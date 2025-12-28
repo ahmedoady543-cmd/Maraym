@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى مريم</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #4a4a4a;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 85%;
+            z-index: 10;
+        }
+        .btn {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            margin: 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .btn:active { transform: scale(0.9); }
+        #step2, #final-section { display: none; }
+        #final-section { overflow-y: auto; max-height: 90vh; padding-top: 50px; }
+        img { width: 100%; max-width: 250px; border-radius: 15px; border: 3px solid #ff4d4d; margin-bottom: 20px; }
+        .poetry { white-space: pre-line; line-height: 1.8; font-weight: bold; text-align: center; font-size: 1.1rem; }
+        .snowflake { position: fixed; top: -10px; color: white; user-select: none; z-index: 1; animation: fall linear infinite; }
+        @keyframes fall { to { transform: translateY(105vh); } }
+    </style>
+</head>
+<body>
+
+    <audio id="myAudio" loop>
+        <source src="shlounak.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="step1" class="container">
+        <h2>انتي مريم؟</h2>
+        <button class="btn" onclick="startExperience()">اي</button>
+        <button class="btn" onclick="startExperience()">اكيد</button>
+    </div>
+
+    <div id="step2" class="container">
+        <h2>تدرين احمد شكد يحبج؟</h2>
+        <button class="btn" onclick="showFinal()">اي</button>
+        <button class="btn" onclick="showFinal()">ادري</button>
+    </div>
+
+    <div id="final-section" class="container">
+        <img src="majid.jpg" alt="ماجد المهندس">
+        <div class="poetry">
+            كلشي بحياتي من غرامك ما سلم...
+            
+            حبيبتي
+            لم تطاوعني اصابعي على كتابه هذه الاسطر
+            فأن رحيلكِ كان سلباً للروحَ ولم اعد اقوى على التذكر ومشاطرة الايام بافراحها واحزنها
+            حبيبتي بماذا ارثيك؟
+            باسطر غادرتها ملامح الحياه
+            حبيبتي عيونكِ وصوتكِ وكل الذكريات
+            لم أنسى أي شيء 
+            حتى في ساعة الممات
+            دنا الموتُ مني وأنا أتذكركِ 
+            فهل تعتقدين حُباً تحت الترابِ يموتُ؟ 
+            لا تذبلِ حين يغيب ساقيكِ
+            فحنان حُبكِ لازال يسقيني
+            حبيبتي، إنّي على عهد الهوى
+            أبقى وفيًّا، لا أرى لكِ بديلا
+            حبيبتي تركت لكِ حباً يكفيكِ اعوام من العشقِ
+            ف لا تكوني هواء قد يستشقِ من لا يستحقكِ
+            اذكريني في اي ليل سأتي على احر من الرصاصة
+            
+            سنة سعيدة عليج يا مريم 🎄
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('myAudio');
+
+        function startExperience() {
+            // تشغيل الموسيقى فور التفاعل مع أول زر
+            audio.play().catch(e => console.log("تحتاج لرفع ملف shlounak.mp3"));
+            document.getElementById('step1').style.display = 'none';
+            document.getElementById('step2').style.display = 'block';
+        }
+
+        function showFinal() {
+            document.getElementById('step2').style.display = 'none';
+            document.getElementById('final-section').style.display = 'block';
+            createSnow();
+        }
+
+        function createSnow() {
+            for (let i = 0; i < 50; i++) {
+                let flake = document.createElement('div');
+                flake.className = 'snowflake';
+                flake.style.left = Math.random() * 100 + 'vw';
+                flake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                flake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                flake.innerText = '❄';
+                document.body.appendChild(flake);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -33,26 +33,10 @@
             padding: 40px 30px; border-radius: 30px; 
             box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
             max-width: 85%; z-index: 10;
-            position: relative; transition: all 0.6s ease;
+            position: relative; transition: all 0.5s ease;
         }
 
-        /* تنسيق زر القلب المبدئي */
-        #start-button {
-            cursor: pointer; transition: 0.3s;
-        }
-        .main-heart {
-            font-size: 80px; color: #ff4d4d;
-            animation: bigPulse 1.5s infinite;
-            display: inline-block;
-        }
-        @keyframes bigPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-        .start-text {
-            display: block; margin-top: 15px; font-weight: bold; font-size: 18px;
-        }
+        h2 { font-size: 1.4rem; margin-bottom: 25px; line-height: 1.4; animation: fadeIn 1s; }
 
         .btn { 
             background-color: #ff4d4d; color: white; border: none; 
@@ -63,15 +47,41 @@
             display: inline-block;
         }
 
-        .btn:hover { transform: scale(1.1); }
+        .btn:hover { transform: scale(1.05); }
 
-        /* إخفاء المراحل */
-        #step1, #step2, #step3, #step4, #final-section { display: none; opacity: 0; }
+        #step2, #step3, #step4, #final-section { display: none; opacity: 0; }
 
-        #final-section { overflow-y: auto; max-height: 90vh; padding-top: 20px; width: 90%; }
-        img { width: 100%; max-width: 220px; border-radius: 20px; border: 4px solid #fff; margin-bottom: 25px; }
-        .poetry { white-space: pre-line; line-height: 2; font-weight: bold; text-align: center; font-size: 1.1rem; }
-        .snowflake { position: fixed; top: -10px; background: white; border-radius: 50%; z-index: 5; animation: fall linear infinite; }
+        #final-section { overflow-y: auto; max-height: 90vh; padding: 30px 20px; width: 90%; }
+        
+        img { 
+            width: 100%; max-width: 200px; border-radius: 20px; 
+            border: 4px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 20px; 
+        }
+
+        /* تنسيق مشغل الموسيقى */
+        .audio-player {
+            margin: 20px 0;
+            background: #f8f8f8;
+            padding: 10px;
+            border-radius: 50px;
+            border: 1px solid #eee;
+        }
+        audio { width: 100%; height: 40px; }
+
+        .poetry { 
+            white-space: pre-line; line-height: 2; 
+            font-weight: bold; text-align: center; font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .snowflake { 
+            position: fixed; top: -10px; background: white; 
+            border-radius: 50%; z-index: 5; animation: fall linear infinite; 
+        }
+
         @keyframes fall { to { transform: translateY(105vh); } }
     </style>
 </head>
@@ -79,18 +89,7 @@
 
     <div class="hearts-bg" id="heartsContainer"></div>
 
-    <audio id="myAudio" loop playsinline>
-        <source src="shlounak.mp3" type="audio/mpeg">
-    </audio>
-
-    <div id="start-screen" class="container">
-        <div id="start-button" onclick="initExperience()">
-            <div class="main-heart">❤</div>
-            <span class="start-text"> اضغطي على القلب مريمي </span>
-        </div>
-    </div>
-
-    <div id="step1" class="container">
+    <div id="step1" class="container" style="display: block; opacity: 1;">
         <h2>انتي مريم؟</h2>
         <button class="btn" onclick="nextStep(1, 2)">اي</button>
         <button class="btn" onclick="nextStep(1, 2)">صح</button>
@@ -116,6 +115,15 @@
 
     <div id="final-section" class="container">
         <img src="majid.jpg" alt="ماجد المهندس">
+        
+        <div class="audio-player">
+            <audio controls id="myAudio" playsinline>
+                <source src="shlounak.mp3" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل الصوت.
+            </audio>
+            <p style="font-size: 12px; margin: 5px 0 0 0; color: #888;">اضغطي لتشغيل الأغنية</p>
+        </div>
+
         <div class="poetry">
 كلشي بحياتي من غرامك ما سلم
 
@@ -142,22 +150,6 @@
     </div>
 
     <script>
-        const audio = document.getElementById('myAudio');
-        
-        function initExperience() {
-            // تشغيل الصوت فوراً عند لمس القلب
-            audio.play();
-            
-            const startScreen = document.getElementById('start-screen');
-            startScreen.style.opacity = '0';
-            setTimeout(() => {
-                startScreen.style.display = 'none';
-                const s1 = document.getElementById('step1');
-                s1.style.display = 'block';
-                setTimeout(() => s1.style.opacity = '1', 50);
-            }, 600);
-        }
-
         function nextStep(current, next) {
             const currentDiv = document.getElementById('step' + current);
             currentDiv.style.opacity = '0';
@@ -181,31 +173,29 @@
             }, 500);
         }
 
-        // إنشاء القلوب والثلج (باقي الكود كما هو)
+        // قلوب الخلفية
         function createBackgroundHearts() {
             const heartsContainer = document.getElementById('heartsContainer');
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 15; i++) {
                 let heart = document.createElement('div');
                 heart.className = 'heart-shape';
                 heart.innerText = '❤';
                 heart.style.left = Math.random() * 100 + 'vw';
                 heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
                 heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-                heart.style.animationDelay = (Math.random() * 10) + 's';
                 heartsContainer.appendChild(heart);
             }
         }
         createBackgroundHearts();
 
         function createSnow() {
-            for (let i = 0; i < 60; i++) {
+            for (let i = 0; i < 50; i++) {
                 let flake = document.createElement('div');
                 flake.className = 'snowflake';
                 flake.style.left = Math.random() * 100 + 'vw';
                 flake.style.animationDuration = (Math.random() * 3 + 3) + 's';
-                flake.style.width = Math.random() * 8 + 4 + 'px';
+                flake.style.width = Math.random() * 6 + 4 + 'px';
                 flake.style.height = flake.style.width;
-                flake.style.opacity = Math.random();
                 document.body.appendChild(flake);
             }
         }

@@ -12,7 +12,6 @@
             overflow: hidden; color: #4a4a4a; position: relative;
         }
 
-        /* حاوية القلوب المتحركة في الخلفية */
         .hearts-bg {
             position: absolute; width: 100%; height: 100%;
             top: 0; left: 0; overflow: hidden; z-index: 1;
@@ -36,6 +35,7 @@
             max-width: 85%; z-index: 10;
             animation: fadeIn 1.5s ease-out;
             position: relative;
+            transition: opacity 0.5s ease;
         }
 
         @keyframes fadeIn {
@@ -73,13 +73,12 @@
         img { 
             width: 100%; max-width: 220px; border-radius: 20px; 
             border: 4px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            margin-bottom: 25px; animation: fadeIn 2s ease-in;
+            margin-bottom: 25px;
         }
 
         .poetry { 
             white-space: pre-line; line-height: 2; 
             font-weight: bold; text-align: center; font-size: 1.1rem;
-            animation: fadeIn 3s ease-in;
         }
 
         .snowflake { 
@@ -94,7 +93,7 @@
 
     <div class="hearts-bg" id="heartsContainer"></div>
 
-    <audio id="myAudio" loop>
+    <audio id="myAudio" loop playsinline preload="auto">
         <source src="shlounak.mp3" type="audio/mpeg">
     </audio>
 
@@ -151,10 +150,18 @@
 
     <script>
         const audio = document.getElementById('myAudio');
+
+        // أهم خطوة للآيفون: تشغيل الصوت عند أول لمسة للشاشة
+        function forcePlay() {
+            audio.play();
+            // نزيل المستمع بعد أول تشغيل
+            document.removeEventListener('touchstart', forcePlay);
+        }
+        document.addEventListener('touchstart', forcePlay);
         
-        // إنشاء القلوب في الخلفية
-        const heartsContainer = document.getElementById('heartsContainer');
+        // إنشاء القلوب
         function createBackgroundHearts() {
+            const heartsContainer = document.getElementById('heartsContainer');
             for (let i = 0; i < 20; i++) {
                 let heart = document.createElement('div');
                 heart.className = 'heart-shape';
@@ -170,7 +177,13 @@
 
         function nextStep(current, next, startMusic = false) {
             if (startMusic) {
-                audio.play().catch(e => console.log("Music play deferred"));
+                audio.play().catch(() => {
+                    // إذا فشل التشغيل التلقائي، نحاول مرة أخرى بقوة
+                    audio.muted = true;
+                    audio.play().then(() => {
+                        audio.muted = false;
+                    });
+                });
             }
             const currentDiv = document.getElementById('step' + current);
             currentDiv.style.opacity = '0';
@@ -178,6 +191,7 @@
                 currentDiv.style.display = 'none';
                 const nextDiv = document.getElementById('step' + next);
                 nextDiv.style.display = 'block';
+                nextDiv.style.opacity = '1';
             }, 500);
         }
 
@@ -187,6 +201,7 @@
             setTimeout(() => {
                 step4.style.display = 'none';
                 document.getElementById('final-section').style.display = 'block';
+                document.getElementById('final-section').style.opacity = '1';
                 createSnow();
             }, 500);
         }

@@ -33,17 +33,26 @@
             padding: 40px 30px; border-radius: 30px; 
             box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
             max-width: 85%; z-index: 10;
-            animation: fadeIn 1.5s ease-out;
-            position: relative;
-            transition: opacity 0.5s ease;
+            position: relative; transition: all 0.6s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* تنسيق زر القلب المبدئي */
+        #start-button {
+            cursor: pointer; transition: 0.3s;
         }
-
-        h2 { font-size: 1.5rem; margin-bottom: 25px; line-height: 1.4; }
+        .main-heart {
+            font-size: 80px; color: #ff4d4d;
+            animation: bigPulse 1.5s infinite;
+            display: inline-block;
+        }
+        @keyframes bigPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .start-text {
+            display: block; margin-top: 15px; font-weight: bold; font-size: 18px;
+        }
 
         .btn { 
             background-color: #ff4d4d; color: white; border: none; 
@@ -52,40 +61,17 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
             display: inline-block;
-            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+        .btn:hover { transform: scale(1.1); }
 
-        .btn:hover {
-            transform: scale(1.1) translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 77, 77, 0.4);
-        }
-
-        #step2, #step3, #step4, #final-section { display: none; }
+        /* إخفاء المراحل */
+        #step1, #step2, #step3, #step4, #final-section { display: none; opacity: 0; }
 
         #final-section { overflow-y: auto; max-height: 90vh; padding-top: 20px; width: 90%; }
-
-        img { 
-            width: 100%; max-width: 220px; border-radius: 20px; 
-            border: 4px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-        }
-
-        .poetry { 
-            white-space: pre-line; line-height: 2; 
-            font-weight: bold; text-align: center; font-size: 1.1rem;
-        }
-
-        .snowflake { 
-            position: fixed; top: -10px; background: white; 
-            border-radius: 50%; z-index: 5; animation: fall linear infinite; 
-        }
-
+        img { width: 100%; max-width: 220px; border-radius: 20px; border: 4px solid #fff; margin-bottom: 25px; }
+        .poetry { white-space: pre-line; line-height: 2; font-weight: bold; text-align: center; font-size: 1.1rem; }
+        .snowflake { position: fixed; top: -10px; background: white; border-radius: 50%; z-index: 5; animation: fall linear infinite; }
         @keyframes fall { to { transform: translateY(105vh); } }
     </style>
 </head>
@@ -93,14 +79,21 @@
 
     <div class="hearts-bg" id="heartsContainer"></div>
 
-    <audio id="myAudio" loop playsinline preload="auto">
+    <audio id="myAudio" loop playsinline>
         <source src="shlounak.mp3" type="audio/mpeg">
     </audio>
 
+    <div id="start-screen" class="container">
+        <div id="start-button" onclick="initExperience()">
+            <div class="main-heart">❤</div>
+            <span class="start-text">اضغط على القلب للبدء</span>
+        </div>
+    </div>
+
     <div id="step1" class="container">
         <h2>انتي مريم؟</h2>
-        <button class="btn" onclick="nextStep(1, 2, true)">اي</button>
-        <button class="btn" onclick="nextStep(1, 2, true)">صح</button>
+        <button class="btn" onclick="nextStep(1, 2)">اي</button>
+        <button class="btn" onclick="nextStep(1, 2)">صح</button>
     </div>
 
     <div id="step2" class="container">
@@ -150,16 +143,45 @@
 
     <script>
         const audio = document.getElementById('myAudio');
-
-        // أهم خطوة للآيفون: تشغيل الصوت عند أول لمسة للشاشة
-        function forcePlay() {
-            audio.play();
-            // نزيل المستمع بعد أول تشغيل
-            document.removeEventListener('touchstart', forcePlay);
-        }
-        document.addEventListener('touchstart', forcePlay);
         
-        // إنشاء القلوب
+        function initExperience() {
+            // تشغيل الصوت فوراً عند لمس القلب
+            audio.play();
+            
+            const startScreen = document.getElementById('start-screen');
+            startScreen.style.opacity = '0';
+            setTimeout(() => {
+                startScreen.style.display = 'none';
+                const s1 = document.getElementById('step1');
+                s1.style.display = 'block';
+                setTimeout(() => s1.style.opacity = '1', 50);
+            }, 600);
+        }
+
+        function nextStep(current, next) {
+            const currentDiv = document.getElementById('step' + current);
+            currentDiv.style.opacity = '0';
+            setTimeout(() => {
+                currentDiv.style.display = 'none';
+                const nextDiv = document.getElementById('step' + next);
+                nextDiv.style.display = 'block';
+                setTimeout(() => nextDiv.style.opacity = '1', 50);
+            }, 500);
+        }
+
+        function showFinal() {
+            const step4 = document.getElementById('step4');
+            step4.style.opacity = '0';
+            setTimeout(() => {
+                step4.style.display = 'none';
+                const final = document.getElementById('final-section');
+                final.style.display = 'block';
+                setTimeout(() => final.style.opacity = '1', 50);
+                createSnow();
+            }, 500);
+        }
+
+        // إنشاء القلوب والثلج (باقي الكود كما هو)
         function createBackgroundHearts() {
             const heartsContainer = document.getElementById('heartsContainer');
             for (let i = 0; i < 20; i++) {
@@ -174,37 +196,6 @@
             }
         }
         createBackgroundHearts();
-
-        function nextStep(current, next, startMusic = false) {
-            if (startMusic) {
-                audio.play().catch(() => {
-                    // إذا فشل التشغيل التلقائي، نحاول مرة أخرى بقوة
-                    audio.muted = true;
-                    audio.play().then(() => {
-                        audio.muted = false;
-                    });
-                });
-            }
-            const currentDiv = document.getElementById('step' + current);
-            currentDiv.style.opacity = '0';
-            setTimeout(() => {
-                currentDiv.style.display = 'none';
-                const nextDiv = document.getElementById('step' + next);
-                nextDiv.style.display = 'block';
-                nextDiv.style.opacity = '1';
-            }, 500);
-        }
-
-        function showFinal() {
-            const step4 = document.getElementById('step4');
-            step4.style.opacity = '0';
-            setTimeout(() => {
-                step4.style.display = 'none';
-                document.getElementById('final-section').style.display = 'block';
-                document.getElementById('final-section').style.opacity = '1';
-                createSnow();
-            }, 500);
-        }
 
         function createSnow() {
             for (let i = 0; i < 60; i++) {

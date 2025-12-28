@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إلى مريم</title>
     <style>
+        /* التنسيق العام */
         body { 
             margin: 0; padding: 0; font-family: 'Arial', sans-serif; 
             background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); 
@@ -12,6 +13,7 @@
             overflow: hidden; color: #4a4a4a; position: relative;
         }
 
+        /* القلوب المتطايرة في الخلفية */
         .hearts-bg {
             position: absolute; width: 100%; height: 100%;
             top: 0; left: 0; overflow: hidden; z-index: 1;
@@ -28,15 +30,16 @@
             100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
         }
 
+        /* حاوية المحتوى */
         .container { 
-            text-align: center; background: rgba(255, 255, 255, 0.92); 
+            text-align: center; background: rgba(255, 255, 255, 0.94); 
             padding: 40px 30px; border-radius: 30px; 
             box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
             max-width: 85%; z-index: 10;
-            position: relative; transition: all 0.5s ease;
+            position: relative; transition: all 0.6s ease;
         }
 
-        h2 { font-size: 1.4rem; margin-bottom: 25px; line-height: 1.4; animation: fadeIn 1s; }
+        h2 { font-size: 1.5rem; margin-bottom: 25px; line-height: 1.4; }
 
         .btn { 
             background-color: #ff4d4d; color: white; border: none; 
@@ -47,35 +50,41 @@
             display: inline-block;
         }
 
-        .btn:hover { transform: scale(1.05); }
+        .btn:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(255, 77, 77, 0.4); }
 
+        /* مراحل العرض */
         #step2, #step3, #step4, #final-section { display: none; opacity: 0; }
 
-        #final-section { overflow-y: auto; max-height: 90vh; padding: 30px 20px; width: 90%; }
-        
-        img { 
-            width: 100%; max-width: 200px; border-radius: 20px; 
-            border: 4px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            margin-bottom: 20px; 
+        /* الصفحة النهائية */
+        #final-section { 
+            overflow-y: auto; max-height: 90vh; 
+            padding: 30px 20px; width: 90%;
+            animation: fadeInFinal 1.5s forwards;
         }
 
-        /* تنسيق مشغل الموسيقى */
+        @keyframes fadeInFinal { from { opacity: 0; } to { opacity: 1; } }
+
+        img { 
+            width: 100%; max-width: 220px; border-radius: 20px; 
+            border: 4px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        /* مشغل الموسيقى */
         .audio-player {
             margin: 20px 0;
-            background: #f8f8f8;
-            padding: 10px;
+            background: #fff0f0;
+            padding: 15px;
             border-radius: 50px;
-            border: 1px solid #eee;
+            border: 2px solid #ff4d4d;
         }
-        audio { width: 100%; height: 40px; }
+        audio { width: 100%; height: 45px; }
 
         .poetry { 
-            white-space: pre-line; line-height: 2; 
-            font-weight: bold; text-align: center; font-size: 1.1rem;
-            margin-top: 20px;
+            white-space: pre-line; line-height: 2.2; 
+            font-weight: bold; text-align: center; font-size: 1.15rem;
+            color: #333; margin-top: 25px;
         }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .snowflake { 
             position: fixed; top: -10px; background: white; 
@@ -118,10 +127,11 @@
         
         <div class="audio-player">
             <audio controls id="myAudio" playsinline>
+                <source src="https://www.melody4arab.com/music/iraq/majed_el_mohandes/ezkoreny/Melody4Arab.Com_Shlonak_Habibi.mp3" type="audio/mpeg">
                 <source src="shlounak.mp3" type="audio/mpeg">
                 متصفحك لا يدعم تشغيل الصوت.
             </audio>
-            <p style="font-size: 12px; margin: 5px 0 0 0; color: #888;">اضغطي لتشغيل الأغنية</p>
+            <p style="font-size: 13px; margin: 8px 0 0 0; color: #ff4d4d; font-weight: bold;">اضغطي على زر التشغيل 🎧</p>
         </div>
 
         <div class="poetry">
@@ -150,6 +160,7 @@
     </div>
 
     <script>
+        // دالة الانتقال بين الأسئلة
         function nextStep(current, next) {
             const currentDiv = document.getElementById('step' + current);
             currentDiv.style.opacity = '0';
@@ -161,6 +172,7 @@
             }, 500);
         }
 
+        // دالة إظهار الصفحة النهائية
         function showFinal() {
             const step4 = document.getElementById('step4');
             step4.style.opacity = '0';
@@ -168,34 +180,36 @@
                 step4.style.display = 'none';
                 const final = document.getElementById('final-section');
                 final.style.display = 'block';
-                setTimeout(() => final.style.opacity = '1', 50);
-                createSnow();
+                createSnow(); // بدء تساقط الثلج
             }, 500);
         }
 
-        // قلوب الخلفية
+        // إنشاء القلوب المتحركة في الخلفية
         function createBackgroundHearts() {
             const heartsContainer = document.getElementById('heartsContainer');
-            for (let i = 0; i < 15; i++) {
+            for (let i = 0; i < 20; i++) {
                 let heart = document.createElement('div');
                 heart.className = 'heart-shape';
                 heart.innerText = '❤';
                 heart.style.left = Math.random() * 100 + 'vw';
                 heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
                 heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heart.style.animationDelay = (Math.random() * 10) + 's';
                 heartsContainer.appendChild(heart);
             }
         }
         createBackgroundHearts();
 
+        // إنشاء تساقط الثلج في النهاية
         function createSnow() {
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 60; i++) {
                 let flake = document.createElement('div');
                 flake.className = 'snowflake';
                 flake.style.left = Math.random() * 100 + 'vw';
                 flake.style.animationDuration = (Math.random() * 3 + 3) + 's';
-                flake.style.width = Math.random() * 6 + 4 + 'px';
+                flake.style.width = Math.random() * 8 + 4 + 'px';
                 flake.style.height = flake.style.width;
+                flake.style.opacity = Math.random();
                 document.body.appendChild(flake);
             }
         }

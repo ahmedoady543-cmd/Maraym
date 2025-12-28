@@ -44,13 +44,12 @@
             background-color: #ff4d4d; color: white; border: none; 
             padding: 14px 35px; margin: 10px; border-radius: 50px; 
             cursor: pointer; font-size: 18px; font-weight: bold; transition: 0.3s;
-            position: relative; overflow: hidden;
         }
 
         /* تأثير القلوب الوردية عند الضغط */
         .click-heart {
             position: absolute; color: #ffb6c1; pointer-events: none;
-            animation: burst 0.8s ease-out forwards; z-index: 100;
+            animation: burst 0.8s ease-out forwards; z-index: 100; font-size: 20px;
         }
         @keyframes burst {
             0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
@@ -58,11 +57,13 @@
         }
 
         #final-section { overflow-y: auto; max-height: 90vh; padding: 30px 20px; width: 90%; }
-        img { width: 100%; max-width: 200px; border-radius: 20px; border: 4px solid #fff; margin-bottom: 20px; }
+        img { width: 100%; max-width: 180px; border-radius: 20px; border: 4px solid #fff; margin-bottom: 10px; }
         
+        .counter-text { font-size: 1.1rem; color: #ff4d4d; font-weight: bold; margin-bottom: 20px; display: block; }
+
         .poetry { 
             white-space: pre-line; line-height: 2.2; font-weight: bold; 
-            font-size: 1.15rem; margin-top: 25px; color: #333;
+            font-size: 1.1rem; margin-top: 15px; color: #333; text-align: center;
         }
 
         .snowflake { position: fixed; top: -10px; background: white; border-radius: 50%; z-index: 5; animation: fall linear infinite; }
@@ -118,37 +119,33 @@
 
     <div id="final-section" class="container">
         <img src="majid.jpg" alt="ماجد المهندس">
-        <div class="poetry">
-            حبيبتي بماذا ارثيك؟
-            باسطر غادرتها ملامح الحياه
-            حبيبتي عيونكِ وصوتكِ وكل الذكريات
-            لم أنسى أي شيء 
-            حتى في ساعة الممات
-            دنا الموتُ مني وأنا أتذكركِ 
-            فهل تعتقدين حُباً تحت الترابِ يموتُ؟ 
-            لا تذبلِ حين يغيب ساقيكِ
-            فحنان حُبكِ لازال يسقيني
-            حبيبتي، إنّي على عهد الهوى
-            أبقى وفيًّا، لا أرى لكِ بديلا
-
-            جان المفروض ادزها 1/1 بس احبيت اول من يهنيج كل عام وانتي بقلبي
-        </div>
+        <div class="counter-text">(صارلي اعرفج <span id="daysCounter">0</span> يوم)</div>
+        <div id="typewriter" class="poetry"></div>
     </div>
 
     <script>
         const audio = document.getElementById('myAudio');
+        const finalPoetry = `حبيبتي بماذا ارثيك؟
+باسطر غادرتها ملامح الحياه
+حبيبتي عيونكِ وصوتكِ وكل الذكريات
+لم أنسى أي شيء 
+حتى في ساعة الممات
+دنا الموتُ مني وأنا أتذكركِ 
+فهل تعتقدين حُباً تحت الترابِ يموتُ؟ 
+لا تذبلِ حين يغيب ساقيكِ
+فحنان حُبكِ لازال يسقيني
+حبيبتي، إنّي على عهد الهوى
+أبقى وفيًّا، لا أرى لكِ بديلا
 
-        // اخفاء اللودنك
+جان المفروض ادزها 1/1 بس احبيت اول من يهنيج كل عام وانتي بقلبي`;
+
         setTimeout(() => {
-            document.getElementById('loader').style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('loader').style.display = 'none';
-                showElement('music-screen');
-            }, 800);
+            document.getElementById('loader').style.display = 'none';
+            showElement('music-screen');
         }, 3000);
 
         function startMusic() {
-            audio.play().catch(e => console.log("Audio play failed"));
+            audio.play();
             nextStep('music-screen', 'heart-screen');
         }
 
@@ -169,10 +166,37 @@
 
         function showFinal() {
             nextStep('step4', 'final-section');
-            createSnow();
+            setTimeout(() => {
+                startCounter(1823); // عدد الأيام التقريبي من بداية 2021
+                typeWriter();
+                createSnow();
+            }, 600);
         }
 
-        // تأثير انفجار القلوب عند الضغط في أي مكان
+        // دالة العداد المتصاعد
+        function startCounter(target) {
+            let count = 0;
+            let speed = 2; // سرعة الزيادة
+            let timer = setInterval(() => {
+                count += 17; // القفزة الرقمية
+                if (count >= target) {
+                    count = target;
+                    clearInterval(timer);
+                }
+                document.getElementById('daysCounter').innerText = count;
+            }, 10);
+        }
+
+        // تأثير الكتابة حرف بحرف
+        let i = 0;
+        function typeWriter() {
+            if (i < finalPoetry.length) {
+                document.getElementById("typewriter").innerHTML += finalPoetry.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50); // سرعة الكتابة
+            }
+        }
+
         function createBurst(e) {
             for (let i = 0; i < 6; i++) {
                 const heart = document.createElement('div');
@@ -210,12 +234,12 @@
         createStarsAndHearts();
 
         function createSnow() {
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 40; i++) {
                 let flake = document.createElement('div');
                 flake.className = 'snowflake';
                 flake.style.left = Math.random() * 100 + 'vw';
-                flake.style.animationDuration = (Math.random() * 3 + 3) + 's';
-                flake.style.width = Math.random() * 6 + 4 + 'px';
+                flake.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                flake.style.width = Math.random() * 6 + 2 + 'px';
                 flake.style.height = flake.style.width;
                 document.body.appendChild(flake);
             }

@@ -1,249 +1,203 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إلى مريم</title>
+    <title>إلى حبيبتي في عيد الحب ❤️</title>
     <style>
-        body { 
-            margin: 0; padding: 0; font-family: 'Arial', sans-serif; 
-            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); 
-            height: 100vh; display: flex; justify-content: center; align-items: center; 
-            overflow: hidden; color: #4a4a4a; position: relative;
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0); /* تدرج لوني لطيف */
+            color: #fff; /* لون الخط أبيض */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* يملأ الشاشة بالكامل */
+            text-align: center;
+            overflow: hidden; /* لمنع ظهور scrollbars */
+            position: relative;
         }
 
-        /* الخلفية الرومانسية */
-        .hearts-bg { position: absolute; width: 100%; height: 100%; top: 0; left: 0; overflow: hidden; z-index: 1; }
-        .heart-shape { position: absolute; color: rgba(255, 77, 77, 0.2); font-size: 20px; animation: floatHearts linear infinite; }
-        .star { position: absolute; background: white; border-radius: 50%; opacity: 0.5; animation: twinkle 2s infinite ease-in-out; }
-
-        @keyframes floatHearts { 
-            0% { transform: translateY(110vh) rotate(0deg); opacity: 0; } 
-            20% { opacity: 0.6; } 
-            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; } 
-        }
-        @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
-
-        /* اللودنك */
-        #loader { text-align: center; z-index: 100; transition: 0.8s; }
-        .spinner { width: 50px; height: 50px; border: 5px solid rgba(255,255,255,0.3); border-top: 5px solid #ff4d4d; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 15px; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        .container { 
-            text-align: center; background: rgba(255, 255, 255, 0.94); 
-            padding: 40px 30px; border-radius: 30px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
-            max-width: 85%; z-index: 10; position: relative; transition: all 0.6s ease;
-            display: none; opacity: 0;
+        .heart-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0; /* لجعل القلوب في الخلفية */
         }
 
-        .main-heart { cursor: pointer; animation: pulse 1.5s infinite; font-size: 70px; color: #ff4d4d; display: inline-block; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
-
-        .btn { 
-            background-color: #ff4d4d; color: white; border: none; 
-            padding: 14px 35px; margin: 10px; border-radius: 50px; 
-            cursor: pointer; font-size: 18px; font-weight: bold; transition: 0.3s;
+        .heart {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2); /* قلوب شفافة */
+            animation: floatHeart 10s ease-in infinite;
+            transform: rotate(-45deg); /* شكل قلب */
+            opacity: 0;
         }
 
-        /* تأثير القلوب الوردية عند الضغط */
-        .click-heart {
-            position: absolute; color: #ffb6c1; pointer-events: none;
-            animation: burst 0.8s ease-out forwards; z-index: 100; font-size: 20px;
-        }
-        @keyframes burst {
-            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-            100% { transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1.5); opacity: 0; }
-        }
-
-        #final-section { overflow-y: auto; max-height: 90vh; padding: 30px 20px; width: 90%; }
-        img { width: 100%; max-width: 180px; border-radius: 20px; border: 4px solid #fff; margin-bottom: 10px; }
-        
-        .counter-text { font-size: 1.1rem; color: #ff4d4d; font-weight: bold; margin-bottom: 20px; display: block; }
-
-        .poetry { 
-            white-space: pre-line; line-height: 2.2; font-weight: bold; 
-            font-size: 1.1rem; margin-top: 15px; color: #333; text-align: center;
+        .heart::before, .heart::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            border-radius: 50%;
         }
 
-        .snowflake { position: fixed; top: -10px; background: white; border-radius: 50%; z-index: 5; animation: fall linear infinite; }
-        @keyframes fall { to { transform: translateY(105vh); } }
+        .heart::before {
+            top: -50%;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 50%;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) rotate(-45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(-45deg); opacity: 0; }
+        }
+
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.4); /* خلفية شبه شفافة للمحتوى */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+            z-index: 1; /* لجعل المحتوى فوق القلوب */
+        }
+
+        h1 {
+            font-size: 3.5em; /* حجم كبير للعنوان */
+            margin-bottom: 20px;
+            color: #ffeeee;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        #countdown {
+            font-size: 2.8em;
+            font-weight: bold;
+            color: #ffe6e6;
+            margin-top: 25px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        #countdown span {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        #countdown .label {
+            display: block;
+            font-size: 0.5em;
+            font-weight: normal;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .small-text {
+            font-size: 1em;
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            p {
+                font-size: 1.2em;
+            }
+            #countdown {
+                font-size: 2em;
+            }
+            .container {
+                padding: 25px;
+            }
+        }
+
     </style>
 </head>
-<body onclick="createBurst(event)">
-
-    <div class="hearts-bg" id="heartsContainer"></div>
-
-    <audio id="myAudio" loop playsinline>
-        <source src="https://www.melody4arab.com/music/iraq/majed_el_mohandes/ezkoreny/Melody4Arab.Com_Shlonak_Habibi.mp3" type="audio/mpeg">
-        <source src="shlounak.mp3" type="audio/mpeg">
-    </audio>
-
-    <div id="loader">
-        <div class="spinner"></div>
-        <p style="font-weight: bold; color: white;">دقيقة مريمي دنجهزلج الرابط</p>
-    </div>
-
-    <div id="music-screen" class="container">
-        <div class="main-heart" onclick="startMusic()">❤</div>
-        <p style="font-weight: bold; margin-top: 15px;">اضغطي حتى تشتغل الاغنية</p>
-    </div>
-
-    <div id="heart-screen" class="container">
-        <div class="main-heart" onclick="nextStep('heart-screen', 'step1')">💖</div>
-        <p style="font-weight: bold; margin-top: 15px;">اضغطي على القلب حبيبي</p>
-    </div>
-
-    <div id="step1" class="container">
-        <h2>هلو مريمي</h2>
-        <button class="btn" onclick="nextStep('step1', 'step2')">هلو</button>
-    </div>
-
-    <div id="step2" class="container">
-        <h2>تدرين احمد شكد يحبج؟</h2>
-        <button class="btn" onclick="nextStep('step2', 'step3')">ادري</button>
-        <button class="btn" onclick="nextStep('step2', 'step3')">اي</button>
-    </div>
-
-    <div id="step3" class="container">
-        <h2>تريدين تشوفين شي؟</h2>
-        <button class="btn" onclick="nextStep('step3', 'step4')">اي</button>
-        <button class="btn" onclick="nextStep('step3', 'step4')">لا</button>
-    </div>
-
-    <div id="step4" class="container">
-        <h2>متاكدة؟</h2>
-        <button class="btn" onclick="showFinal()">اي</button>
-        <button class="btn" onclick="showFinal()">متأكدة</button>
-    </div>
-
-    <div id="final-section" class="container">
-        <img src="majid.jpg" alt="ماجد المهندس">
-        <div class="counter-text">(صارلي اعرفج <span id="daysCounter">0</span> يوم)</div>
-        <div id="typewriter" class="poetry"></div>
+<body>
+    <div class="heart-background" id="heart-container"></div>
+    <div class="container">
+        <h1>إلى حبيبتي...</h1>
+        <p>كل عام وأنتِ الحب وكل شيء جميل في حياتي. لا أطيق الانتظار حتى يحل عيد الحب لأقضي معكِ أجمل الأوقات.</p>
+        <p>تبقى على عيد الحب:</p>
+        <div id="countdown"></div>
+        <p class="small-text">أحبك أكثر مما تتخيلين ❤️</p>
     </div>
 
     <script>
-        const audio = document.getElementById('myAudio');
-        const finalPoetry = `حبيبتي بماذا ارثيك؟
-باسطر غادرتها ملامح الحياه
-حبيبتي عيونكِ وصوتكِ وكل الذكريات
-لم أنسى أي شيء 
-حتى في ساعة الممات
-دنا الموتُ مني وأنا أتذكركِ 
-فهل تعتقدين حُباً تحت الترابِ يموتُ؟ 
-لا تذبلِ حين يغيب ساقيكِ
-فحنان حُبكِ لازال يسقيني
-حبيبتي، إنّي على عهد الهوى
-أبقى وفيًّا، لا أرى لكِ بديلا
+        // Set the date we're counting down to
+        // 14 فبراير 2026 - (السنة, الشهر-1, اليوم, الساعة, الدقيقة, الثانية)
+        const countDownDate = new Date("Feb 14, 2026 00:00:00").getTime();
 
-جان المفروض ادزها 1/1 بس احبيت اول من يهنيج كل عام وانتي بقلبي`;
+        // Update the count down every 1 second
+        const x = setInterval(function() {
 
-        setTimeout(() => {
-            document.getElementById('loader').style.display = 'none';
-            showElement('music-screen');
-        }, 3000);
+            // Get today's date and time
+            const now = new Date().getTime();
 
-        function startMusic() {
-            audio.play();
-            nextStep('music-screen', 'heart-screen');
-        }
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
 
-        function showElement(id) {
-            const el = document.getElementById(id);
-            el.style.display = 'block';
-            setTimeout(() => el.style.opacity = '1', 50);
-        }
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        function nextStep(currentId, nextId) {
-            const current = document.getElementById(currentId);
-            current.style.opacity = '0';
-            setTimeout(() => {
-                current.style.display = 'none';
-                showElement(nextId);
-            }, 500);
-        }
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML =
+                "<span>" + days + "<br><span class='label'>يوم</span></span>" +
+                "<span>" + hours + "<br><span class='label'>ساعة</span></span>" +
+                "<span>" + minutes + "<br><span class='label'>دقيقة</span></span>" +
+                "<span>" + seconds + "<br><span class='label'>ثانية</span></span>";
 
-        function showFinal() {
-            nextStep('step4', 'final-section');
-            setTimeout(() => {
-                startCounter(1823); // عدد الأيام التقريبي من بداية 2021
-                typeWriter();
-                createSnow();
-            }, 600);
-        }
-
-        // دالة العداد المتصاعد
-        function startCounter(target) {
-            let count = 0;
-            let speed = 2; // سرعة الزيادة
-            let timer = setInterval(() => {
-                count += 17; // القفزة الرقمية
-                if (count >= target) {
-                    count = target;
-                    clearInterval(timer);
-                }
-                document.getElementById('daysCounter').innerText = count;
-            }, 10);
-        }
-
-        // تأثير الكتابة حرف بحرف
-        let i = 0;
-        function typeWriter() {
-            if (i < finalPoetry.length) {
-                document.getElementById("typewriter").innerHTML += finalPoetry.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50); // سرعة الكتابة
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "عيد حب سعيد يا حبيبتي! ❤️";
+                // يمكنك تغيير الرسالة هنا إذا وصل التاريخ
             }
+        }, 1000);
+
+        // Function to create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.width = Math.random() * 20 + 10 + 'px'; // حجم عشوائي
+            heart.style.height = heart.style.width;
+            heart.style.left = Math.random() * 100 + 'vw'; // مكان عشوائي أفقياً
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's'; // سرعة عشوائية
+            heart.style.animationDelay = Math.random() * 2 + 's'; // تأخير عشوائي
+
+            document.getElementById('heart-container').appendChild(heart);
+
+            // Remove heart after animation to prevent performance issues
+            heart.addEventListener('animationend', () => {
+                heart.remove();
+            });
         }
 
-        function createBurst(e) {
-            for (let i = 0; i < 6; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'click-heart';
-                heart.innerHTML = '🌸';
-                heart.style.left = e.clientX + 'px';
-                heart.style.top = e.clientY + 'px';
-                heart.style.setProperty('--x', (Math.random() * 200 - 100) + 'px');
-                heart.style.setProperty('--y', (Math.random() * 200 - 100) + 'px');
-                document.body.appendChild(heart);
-                setTimeout(() => heart.remove(), 800);
-            }
-        }
+        // Create hearts every 300ms
+        setInterval(createHeart, 300);
 
-        function createStarsAndHearts() {
-            const container = document.getElementById('heartsContainer');
-            for (let i = 0; i < 60; i++) {
-                let star = document.createElement('div');
-                star.className = 'star';
-                star.style.width = Math.random() * 3 + 'px';
-                star.style.height = star.style.width;
-                star.style.left = Math.random() * 100 + 'vw';
-                star.style.top = Math.random() * 100 + 'vh';
-                container.appendChild(star);
-                if (i < 25) {
-                    let heart = document.createElement('div');
-                    heart.className = 'heart-shape';
-                    heart.innerText = '❤';
-                    heart.style.left = Math.random() * 100 + 'vw';
-                    heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                    container.appendChild(heart);
-                }
-            }
-        }
-        createStarsAndHearts();
-
-        function createSnow() {
-            for (let i = 0; i < 40; i++) {
-                let flake = document.createElement('div');
-                flake.className = 'snowflake';
-                flake.style.left = Math.random() * 100 + 'vw';
-                flake.style.animationDuration = (Math.random() * 3 + 4) + 's';
-                flake.style.width = Math.random() * 6 + 2 + 'px';
-                flake.style.height = flake.style.width;
-                document.body.appendChild(flake);
-            }
-        }
     </script>
 </body>
 </html>

@@ -34,19 +34,19 @@
       text-align: center;
       position: relative;
       backdrop-filter: blur(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
     h1 {
       font-family: 'Amiri', serif;
       color: #d4af37;
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       margin-bottom: 20px;
       font-weight: 700;
       letter-spacing: 1px;
     }
     p {
       color: #e0d0e0;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       line-height: 1.9;
       margin-bottom: 35px;
       font-weight: 300;
@@ -87,8 +87,9 @@
       background: rgba(255, 255, 255, 0.05);
       color: #a090a0;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      position: absolute;
+      position: fixed;
       z-index: 999;
+      transition: left 0.2s ease, top 0.2s ease;
     }
     .hidden {
       display: none;
@@ -104,34 +105,48 @@
 </head>
 <body>
 
-  <!-- المرحلة الأولى: التهنئة والتمهيد -->
+  <!-- المرحلة 1 -->
   <div id="step1" class="card visible">
     <h1>عيد ميلاد سعيد</h1>
-    <p>كل عام وأنتِ أصل الجمال في هذا العالم. في يومكِ الخاص، أردتُ أن أقدم لكِ كلمة تليق بمقامكِ...</p>
+    <p>في هذا اليوم المميز، أردت أن أقدم لكِ شيئاً مختلفاً يليق بمكانتكِ وخاصة هذا اليوم...</p>
     <button class="btn-main" onclick="nextStep(2)">متابعة</button>
   </div>
 
-  <!-- المرحلة الثانية: الاعتراف والكلمات الفخمة -->
+  <!-- المرحلة 2 -->
   <div id="step2" class="card hidden">
-    <h1>حقيقة المشاعر</h1>
-    <p>لم تكن الأيام جيدة إلا بوجودكِ فيها، وجودكِ يضيف للوقت قيمة وللحياة معنى مختلفاً تماماً. أنتِ لستِ مجرد شخص عابر، بل أنتِ الاستثناء الوحيد لكل شيء.</p>
+    <h1>بداية القصة</h1>
+    <p>هناك أشخاص يمرون في حياتنا كأنهم عابرون، وهناك من يمر ليكون هو الأثر والأهم دائماً...</p>
     <button class="btn-main" onclick="nextStep(3)">متابعة</button>
   </div>
 
-  <!-- المرحلة الثالثة: السؤال والزر الهارب (لا) والزر الوحيد المتاح (أحبك) -->
+  <!-- المرحلة 3 -->
   <div id="step3" class="card hidden">
-    <h1>السؤال الأخير</h1>
+    <h1>تأثير وجودكِ</h1>
+    <p>وجودكِ يضيف للوقت قيمة، وللحديث معنى مختلفاً. أصبحتِ الاستثناء الوحيد في كل تفصيل جميل...</p>
+    <button class="btn-main" onclick="nextStep(4)">متابعة</button>
+  </div>
+
+  <!-- المرحلة 4 -->
+  <div id="step4" class="card hidden">
+    <h1>حقيقة المشاعر</h1>
+    <p>لم يكن الأمر مجرد إعجاب عابر، بل مشاعر صادقة تكبر كل يوم وتنتظر هذه اللحظة لتُقال بالكامل...</p>
+    <button class="btn-main" onclick="nextStep(5)">متابعة</button>
+  </div>
+
+  <!-- المرحلة 5: السؤال والزر الهارب -->
+  <div id="step5" class="card hidden">
+    <h1>السؤال الأهم</h1>
     <p>هل تمنحين هذه المشاعر فرصة لتبدأ فصلاً جديداً ومختلفاً يليق بكِ؟</p>
     <div class="btn-container">
-      <button class="btn-main" onclick="nextStep(4)">أحبك</button>
+      <button class="btn-main" onclick="nextStep(6)">أحبك</button>
       <button id="runawayBtn" class="btn-no" onmouseover="moveButton()" onclick="moveButton()" ontouchstart="moveButton()">لا</button>
     </div>
   </div>
 
-  <!-- المرحلة الأخيرة: النهاية والقبول -->
-  <div id="step4" class="card hidden">
+  <!-- المرحلة 6: النهاية والقبول -->
+  <div id="step6" class="card hidden">
     <h1>بداية أجمل الأيام</h1>
-    <p>شكراً لكونكِ أنتِ، وشكراً لأنكِ جعلتِ هذا اليوم أصدق وأجمل بوجودكِ في حياتي.</p>
+    <p>شكراً لأنكِ جعلتِ هذا اليوم أصدق وأجمل بوجودكِ في حياتي، كل عام وأنتِ بقلبي...</p>
   </div>
 
   <script>
@@ -141,6 +156,12 @@
         card.classList.remove('visible');
         card.classList.add('hidden');
       });
+
+      // إخفاء زر "لا" في المرحلة الأخيرة
+      if(stepNumber === 6) {
+        document.getElementById('runawayBtn').style.display = 'none';
+      }
+
       const nextCard = document.getElementById('step' + stepNumber);
       nextCard.classList.remove('hidden');
       setTimeout(() => {
@@ -150,11 +171,19 @@
 
     function moveButton() {
       const btn = document.getElementById('runawayBtn');
-      const x = Math.random() * (window.innerWidth - btn.offsetWidth - 80);
-      const y = Math.random() * (window.innerHeight - btn.offsetHeight - 80);
-      btn.style.position = 'fixed';
-      btn.style.left = Math.max(30, x) + 'px';
-      btn.style.top = Math.max(30, y) + 'px';
+      const padding = 20; // هامش أمان داخل الشاشة
+      
+      const btnWidth = btn.offsetWidth;
+      const btnHeight = btn.offsetHeight;
+      
+      const maxX = window.innerWidth - btnWidth - padding;
+      const maxY = window.innerHeight - btnHeight - padding;
+      
+      const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
+      const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
+      
+      btn.style.left = randomX + 'px';
+      btn.style.top = randomY + 'px';
     }
   </script>
 </body>

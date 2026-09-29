@@ -67,7 +67,7 @@
       border-radius: 4px;
       cursor: pointer;
       font-weight: 600;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       background: transparent;
       color: #d4af37;
       letter-spacing: 1px;
@@ -87,9 +87,8 @@
       background: rgba(255, 255, 255, 0.05);
       color: #a090a0;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      position: fixed;
+      position: absolute;
       z-index: 999;
-      transition: left 0.2s ease, top 0.2s ease;
     }
     .hidden {
       display: none;
@@ -137,7 +136,7 @@
   <div id="step5" class="card hidden">
     <h1>السؤال الأهم</h1>
     <p>هل تمنحين هذه المشاعر فرصة لتبدأ فصلاً جديداً ومختلفاً يليق بكِ؟</p>
-    <div class="btn-container">
+    <div class="btn-container" id="container5">
       <button class="btn-main" onclick="nextStep(6)">أحبك</button>
       <button id="runawayBtn" class="btn-no" onmouseover="moveButton()" onclick="moveButton()" ontouchstart="moveButton()">لا</button>
     </div>
@@ -157,7 +156,6 @@
         card.classList.add('hidden');
       });
 
-      // إخفاء زر "لا" في المرحلة الأخيرة
       if(stepNumber === 6) {
         document.getElementById('runawayBtn').style.display = 'none';
       }
@@ -171,19 +169,28 @@
 
     function moveButton() {
       const btn = document.getElementById('runawayBtn');
-      const padding = 20; // هامش أمان داخل الشاشة
+      const winWidth = window.innerWidth;
+      const winHeight = window.innerHeight;
       
       const btnWidth = btn.offsetWidth;
       const btnHeight = btn.offsetHeight;
       
-      const maxX = window.innerWidth - btnWidth - padding;
-      const maxY = window.innerHeight - btnHeight - padding;
+      // تحديد هامش أمان واضح بحدود 40 بكسل من كل جهة لتجنب الاختفاء تماماً
+      const margin = 40;
       
-      const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
-      const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
+      const minX = margin;
+      const maxX = winWidth - btnWidth - margin;
       
-      btn.style.left = randomX + 'px';
-      btn.style.top = randomY + 'px';
+      const minY = margin;
+      const maxY = winHeight - btnHeight - margin;
+      
+      // توليد موقع عشوائي آمن داخل رؤية العين 100%
+      const newX = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
+      const newY = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
+      
+      btn.style.position = 'fixed';
+      btn.style.left = newX + 'px';
+      btn.style.top = newY + 'px';
     }
   </script>
 </body>

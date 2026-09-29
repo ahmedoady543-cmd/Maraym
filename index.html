@@ -24,12 +24,12 @@
       color: #f3e5f5;
     }
     .card {
-      background: rgba(25, 15, 23, 0.85);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      padding: 50px 40px;
-      border-radius: 12px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.1);
-      max-width: 500px;
+      background: rgba(25, 15, 23, 0.92);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 50px 30px;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+      max-width: 480px;
       width: 90%;
       text-align: center;
       position: relative;
@@ -57,38 +57,39 @@
       align-items: center;
       gap: 20px;
       position: relative;
-      min-height: 60px;
+      min-height: 120px; /* مساحة واسعة ومحاطة داخل الكارت للتحرك */
     }
     button {
       padding: 12px 35px;
       font-size: 1.05rem;
       font-family: 'Cairo', sans-serif;
-      border: 1px solid #d4af37;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
-      transition: all 0.2s ease;
-      background: transparent;
-      color: #d4af37;
       letter-spacing: 1px;
     }
     .btn-main {
       background: linear-gradient(45deg, #8a1c4a, #a8235c);
       color: #ffffff;
-      border: none;
+      border: 1px solid #d4af37;
       box-shadow: 0 4px 15px rgba(168, 35, 92, 0.4);
+      transition: all 0.3s ease;
+      z-index: 2;
     }
     .btn-main:hover {
       background: linear-gradient(45deg, #a8235c, #c42b6e);
       box-shadow: 0 6px 20px rgba(168, 35, 92, 0.6);
       transform: translateY(-2px);
     }
+    /* زر لا واضح جداً ومحدد الحدود وبطيء الحركة */
     .btn-no {
-      background: rgba(255, 255, 255, 0.05);
-      color: #a090a0;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: #4a1525;
+      color: #ffffff;
+      border: 2px solid #d4af37;
       position: absolute;
-      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* حركة بطيئة وسلسة */
+      z-index: 10;
     }
     .hidden {
       display: none;
@@ -156,10 +157,6 @@
         card.classList.add('hidden');
       });
 
-      if(stepNumber === 6) {
-        document.getElementById('runawayBtn').style.display = 'none';
-      }
-
       const nextCard = document.getElementById('step' + stepNumber);
       nextCard.classList.remove('hidden');
       setTimeout(() => {
@@ -169,26 +166,19 @@
 
     function moveButton() {
       const btn = document.getElementById('runawayBtn');
-      const winWidth = window.innerWidth;
-      const winHeight = window.innerHeight;
+      const container = document.getElementById('container5');
       
-      const btnWidth = btn.offsetWidth;
-      const btnHeight = btn.offsetHeight;
+      // أبعاد الحاوية داخل الكارت فقط
+      const cWidth = container.clientWidth;
+      const cHeight = container.clientHeight;
       
-      // تحديد هامش أمان واضح بحدود 40 بكسل من كل جهة لتجنب الاختفاء تماماً
-      const margin = 40;
+      const bWidth = btn.offsetWidth;
+      const bHeight = btn.offsetHeight;
       
-      const minX = margin;
-      const maxX = winWidth - btnWidth - margin;
+      // التحرّك فقط داخل المربع وبطريقة سلسة
+      const newX = Math.floor(Math.random() * (cWidth - bWidth));
+      const newY = Math.floor(Math.random() * (cHeight - bHeight));
       
-      const minY = margin;
-      const maxY = winHeight - btnHeight - margin;
-      
-      // توليد موقع عشوائي آمن داخل رؤية العين 100%
-      const newX = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
-      const newY = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
-      
-      btn.style.position = 'fixed';
       btn.style.left = newX + 'px';
       btn.style.top = newY + 'px';
     }

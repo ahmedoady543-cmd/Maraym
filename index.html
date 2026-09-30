@@ -51,13 +51,20 @@
       margin-bottom: 35px;
       font-weight: 300;
     }
+    .funny-status {
+      color: #d4af37;
+      font-size: 0.95rem;
+      font-weight: 600;
+      min-height: 25px;
+      margin-bottom: 10px;
+    }
     .btn-container {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 20px;
       position: relative;
-      min-height: 120px;
+      min-height: 130px;
     }
     button {
       padding: 12px 35px;
@@ -87,7 +94,7 @@
       border: 2px solid #d4af37;
       position: absolute;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       z-index: 10;
     }
     .hidden {
@@ -112,50 +119,60 @@
 
   <!-- المرحلة 1 -->
   <div id="step1" class="card visible">
-    <h1>كل عام وأنتِ بخير يا صفا</h1>
-    <p>في يوم ميلادكِ المميز، أردت أن أذكركِ بأن وجودكِ في حياتي هو أجمل وأعظم هدايا القَدر...</p>
+    <h1>يا صفا... ✨</h1>
+    <p>بدون أي مقدمات أو مناسبة، أردت أن أذكركِ بأنكِ أجمل شيء حدث في حياتي...</p>
     <button class="btn-main" onclick="nextStep(2)">افتحي الرسالة</button>
   </div>
 
   <!-- المرحلة 2 -->
   <div id="step2" class="card hidden">
     <h1>نعمة وجودكِ</h1>
-    <p>معكِ عرفت كيف تكون الحياة دافئة ومليئة بالحب، أنتِ لستِ مجرد شريكة وحبيبة، أنتِ ملاذي وراحتي وأجمل أملاكي...</p>
+    <p>معكِ عرفت كيف تكون الحياة دافئة ومليئة بالحب، أنتِ لستِ مجرد حبيبة، أنتِ راحتي وأجمل أملاكي...</p>
     <button class="btn-main" onclick="nextStep(3)">متابعة</button>
   </div>
 
   <!-- المرحلة 3 -->
   <div id="step3" class="card hidden">
-    <h1>استثناء صفا</h1>
-    <p>في كل يوم يزداد حبكِ في قلبي أكثر من اليوم الذي قبله، أنتِ الجمال الذي لا يشبهه أحد، والروح التي لا تتبدل...</p>
+    <h1>حقائق لا تُنكر</h1>
+    <p>وجودكِ يغير نبرة اليوم بالكامل، وأنتِ الشخص الوحيد الذي لا أملّ من الحديث معه أبداً...</p>
     <button class="btn-main" onclick="nextStep(4)">متابعة</button>
   </div>
 
   <!-- المرحلة 4 -->
   <div id="step4" class="card hidden">
-    <h1>وعد وحب</h1>
-    <p>كل عام وأنتِ معي وبجانبي، وأعدكِ أن أظل السند والدفء وقلبكِ الأوفى في كل أوقاتكِ...</p>
-    <button class="btn-main" onclick="nextStep(5)">سؤال مهم جداً</button>
+    <h1>سؤال يحدد المصير!</h1>
+    <p>وصلنا للنقطة الحاسمة، والموضوع يحتاج اعتراف صريح منكِ الآن...</p>
+    <button class="btn-main" onclick="nextStep(5)">جاهزة؟</button>
   </div>
 
-  <!-- المرحلة 5: السؤال والزر الهارب -->
+  <!-- المرحلة 5: السؤال والزر الهارب والملاحظات المضحكة -->
   <div id="step5" class="card hidden">
     <h1>يا صفا... تحبيني قدر ما أحبكِ؟</h1>
-    <p>تتوقعين تحبيني أضعاف حُبي إلكِ؟</p>
+    <p>المجال مفتوح للاعتراف الصريح فقط!</p>
+    <div id="funnyStatus" class="funny-status"></div>
     <div class="btn-container" id="container5">
-      <button class="btn-main" onclick="nextStep(6)">أحبك جداً وأكثر</button>
-      <button id="runawayBtn" class="btn-no" onmouseover="moveButton()" onclick="moveButton()" ontouchstart="moveButton()">لا، أقل منك</button>
+      <button class="btn-main" onclick="nextStep(6)">أحبك جداً وأكثر!</button>
+      <button id="runawayBtn" class="btn-no" onmouseover="moveButton()" onclick="moveButton()" ontouchstart="moveButton()">لا، مستحيل أحبك</button>
     </div>
   </div>
 
-  <!-- المرحلة 6: النهاية اللطيفة والمضحكة -->
+  <!-- المرحلة 6: النهاية المضحكة واللطيفة -->
   <div id="step6" class="card hidden">
-    <h1>أحلى وأعظم قرار! ✨</h1>
-    <p>كل عام وأنتِ حب العمر كله يا صفا، وأجمل ما في أيامي...</p>
-    <p class="funny-note">(ملاحظة: زر "لا" كان خيار شكلي فقط، حبنا ما بيه خيارات!)</p>
+    <h1>أعظم وأذكاش خيار! 🎉✨</h1>
+    <p>كنت أعرف أنكِ ستحبينني، أصلاً ما كان عندكِ خيار ثاني!</p>
+    <p>أحبكِ جداً يا صفا، وأتمنى أن تبقي في حياتي دائماً وأبداً ❤️</p>
+    <p class="funny-note">(ملاحظة: زر "لا" مسكين تعب وهو ينهرب، تحية لإصراركِ الفاشل على الضغط عليه!)</p>
   </div>
 
   <script>
+    const funnyTexts = [
+      "عفواً، وين رايحة بالماوس؟ 😂",
+      "الزر هرب منكِ خلاص!",
+      "لا تحاولين، زر لا ديكور بس!",
+      "المحاولة رقم 100 الفاشلة 😜",
+      "اضغطي أحبكِ أسهل لكِ!"
+    ];
+
     function nextStep(stepNumber) {
       const cards = document.querySelectorAll('.card');
       cards.forEach(card => {
@@ -173,6 +190,7 @@
     function moveButton() {
       const btn = document.getElementById('runawayBtn');
       const container = document.getElementById('container5');
+      const status = document.getElementById('funnyStatus');
       
       const cWidth = container.clientWidth;
       const cHeight = container.clientHeight;
@@ -185,6 +203,10 @@
       
       btn.style.left = newX + 'px';
       btn.style.top = newY + 'px';
+
+      // تغيير النص المضحك
+      const randomIndex = Math.floor(Math.random() * funnyTexts.length);
+      status.innerText = funnyTexts[randomIndex];
     }
   </script>
 </body>

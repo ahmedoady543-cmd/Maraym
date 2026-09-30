@@ -22,11 +22,12 @@
       align-items: center;
       overflow: hidden;
       color: #fce4ec;
+      user-select: none;
     }
     .card {
       background: rgba(35, 10, 25, 0.92);
       border: 1px solid rgba(212, 175, 55, 0.4);
-      padding: 50px 30px;
+      padding: 45px 25px;
       border-radius: 16px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
       max-width: 480px;
@@ -39,16 +40,16 @@
     h1 {
       font-family: 'Amiri', serif;
       color: #d4af37;
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       margin-bottom: 20px;
       font-weight: 700;
       letter-spacing: 1px;
     }
     p {
       color: #f8bbd0;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       line-height: 1.9;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
       font-weight: 300;
     }
     .funny-status {
@@ -64,16 +65,17 @@
       align-items: center;
       gap: 20px;
       position: relative;
-      min-height: 130px;
+      min-height: 140px;
     }
     button {
-      padding: 12px 35px;
+      padding: 12px 30px;
       font-size: 1.05rem;
       font-family: 'Cairo', sans-serif;
       border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
       letter-spacing: 1px;
+      -webkit-tap-highlight-color: transparent;
     }
     .btn-main {
       background: linear-gradient(45deg, #8a1c4a, #c2185b);
@@ -94,7 +96,7 @@
       border: 2px solid #d4af37;
       position: absolute;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: all 0.3s ease-out;
       z-index: 10;
     }
     .hidden {
@@ -145,31 +147,34 @@
     <button class="btn-main" onclick="nextStep(5)">جاهزة؟</button>
   </div>
 
-  <!-- المرحلة 5: السؤال والزر الهارب والملاحظات المضحكة -->
+  <!-- المرحلة 5: السؤال والزر الهارب المخصص للموبايل -->
   <div id="step5" class="card hidden">
     <h1>يا صفا... تحبيني قدر ما أحبكِ؟</h1>
     <p>المجال مفتوح للاعتراف الصريح فقط!</p>
     <div id="funnyStatus" class="funny-status"></div>
     <div class="btn-container" id="container5">
-      <button class="btn-main" onclick="nextStep(6)">أحبك جداً وأكثر!</button>
-      <button id="runawayBtn" class="btn-no" onmouseover="moveButton()" onclick="moveButton()" ontouchstart="moveButton()">لا، مستحيل أحبك</button>
+      <button class="btn-main" onclick="acceptLove()">أحبك جداً وأكثر!</button>
+      <button id="runawayBtn" class="btn-no" 
+              onmouseover="moveButton(event)" 
+              ontouchstart="moveButton(event)" 
+              onclick="moveButton(event)">لا، مستحيل أحبك</button>
     </div>
   </div>
 
-  <!-- المرحلة 6: النهاية المضحكة واللطيفة -->
+  <!-- المرحلة 6: النهاية المضحكة -->
   <div id="step6" class="card hidden">
     <h1>أعظم وأذكاش خيار! 🎉✨</h1>
     <p>كنت أعرف أنكِ ستحبينني، أصلاً ما كان عندكِ خيار ثاني!</p>
     <p>أحبكِ جداً يا صفا، وأتمنى أن تبقي في حياتي دائماً وأبداً ❤️</p>
-    <p class="funny-note">(ملاحظة: زر "لا" مسكين تعب وهو ينهرب، تحية لإصراركِ الفاشل على الضغط عليه!)</p>
+    <p class="funny-note">(ملاحظة: زر "لا" مسكين تعب وهو ينهرب بالموبايل، تحية لإصراركِ الفاشل على الضغط عليه!)</p>
   </div>
 
   <script>
     const funnyTexts = [
-      "عفواً، وين رايحة بالماوس؟ 😂",
+      "عفواً، وين رايحة باللمس؟ 😂",
       "الزر هرب منكِ خلاص!",
       "لا تحاولين، زر لا ديكور بس!",
-      "المحاولة رقم 100 الفاشلة 😜",
+      "المحاولة الفاشلة رقم 100 😜",
       "اضغطي أحبكِ أسهل لكِ!"
     ];
 
@@ -187,7 +192,15 @@
       }, 50);
     }
 
-    function moveButton() {
+    function acceptLove() {
+      // إظهار تنبيه رسمي مضحك قبل الانتقال للصفحة الأخيرة
+      alert("⚠️ تنبيه النظام:\nتم تسجيل الاعتراف بنجاح، ولا يمكن التراجع أو التعديل نهائياً! الضمان يسري لمدى الحياة ❤️");
+      nextStep(6);
+    }
+
+    function moveButton(e) {
+      if (e) e.preventDefault(); // منع الضغط الحقيقي بالموبايل
+      
       const btn = document.getElementById('runawayBtn');
       const container = document.getElementById('container5');
       const status = document.getElementById('funnyStatus');
@@ -204,7 +217,6 @@
       btn.style.left = newX + 'px';
       btn.style.top = newY + 'px';
 
-      // تغيير النص المضحك
       const randomIndex = Math.floor(Math.random() * funnyTexts.length);
       status.innerText = funnyTexts[randomIndex];
     }

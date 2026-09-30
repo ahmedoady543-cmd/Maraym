@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>في يومكِ الخاص</title>
+  <title>إلى صفا ✨</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -14,17 +14,17 @@
       padding: 0;
     }
     body {
-      background: radial-gradient(circle, #1a0b16 0%, #0d050b 100%);
+      background: radial-gradient(circle, #2a0818 0%, #0f020a 100%);
       font-family: 'Cairo', serif;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      color: #f3e5f5;
+      color: #fce4ec;
     }
     .card {
-      background: rgba(25, 15, 23, 0.92);
+      background: rgba(35, 10, 25, 0.92);
       border: 1px solid rgba(212, 175, 55, 0.4);
       padding: 50px 30px;
       border-radius: 16px;
@@ -39,14 +39,14 @@
     h1 {
       font-family: 'Amiri', serif;
       color: #d4af37;
-      font-size: 2.1rem;
+      font-size: 2.2rem;
       margin-bottom: 20px;
       font-weight: 700;
       letter-spacing: 1px;
     }
     p {
-      color: #e0d0e0;
-      font-size: 1.1rem;
+      color: #f8bbd0;
+      font-size: 1.15rem;
       line-height: 1.9;
       margin-bottom: 35px;
       font-weight: 300;
@@ -57,7 +57,7 @@
       align-items: center;
       gap: 20px;
       position: relative;
-      min-height: 120px; /* مساحة واسعة ومحاطة داخل الكارت للتحرك */
+      min-height: 120px;
     }
     button {
       padding: 12px 35px;
@@ -69,26 +69,25 @@
       letter-spacing: 1px;
     }
     .btn-main {
-      background: linear-gradient(45deg, #8a1c4a, #a8235c);
+      background: linear-gradient(45deg, #8a1c4a, #c2185b);
       color: #ffffff;
       border: 1px solid #d4af37;
-      box-shadow: 0 4px 15px rgba(168, 35, 92, 0.4);
+      box-shadow: 0 4px 15px rgba(194, 24, 91, 0.4);
       transition: all 0.3s ease;
       z-index: 2;
     }
     .btn-main:hover {
-      background: linear-gradient(45deg, #a8235c, #c42b6e);
-      box-shadow: 0 6px 20px rgba(168, 35, 92, 0.6);
+      background: linear-gradient(45deg, #c2185b, #e91e63);
+      box-shadow: 0 6px 20px rgba(194, 24, 91, 0.6);
       transform: translateY(-2px);
     }
-    /* زر لا واضح جداً ومحدد الحدود وبطيء الحركة */
     .btn-no {
       background: #4a1525;
       color: #ffffff;
       border: 2px solid #d4af37;
       position: absolute;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* حركة بطيئة وسلسة */
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
       z-index: 10;
     }
     .hidden {
@@ -101,52 +100,59 @@
       opacity: 1;
       transform: translateY(0);
     }
+    .funny-note {
+      font-size: 0.95rem;
+      color: #d4af37;
+      margin-top: 15px;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
 
   <!-- المرحلة 1 -->
   <div id="step1" class="card visible">
-    <h1>عيد ميلاد سعيد</h1>
-    <p>في هذا اليوم المميز، أردت أن أقدم لكِ شيئاً مختلفاً يليق بمكانتكِ وخاصة هذا اليوم...</p>
-    <button class="btn-main" onclick="nextStep(2)">متابعة</button>
+    <h1>يا صَفاء الرُوح...</h1>
+    <p>يقولون إن لكل شخص من اسمه نصيب، وأنتِ أخذتِ الصفاء كُلّه ليكون عنوانكِ ومظهركِ ووجودكِ...</p>
+    <button class="btn-main" onclick="nextStep(2)">افتحي الرسالة</button>
   </div>
 
   <!-- المرحلة 2 -->
   <div id="step2" class="card hidden">
-    <h1>بداية القصة</h1>
-    <p>هناك أشخاص يمرون في حياتنا كأنهم عابرون، وهناك من يمر ليكون هو الأثر والأهم دائماً...</p>
+    <h1>حديث لا يُقال للجميع</h1>
+    <p>منذ أن ظهرتِ في المدى، أصبحتِ أنتِ الغزل السائد، والوجه الوحيد الذي يبتسم له القلب قبل العين...</p>
     <button class="btn-main" onclick="nextStep(3)">متابعة</button>
   </div>
 
   <!-- المرحلة 3 -->
   <div id="step3" class="card hidden">
-    <h1>تأثير وجودكِ</h1>
-    <p>وجودكِ يضيف للوقت قيمة، وللحديث معنى مختلفاً. أصبحتِ الاستثناء الوحيد في كل تفصيل جميل...</p>
+    <h1>استثناء صفا</h1>
+    <p>في هذا العالم المزدحم، أنتِ الهدوء والاستثناء، والشخص الذي يجعل لكل لحظة طعماً آخر من الجمال...</p>
     <button class="btn-main" onclick="nextStep(4)">متابعة</button>
   </div>
 
   <!-- المرحلة 4 -->
   <div id="step4" class="card hidden">
-    <h1>حقيقة المشاعر</h1>
-    <p>لم يكن الأمر مجرد إعجاب عابر، بل مشاعر صادقة تكبر كل يوم وتنتظر هذه اللحظة لتُقال بالكامل...</p>
-    <button class="btn-main" onclick="nextStep(5)">متابعة</button>
+    <h1>المشاعر الصادقة</h1>
+    <p>لم تكن المودّة يوماً بالصدفة، بل هي مشاعر حقيقية تكبر كل يوم وتليق بإنسانة لطيفة وراقية مثلكِ...</p>
+    <button class="btn-main" onclick="nextStep(5)">السؤال الأهم</button>
   </div>
 
   <!-- المرحلة 5: السؤال والزر الهارب -->
   <div id="step5" class="card hidden">
-    <h1>السؤال الأهم</h1>
-    <p>هل تمنحين هذه المشاعر فرصة لتبدأ فصلاً جديداً ومختلفاً يليق بكِ؟</p>
+    <h1>يا صفا... هل نبدأ؟</h1>
+    <p>هل تمنحين هذا الحب فرصة ليزهر ويصبح أجمل حكاية؟</p>
     <div class="btn-container" id="container5">
-      <button class="btn-main" onclick="nextStep(6)">أحبك</button>
-      <button id="runawayBtn" class="btn-no" onmouseover="moveButton()" onclick="moveButton()" ontouchstart="moveButton()">لا</button>
+      <button class="btn-main" onclick="nextStep(6)">أحبك يا صفا</button>
+      <button id="runawayBtn" class="btn-no" onmouseover="moveButton()" onclick="moveButton()" ontouchstart="moveButton()">لا، مستحيل</button>
     </div>
   </div>
 
-  <!-- المرحلة 6: النهاية والقبول -->
+  <!-- المرحلة 6: النهاية اللطيفة والمضحكة -->
   <div id="step6" class="card hidden">
-    <h1>بداية أجمل الأيام</h1>
-    <p>شكراً لأنكِ جعلتِ هذا اليوم أصدق وأجمل بوجودكِ في حياتي، كل عام وأنتِ بقلبي...</p>
+    <h1>أجمل اختيار! ✨</h1>
+    <p>شكراً لأنكِ اخترتِ القلب الذي يحبكِ جداً...</p>
+    <p class="funny-note">(ملاحظة: زر "لا" كان محاولة مجانية للهروب فقط، لكن القدر مقدّر ومكتوب!)</p>
   </div>
 
   <script>
@@ -168,14 +174,12 @@
       const btn = document.getElementById('runawayBtn');
       const container = document.getElementById('container5');
       
-      // أبعاد الحاوية داخل الكارت فقط
       const cWidth = container.clientWidth;
       const cHeight = container.clientHeight;
       
       const bWidth = btn.offsetWidth;
       const bHeight = btn.offsetHeight;
       
-      // التحرّك فقط داخل المربع وبطريقة سلسة
       const newX = Math.floor(Math.random() * (cWidth - bWidth));
       const newY = Math.floor(Math.random() * (cHeight - bHeight));
       

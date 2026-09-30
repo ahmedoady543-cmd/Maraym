@@ -27,7 +27,7 @@
     .card {
       background: rgba(35, 10, 25, 0.92);
       border: 1px solid rgba(212, 175, 55, 0.4);
-      padding: 45px 25px;
+      padding: 40px 20px;
       border-radius: 16px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
       max-width: 480px;
@@ -49,7 +49,7 @@
       color: #f8bbd0;
       font-size: 1.1rem;
       line-height: 1.9;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       font-weight: 300;
     }
     .funny-status {
@@ -115,9 +115,93 @@
       margin-top: 15px;
       font-style: italic;
     }
+
+    /* إشعار الآيفون الوهمي */
+    .iphone-notification {
+      position: fixed;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 400px;
+      background: rgba(40, 20, 35, 0.95);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 14px;
+      padding: 12px 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      backdrop-filter: blur(15px);
+      z-index: 9999;
+      transition: top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      text-align: right;
+    }
+    .iphone-notification.show {
+      top: 20px;
+    }
+    .notif-header {
+      font-size: 0.75rem;
+      color: #d4af37;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .notif-body {
+      font-size: 0.9rem;
+      color: #ffffff;
+      line-height: 1.4;
+    }
+
+    /* منطقة البص الملموسة */
+    .fingerprint-box {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .fingerprint-btn {
+      font-size: 3rem;
+      background: transparent;
+      border: 2px dashed #d4af37;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .fingerprint-btn:active {
+      transform: scale(0.9);
+      border-color: #e91e63;
+      background: rgba(233, 30, 99, 0.2);
+    }
+    .stamp-approved {
+      color: #4caf50;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border: 2px solid #4caf50;
+      padding: 5px 15px;
+      border-radius: 8px;
+      display: inline-block;
+      transform: rotate(-5deg);
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
+
+  <!-- إشعار الآيفون -->
+  <div id="iphoneNotif" class="iphone-notification">
+    <div class="notif-header">
+      <span>💬 iMessage</span>
+      <span>الآن</span>
+    </div>
+    <div class="notif-body">
+      <strong>القلب:</strong> تم قفل خيار التراجع بنجاح! لا توجد استردادات ولا استبدال 🔒❤️
+    </div>
+  </div>
 
   <!-- المرحلة 1 -->
   <div id="step1" class="card visible">
@@ -147,7 +231,7 @@
     <button class="btn-main" onclick="nextStep(5)">جاهزة؟</button>
   </div>
 
-  <!-- المرحلة 5: السؤال والزر الهارب المخصص للموبايل -->
+  <!-- المرحلة 5: السؤال والزر الهارب -->
   <div id="step5" class="card hidden">
     <h1>يا صفا... تحبيني قدر ما أحبكِ؟</h1>
     <p>المجال مفتوح للاعتراف الصريح فقط!</p>
@@ -161,24 +245,46 @@
     </div>
   </div>
 
-  <!-- المرحلة 6: النهاية المضحكة -->
+  <!-- المرحلة 6: النهاية + الختم بالبصمة -->
   <div id="step6" class="card hidden">
     <h1>أعظم وأذكاش خيار! 🎉✨</h1>
     <p>كنت أعرف أنكِ ستحبينني، أصلاً ما كان عندكِ خيار ثاني!</p>
     <p>أحبكِ جداً يا صفا، وأتمنى أن تبقي في حياتي دائماً وأبداً ❤️</p>
-    <p class="funny-note">(ملاحظة: زر "لا" مسكين تعب وهو ينهرب بالموبايل، تحية لإصراركِ الفاشل على الضغط عليه!)</p>
+    
+    <!-- قسم البصمة الملموسة -->
+    <div class="fingerprint-box" id="fpSection">
+      <p style="font-size: 0.9rem; margin-bottom: 5px; color: #d4af37;">اضغطي مطولاً بالبصمة لتأكيد العقد مدى الحياة: 👆</p>
+      <div class="fingerprint-btn" id="fpBtn" 
+           onmousedown="startFingerprint()" 
+           onmouseup="cancelFingerprint()" 
+           ontouchstart="startFingerprint()" 
+           ontouchend="cancelFingerprint()">🖕🏻</div>
+      <span id="fpStatus" style="font-size: 0.8rem; color: #aaa;">اضغطي لمدة ثانيتين...</span>
+    </div>
+
+    <p class="funny-note" id="funnyFinalNote">(ملاحظة: زر "لا" تعب وهو ينهرب بالموبايل، تحية لإصراركِ الفاشل!)</p>
   </div>
 
   <script>
+    let escapeCount = 0;
+    let fpTimer = null;
+
     const funnyTexts = [
       "عفواً، وين رايحة باللمس؟ 😂",
       "الزر هرب منكِ خلاص!",
       "لا تحاولين، زر لا ديكور بس!",
-      "المحاولة الفاشلة رقم 100 😜",
-      "اضغطي أحبكِ أسهل لكِ!"
+      "المحاولة رقم {c}: صفا ترة مصختيها! 😜",
+      "FaceID: تم كشف المحاولة الفاشلة رقم {c}!"
     ];
 
+    function triggerVibration(pattern) {
+      if (navigator.vibrate) {
+        navigator.vibrate(pattern);
+      }
+    }
+
     function nextStep(stepNumber) {
+      triggerVibration(40);
       const cards = document.querySelectorAll('.card');
       cards.forEach(card => {
         card.classList.remove('visible');
@@ -193,13 +299,26 @@
     }
 
     function acceptLove() {
-      // إظهار تنبيه رسمي مضحك قبل الانتقال للصفحة الأخيرة
+      triggerVibration([100, 50, 100]);
       alert("⚠️ تنبيه النظام:\nتم تسجيل الاعتراف بنجاح، ولا يمكن التراجع أو التعديل نهائياً! الضمان يسري لمدى الحياة ❤️");
+      
       nextStep(6);
+
+      setTimeout(() => {
+        const notif = document.getElementById('iphoneNotif');
+        notif.classList.add('show');
+        triggerVibration([80, 40, 80]);
+        
+        setTimeout(() => {
+          notif.classList.remove('show');
+        }, 5000);
+      }, 500);
     }
 
     function moveButton(e) {
-      if (e) e.preventDefault(); // منع الضغط الحقيقي بالموبايل
+      if (e) e.preventDefault();
+      escapeCount++;
+      triggerVibration(60);
       
       const btn = document.getElementById('runawayBtn');
       const container = document.getElementById('container5');
@@ -207,7 +326,6 @@
       
       const cWidth = container.clientWidth;
       const cHeight = container.clientHeight;
-      
       const bWidth = btn.offsetWidth;
       const bHeight = btn.offsetHeight;
       
@@ -218,7 +336,29 @@
       btn.style.top = newY + 'px';
 
       const randomIndex = Math.floor(Math.random() * funnyTexts.length);
-      status.innerText = funnyTexts[randomIndex];
+      let text = funnyTexts[randomIndex].replace('{c}', escapeCount);
+      status.innerText = text;
+    }
+
+    // تفاعل البصمة الملموسة
+    function startFingerprint() {
+      triggerVibration([50, 50, 50, 50, 50]);
+      document.getElementById('fpStatus').innerText = "جاري الفحص بالبصمة... ⏳";
+      
+      fpTimer = setTimeout(() => {
+        triggerVibration([150, 80, 150]);
+        document.getElementById('fpSection').innerHTML = `
+          <div class="stamp-approved">تم الختم بالبصمة بنجاح ✍️❤️</div>
+          <p style="font-size: 0.85rem; color: #4caf50; margin-top:5px;">العقد نافذ مدى الحياة!</p>
+        `;
+      }, 2000);
+    }
+
+    function cancelFingerprint() {
+      if (fpTimer) {
+        clearTimeout(fpTimer);
+        document.getElementById('fpStatus').innerText = "فشلت البصمة! اضغطي باستمرار بدون رفعة إيد 😜";
+      }
     }
   </script>
 </body>

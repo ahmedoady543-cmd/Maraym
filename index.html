@@ -3,128 +3,148 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>هدية تخرج لمنار</title>
-<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<title>هدية لمحامية جديدة – مي</title>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#efe8dc;--paper2:#e4dac8;--ink:#1d1b17;--mute:#6b6254;--clay:#b8553a;--olive:#55603f;--brass:#b08d4a;--wall:#f6f1e7;--wall2:#e9e0cf;--floor:#d8c9ad;box-sizing:border-box}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#16130f;--paper2:#201b15;--ink:#efe6d6;--mute:#a89d89;--clay:#d77a5c;--olive:#8c9b6c;--brass:#cfa75a;--wall:#2b251d;--wall2:#231e17;--floor:#3a3125}}
-:root[data-theme="dark"]{--paper:#16130f;--paper2:#201b15;--ink:#efe6d6;--mute:#a89d89;--clay:#d77a5c;--olive:#8c9b6c;--brass:#cfa75a;--wall:#2b251d;--wall2:#231e17;--floor:#3a3125}
+:root{--bg:#f1ead9;--bg2:#e6dcc3;--ink:#14213a;--mute:#5b6478;--wine:#7a1f2e;--brass:#9a7a34;--card:#fbf7ec;box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1626;--bg2:#15233a;--ink:#f1e9d8;--mute:#9fa9bd;--wine:#d0546a;--brass:#d2ad63;--card:#1b2a44}}
+:root[data-theme="dark"]{--bg:#0d1626;--bg2:#15233a;--ink:#f1e9d8;--mute:#9fa9bd;--wine:#d0546a;--brass:#d2ad63;--card:#1b2a44}
 *{box-sizing:border-box;margin:0}
 html,body{height:100%;overflow:hidden}
-body{background:var(--paper);color:var(--ink);font-family:Tajawal,Tahoma,sans-serif;position:relative}
-body::before{content:"";position:fixed;inset:0;z-index:0;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .35 0 0 0 0 .3 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
-.k{font-family:'Reem Kufi',Tajawal,sans-serif}
-.frame{position:fixed;z-index:6;inset:calc(10px + env(safe-area-inset-top,0px)) 10px calc(10px + env(safe-area-inset-bottom,0px)) 10px;border:1.5px solid var(--ink);pointer-events:none}
-.frame::after{content:"";position:absolute;inset:4px;border:1px solid var(--ink);opacity:.5}
-.tb{position:fixed;z-index:7;inset-inline:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));height:38px;display:grid;grid-template-columns:1fr 1.6fr 1fr;border-top:1.5px solid var(--ink);font-size:12px;background:var(--paper);pointer-events:none}
-.tb div{display:flex;align-items:center;justify-content:center;border-inline-start:1px solid var(--ink);padding:0 6px;text-align:center}
+body{background:radial-gradient(circle at 50% 0,var(--bg2),var(--bg) 70%);color:var(--ink);font-family:Amiri,Tajawal,serif;position:relative}
+body::before{content:"";position:fixed;inset:0;opacity:.28;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .35 0 0 0 .2 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.k{font-family:'Reem Kufi',sans-serif}
+.frame{position:fixed;z-index:6;inset:calc(10px + env(safe-area-inset-top,0px)) 10px calc(10px + env(safe-area-inset-bottom,0px));border:2px solid var(--brass);pointer-events:none}
+.frame::after{content:"";position:absolute;inset:5px;border:1px solid var(--brass);opacity:.6}
+.tb{position:fixed;z-index:7;inset-inline:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));height:38px;display:grid;grid-template-columns:1fr 1.5fr 1fr;border-top:2px solid var(--brass);font:500 12px Tajawal;background:var(--bg);pointer-events:none;color:var(--mute)}
+.tb div{display:flex;align-items:center;justify-content:center;border-inline-start:1px solid var(--brass);text-align:center;padding:0 5px}
 .tb div:first-child{border:0}
 #stage{position:fixed;inset:0;z-index:2}
-.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(34px + env(safe-area-inset-top,0px)) 24px calc(150px + env(safe-area-inset-bottom,0px));opacity:0;visibility:hidden;transition:opacity .8s,visibility .8s;overflow-y:auto}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(40px + env(safe-area-inset-top,0px)) 24px calc(150px + env(safe-area-inset-bottom,0px));opacity:0;visibility:hidden;transition:opacity .8s,visibility .8s;overflow-y:auto}
 .scene.on{opacity:1;visibility:visible}
-h2{font:700 clamp(30px,8vw,48px) 'Reem Kufi';margin-bottom:20px;display:flex;align-items:baseline;gap:12px;justify-content:center}
-h2 b{font-size:.8em;color:transparent;-webkit-text-stroke:1.2px var(--clay)}
-.note{font:500 13px Tajawal;letter-spacing:3px;color:var(--clay);border:1px solid var(--clay);padding:4px 14px;border-radius:2px;margin-bottom:22px}
-.type{font:700 clamp(26px,7vw,42px)/1.9 'Reem Kufi';max-width:620px;min-height:2em}
-.type::after{content:"|";color:var(--clay);animation:bl .8s infinite}
+.top{justify-content:flex-start;padding-top:calc(62px + env(safe-area-inset-top,0px))}
+h2{font:700 clamp(28px,7.5vw,44px) 'Reem Kufi';margin-bottom:14px;display:flex;align-items:baseline;gap:12px;justify-content:center}
+h2 b{font-size:.8em;color:transparent;-webkit-text-stroke:1.2px var(--wine)}
+.note{font:500 13px Tajawal;letter-spacing:3px;color:var(--wine);border:1px solid var(--wine);padding:4px 14px;margin-bottom:22px}
+.type{font:700 clamp(26px,7vw,40px)/1.9 'Reem Kufi';max-width:620px;min-height:2em}
+.type::after{content:"|";color:var(--wine);animation:bl .8s infinite}
 .type.done::after{content:""}
 @keyframes bl{50%{opacity:0}}
-#room{width:min(430px,94vw);height:auto;overflow:visible}
-#room .pc{opacity:0;transform-box:fill-box}
-#room.go .pc{animation:drop .8s cubic-bezier(.2,1.3,.4,1) forwards;animation-delay:calc(var(--i)*.3s)}
-@keyframes drop{from{opacity:0;transform:translateY(-34px)}to{opacity:1;transform:none}}
-#glow{animation:gl 3s ease-in-out infinite}
-@keyframes gl{50%{opacity:.35}}
-.nm{font:700 clamp(84px,26vw,170px)/1 'Reem Kufi';color:var(--ink);clip-path:inset(0 0 0 100%);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1);margin-top:2px}
-.nm.show{clip-path:inset(0)}
-.nm em{font-style:normal;color:var(--clay)}
-.sub{font:500 clamp(15px,4vw,19px) Tajawal;color:var(--mute);letter-spacing:1px;opacity:0;transition:opacity 1s;margin-top:4px}
-.sub.show{opacity:1}
-.sw{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%;max-width:440px}
-.s{background:#fbf8f1;color:#1d1b17;padding:8px 8px 10px;box-shadow:0 10px 24px rgba(0,0,0,.22);opacity:0;transform:translateY(60px) rotate(var(--r));transition:all .9s cubic-bezier(.2,1.2,.3,1);position:relative}
-.s.show{opacity:1;transform:rotate(var(--r))}
-.s::before{content:"";position:absolute;top:-8px;left:50%;width:14px;height:14px;border-radius:50%;background:var(--clay);box-shadow:0 2px 4px rgba(0,0,0,.4);transform:translateX(-50%)}
-.s i{display:block;height:86px}
-.s h3{font:700 19px 'Reem Kufi';margin-top:8px}
-.s p{font-size:13px;color:#6b6254;line-height:1.5}
-.rows{width:100%;max-width:500px;text-align:start}
-.r{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--ink);opacity:0;transform:translateX(70px);transition:all .8s cubic-bezier(.2,.9,.3,1)}
-.r.show{opacity:1;transform:none}
-.r b{font:700 52px 'Reem Kufi';color:transparent;-webkit-text-stroke:1.3px var(--clay);min-width:70px;text-align:center}
-.r small{color:var(--clay);font-weight:700;letter-spacing:1px}
-.r h3{font:700 22px 'Reem Kufi'}
-.r p{color:var(--mute);font-size:15px;line-height:1.6}
-.paper{background:#fbf8f1;color:#2a2620;max-width:540px;width:100%;padding:26px 24px 20px;box-shadow:0 18px 40px rgba(0,0,0,.28);text-align:start;transform:rotate(-1deg);background-image:repeating-linear-gradient(transparent 0 35px,rgba(184,85,58,.18) 35px 36px)}
-.paper .type{font:400 clamp(20px,5.2vw,25px)/36px 'Aref Ruqaa';min-height:11em;color:#2a2620}
-.sign{font:700 38px 'Aref Ruqaa';color:var(--clay);text-align:end;clip-path:inset(0 0 0 100%);transition:clip-path 1.6s ease;margin-top:6px}
-.sign.show{clip-path:inset(0)}
-.btn{padding:13px 32px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);font:700 17px 'Reem Kufi';cursor:pointer;letter-spacing:1px;transition:.25s}
+.btn{padding:12px 30px;border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);font:700 17px 'Reem Kufi';cursor:pointer;transition:.25s}
 .btn:active{transform:scale(.95)}
-.btn.clay{background:var(--clay);border-color:var(--clay);color:#fff}
+.btn.w{background:var(--wine);border-color:var(--wine);color:#fff}
+.btn.o{background:transparent;color:var(--ink)}
 #next{position:fixed;z-index:9;left:50%;bottom:calc(66px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;visibility:hidden;transition:.5s}
 #next.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
-#music{position:fixed;z-index:9;top:calc(20px + env(safe-area-inset-top,0px));inset-inline-start:20px;width:40px;height:40px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);font-size:17px;cursor:pointer}
+#music{position:fixed;z-index:9;top:calc(20px + env(safe-area-inset-top,0px));inset-inline-start:20px;width:40px;height:40px;border:1.5px solid var(--brass);background:var(--bg);color:var(--brass);font-size:17px;cursor:pointer}
 #dots{position:fixed;z-index:9;top:calc(26px + env(safe-area-inset-top,0px));inset-inline:70px;display:flex;gap:6px}
 #dots i{flex:1;height:3px;background:var(--ink);opacity:.18;transition:.5s}
-#dots i.on{background:var(--clay);opacity:1}
-.arena{position:relative;width:100%;max-width:400px;height:230px;margin-top:10px}
-.arena .btn{position:absolute}
-#yes{top:10px;inset-inline-start:calc(50% - 105px);width:210px}
-#no{top:130px;inset-inline-start:calc(50% - 32px);background:transparent;color:var(--mute);border-color:var(--mute);transition:inset .25s,top .25s}
-.stamp{position:absolute;z-index:5;border:5px double var(--clay);color:var(--clay);padding:10px 26px;font:700 clamp(44px,13vw,70px)/1.2 'Reem Kufi';text-align:center;transform:rotate(-11deg) scale(3);opacity:0;pointer-events:none;background:color-mix(in srgb,var(--paper) 70%,transparent)}
-.stamp small{display:block;font:500 15px Tajawal;letter-spacing:2px}
-.stamp.hit{animation:hit .5s cubic-bezier(.2,2,.4,1) forwards}
-@keyframes hit{to{opacity:.95;transform:rotate(-11deg) scale(1)}}
-.shake{animation:shk .35s}
-@keyframes shk{25%{transform:translate(6px,4px)}50%{transform:translate(-6px,-3px)}75%{transform:translate(3px,-4px)}}
-.curtain{position:fixed;inset:0;z-index:40;background:var(--clay);opacity:0;clip-path:circle(0% at 50% 90%);pointer-events:none}
-.curtain.sweep{animation:wipe 1.4s}
-@keyframes wipe{0%{clip-path:circle(0% at 50% 90%);opacity:1}45%{clip-path:circle(150% at 50% 90%);opacity:1}100%{clip-path:circle(150% at 50% 90%);opacity:0}}
-#intro{position:fixed;inset:0;z-index:100;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;transition:opacity 1s,visibility 1s}
-#intro.off{opacity:0;visibility:hidden}
-#intro .cv{font:500 13px Tajawal;letter-spacing:4px;color:var(--clay)}
-#intro h1{font:700 clamp(96px,30vw,200px)/1.05 'Reem Kufi';margin:10px 0}
-#intro p{color:var(--mute);margin-bottom:28px;line-height:1.9}
-#intro svg{width:120px;margin-bottom:6px}
-#intro path{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 2.4s .3s forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.cf{position:fixed;top:-20px;width:9px;height:15px;z-index:60;pointer-events:none;animation:fall 3.2s linear forwards}
-@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
-#gift{width:min(260px,70vw);cursor:pointer;overflow:visible;-webkit-tap-highlight-color:transparent;animation:wob 2.2s ease-in-out infinite;position:relative;z-index:2}
-#gift .lid{transition:transform 1s cubic-bezier(.3,1.5,.5,1),opacity 1s;transform-box:fill-box;transform-origin:center}
-#gift.open{animation:none}
-#gift.open .lid{transform:translateY(-130px) rotate(-22deg);opacity:0}
-@keyframes wob{0%,40%,100%{transform:rotate(0)}10%{transform:rotate(-4deg)}20%{transform:rotate(4deg)}30%{transform:rotate(-2deg)}}
+#dots i.on{background:var(--wine);opacity:1}
+/* seal */
+#env{width:min(300px,78vw);cursor:pointer;overflow:visible;animation:wob 2.4s ease-in-out infinite;-webkit-tap-highlight-color:transparent}
+#env.open{animation:none}
+@keyframes wob{0%,40%,100%{transform:rotate(0)}10%{transform:rotate(-3deg)}20%{transform:rotate(3deg)}30%{transform:rotate(-2deg)}}
+#env .flap{transform-box:fill-box;transform-origin:50% 0;transition:transform .9s .25s}
+#env.open .flap{transform:scaleY(-1)}
+#env .seal{transform-box:fill-box;transform-origin:center;transition:all .6s}
+#env.open .seal{transform:scale(1.8) rotate(25deg);opacity:0}
+#env .pp{transition:transform 1s .7s cubic-bezier(.3,1.3,.5,1)}
+#env.open .pp{transform:translateY(-62px)}
 .rays{position:absolute;inset:0;margin:auto;width:140vmax;height:140vmax;border-radius:50%;background:repeating-conic-gradient(var(--brass) 0 6deg,transparent 6deg 18deg);opacity:0;pointer-events:none;-webkit-mask-image:radial-gradient(circle,#000,transparent 55%);mask-image:radial-gradient(circle,#000,transparent 55%)}
 .rays.on{animation:rays 2.4s ease-out forwards}
-@keyframes rays{0%{opacity:.65;transform:scale(0) rotate(0)}100%{opacity:0;transform:scale(1) rotate(60deg)}}
-.hint{margin-top:18px;color:var(--mute);font-size:18px;animation:bl 1.4s infinite}
-.gm{display:flex;flex-direction:column;align-items:center;width:100%;max-width:440px}
-#gr{width:min(370px,86vw);height:auto;overflow:visible}
-.bump{animation:bump .35s}
-@keyframes bump{50%{transform:scale(1.035)}}
-.ctl{width:100%;margin-top:6px}
-.row{display:flex;align-items:center;gap:9px;justify-content:center;margin:7px 0;flex-wrap:wrap}
-.row span{font:700 14px 'Reem Kufi';min-width:58px;text-align:start}
-.dot{width:30px;height:30px;border-radius:50%;border:2px solid var(--ink);cursor:pointer;padding:0;transition:transform .2s}
-.dot.on{transform:scale(1.25);box-shadow:0 0 0 3px var(--clay)}
-.tg{padding:7px 14px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font:700 14px 'Reem Kufi';cursor:pointer}
-.tg.on{background:var(--ink);color:var(--paper)}
-#score{font:700 21px 'Reem Kufi';color:var(--clay);min-height:1.5em;margin-top:10px}
+@keyframes rays{0%{opacity:.6;transform:scale(0) rotate(0)}100%{opacity:0;transform:scale(1) rotate(60deg)}}
+.hint{margin-top:16px;color:var(--mute);font-size:18px;animation:bl 1.4s infinite}
+/* id card */
+.cw{perspective:900px;width:min(340px,88vw);height:min(214px,55vw);cursor:pointer;touch-action:none}
+.card3{position:relative;width:100%;height:100%;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(calc(var(--ry,0deg) + var(--fl,0deg)));transition:transform .15s;opacity:0}
+.card3.in{animation:cin 1.2s cubic-bezier(.2,1.2,.3,1) forwards}
+@keyframes cin{from{opacity:0;transform:translateY(80px) rotateX(50deg)}to{opacity:1;transform:rotateX(var(--rx,0deg)) rotateY(calc(var(--ry,0deg) + var(--fl,0deg)))}}
+.face{position:absolute;inset:0;border-radius:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.35);border:1.5px solid var(--brass);text-align:start}
+.front{background:linear-gradient(135deg,#faf5e8,#e8dcbc);color:#14213a;padding:0}
+.back{background:linear-gradient(135deg,#14213a,#243a63);color:#f1e9d8;transform:rotateY(180deg);padding:18px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.hd{background:#14213a;color:#d2ad63;font:700 14px 'Reem Kufi';padding:7px 14px;display:flex;justify-content:space-between;align-items:center;letter-spacing:1px}
+.hd svg{width:20px;height:20px;stroke:#d2ad63;fill:none;stroke-width:2.5}
+.bd{display:flex;gap:12px;padding:12px 14px}
+.ph{width:76px;height:96px;background:linear-gradient(#cdd6e6,#9fb0cc);border:1.5px solid #14213a;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.ph svg{width:70px;fill:#14213a;opacity:.75}
+.inf{flex:1;font-size:13px;line-height:1.9}
+.inf b{font:700 25px 'Reem Kufi';display:block;line-height:1.2;color:#7a1f2e}
+.inf small{color:#5b6478}
+.holo{position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 46%,rgba(210,173,99,.35) 50%,transparent 62%);background-size:250% 100%;animation:hs 3.5s linear infinite;mix-blend-mode:overlay;pointer-events:none}
+@keyframes hs{from{background-position:130% 0}to{background-position:-60% 0}}
+.nm{font:700 clamp(40px,12vw,64px)/1.2 'Reem Kufi';margin-top:20px;clip-path:inset(0 0 0 100%);transition:clip-path 1.3s cubic-bezier(.7,0,.2,1)}
+.nm.show{clip-path:inset(0)}
+.nm em{font-style:normal;color:var(--wine)}
+.sub{color:var(--mute);font-size:clamp(16px,4vw,20px);opacity:0;transition:opacity 1s;margin-top:4px;max-width:420px;line-height:1.7}
+.sub.show{opacity:1}
+/* trial */
+#gv{width:100px;height:auto;margin-bottom:4px}
+#gavel{transform-origin:60px 86px;transform:rotate(-38deg);transition:transform .14s}
+#gavel.hit{transform:rotate(0)}
+.case{background:var(--card);border:1.5px solid var(--brass);padding:14px 18px;width:100%;max-width:440px;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.case small{color:var(--wine);font:700 13px 'Reem Kufi';letter-spacing:1px}
+.case h3{font:700 21px 'Reem Kufi';margin:4px 0}
+.case p{color:var(--mute);font-size:17px}
+.opts{display:flex;flex-direction:column;gap:9px;width:100%;max-width:440px;margin-top:12px}
+.opts .btn{font-size:15px;padding:11px 14px;text-align:center;line-height:1.5}
+#vd{font:700 20px/1.7 'Reem Kufi';color:var(--wine);min-height:3.4em;margin-top:10px;max-width:440px}
+.shake{animation:shk .35s}
+@keyframes shk{25%{transform:translate(6px,4px)}50%{transform:translate(-6px,-3px)}75%{transform:translate(3px,-4px)}}
+/* scale */
+#sv{width:min(340px,92vw);height:auto;overflow:visible}
+.bt{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+#sm{font:700 19px/1.7 'Reem Kufi';color:var(--wine);min-height:3em;margin-top:8px;max-width:420px}
+/* rows */
+.rows{width:100%;max-width:500px;text-align:start}
+.r{display:flex;gap:16px;align-items:center;padding:13px 0;border-bottom:1px solid var(--brass);opacity:0;transform:translateX(70px);transition:all .8s cubic-bezier(.2,.9,.3,1)}
+.r.show{opacity:1;transform:none}
+.r b{font:700 48px 'Reem Kufi';color:transparent;-webkit-text-stroke:1.3px var(--wine);min-width:68px;text-align:center}
+.r h3{font:700 22px 'Reem Kufi'}
+.r p{color:var(--mute);font-size:17px;line-height:1.6}
+/* letter */
+.paper{background:#fbf7ec;color:#2a2620;max-width:540px;width:100%;padding:26px 24px 20px;box-shadow:0 18px 40px rgba(0,0,0,.3);text-align:start;transform:rotate(-1deg);background-image:repeating-linear-gradient(transparent 0 35px,rgba(122,31,46,.18) 35px 36px)}
+.paper .type{font:400 clamp(20px,5.2vw,25px)/36px 'Aref Ruqaa';min-height:12em;color:#2a2620}
+.paper .type::after{color:#7a1f2e}
+.sign{font:700 38px 'Aref Ruqaa';color:#7a1f2e;text-align:end;clip-path:inset(0 0 0 100%);transition:clip-path 1.6s ease;margin-top:6px}
+.sign.show{clip-path:inset(0)}
+.paper .sign{color:#7a1f2e}
+.arena{position:relative;width:100%;max-width:400px;height:220px;margin-top:10px}
+.arena .btn{position:absolute}
+#yes{top:10px;inset-inline-start:calc(50% - 105px);width:210px}
+#no{top:125px;inset-inline-start:calc(50% - 40px);transition:inset .25s,top .25s}
+#toast{color:var(--wine);font:700 20px 'Reem Kufi';height:1.4em;margin-top:6px}
+.stamp{position:absolute;z-index:5;border:5px double var(--wine);color:var(--wine);padding:10px 22px;font:700 clamp(38px,11vw,60px)/1.2 'Reem Kufi';text-align:center;transform:rotate(-10deg) scale(3);opacity:0;pointer-events:none;background:color-mix(in srgb,var(--bg) 75%,transparent)}
+.stamp small{display:block;font:500 15px Tajawal;letter-spacing:2px}
+.stamp.hit{animation:hit .5s cubic-bezier(.2,2,.4,1) forwards}
+@keyframes hit{to{opacity:.95;transform:rotate(-10deg) scale(1)}}
+.curtain{position:fixed;inset:0;z-index:40;background:var(--wine);pointer-events:none;clip-path:inset(0 0 100% 0)}
+.curtain.sweep{animation:wipe 1.3s cubic-bezier(.7,0,.3,1)}
+@keyframes wipe{0%{clip-path:inset(0 0 100% 0)}45%,55%{clip-path:inset(0)}100%{clip-path:inset(100% 0 0 0)}}
+#intro{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;transition:opacity 1s,visibility 1s}
+#intro.off{opacity:0;visibility:hidden}
+#intro svg{width:84px;height:84px;stroke:var(--brass);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#intro svg *{stroke-dasharray:200;stroke-dashoffset:200;animation:dr 2.4s .2s forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+#intro .cv{font:500 13px Tajawal;letter-spacing:4px;color:var(--wine);margin-top:10px}
+#intro h1{font:700 clamp(100px,32vw,210px)/1.05 'Reem Kufi';margin:6px 0}
+#intro p{color:var(--mute);margin-bottom:26px;line-height:1.9;font-size:19px}
+.cf{position:fixed;top:-20px;width:9px;height:15px;z-index:60;pointer-events:none;animation:fall 3.2s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute"><symbol id="sc" viewBox="0 0 48 48"><g stroke-linecap="round" stroke-linejoin="round"><path d="M24 6V40M14 42H34M8 12H40M8 12L2 28H14ZM40 12L34 28H46ZM2 28Q8 34 14 28M34 28Q40 34 46 28"/></g></symbol></svg>
 <div class="frame"></div>
-<div class="tb"><div id="tb1"></div><div>هدية التخرج · إلى منار</div><div>من: أحمد</div></div>
+<div class="tb"><div id="tb1"></div><div>القضية رقم ٢٠٢٦/١ · تهنئة</div><div id="tb3"></div></div>
 <div class="curtain" id="curtain"></div>
 
 <div id="intro">
-  <svg viewBox="0 0 120 70" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"><path d="M10 66V30A50 50 0 0 1 110 30V66M4 66H116M30 66V36A30 30 0 0 1 90 36V66"/></svg>
-  <div class="cv">هدية التخرج</div>
-  <h1>منار</h1>
-  <p>إلى مهندسة التصميم الداخلي<br>هدية من أحمد</p>
-  <button class="btn clay" id="enter">ابدأي</button>
+  <svg viewBox="0 0 48 48"><use href="#sc"/></svg>
+  <div class="cv">هدية خاصة</div>
+  <h1 id="iname"></h1>
+  <p id="ip"></p>
+  <button class="btn w" id="enter">ابدأي</button>
 </div>
 
 <div id="dots"></div>
@@ -132,142 +152,146 @@ h2 b{font-size:.8em;color:transparent;-webkit-text-stroke:1.2px var(--clay)}
 <button class="btn" id="next">التالي ←</button>
 
 <div id="stage">
-  <div class="scene" id="s0" style="overflow:hidden"><div class="rays" id="rays"></div>
-    <svg id="gift" viewBox="0 0 200 200"><g><rect x="35" y="95" width="130" height="90" fill="var(--clay)" stroke="var(--ink)" stroke-width="2"/><rect x="90" y="95" width="20" height="90" fill="var(--brass)" stroke="var(--ink)" stroke-width="2"/></g><g class="lid"><rect x="28" y="68" width="144" height="30" fill="#c9694c" stroke="var(--ink)" stroke-width="2"/><rect x="90" y="68" width="20" height="30" fill="var(--brass)" stroke="var(--ink)" stroke-width="2"/><path d="M100 68C80 30 50 40 70 62C80 70 100 68 100 68ZM100 68C120 30 150 40 130 62C120 70 100 68 100 68Z" fill="var(--brass)" stroke="var(--ink)" stroke-width="2"/></g></svg>
-    <div class="hint" id="hint">اضغطي على الهدية</div><div class="type" id="gt" style="min-height:0;font-size:26px"></div></div>
-
-  <div class="scene" id="s1"><div class="note">ملاحظات المصمم</div><div class="type" id="t1"></div></div>
-
-  <div class="scene" id="s2">
-    <svg id="room" viewBox="0 -20 400 310"></svg>
-    <div class="nm" id="nm">م<em>ن</em>ار</div>
-    <div class="sub" id="sb">مهندسة التصميم الداخلي · مبروك التخرج</div>
-  </div>
-
-  <div class="scene" id="s3"><h2><b>٠٤</b>لوحة الخامات</h2><div class="sw" id="sw"></div></div>
-
-  <div class="scene" id="s4"><h2><b>٠٥</b>مراجعات التصميم</h2><div class="rows" id="rw"></div></div>
-
-  <div class="scene" id="sg6" style="justify-content:flex-start;padding-top:calc(58px + env(safe-area-inset-top,0px))">
-    <h2 style="margin-bottom:4px"><b>٠٦</b>صمّمي غرفتكِ</h2>
-    <p style="color:var(--mute);font-size:14px;margin-bottom:4px">غيّري الألوان وأضيفي القطع على كيفكِ</p>
-    <div class="gm"><svg id="gr" viewBox="0 -20 400 310"></svg><div class="ctl" id="ctl"></div><button class="btn clay" id="done" style="margin-top:10px">تسليم التصميم</button><div id="score"></div></div></div>
-
-  <div class="scene" id="s5"><h2><b>٠٧</b>رسالة</h2><div class="paper"><div class="type" id="t5"></div><div class="sign" id="sg"></div></div></div>
-
-  <div class="scene" id="s6" style="position:absolute">
-    <h2 style="display:block;font-size:clamp(28px,7vw,42px)" id="q">هل تعرفين أنكِ فخر العائلة؟</h2>
-    <p id="qs" style="color:var(--mute)">جاوبي بصراحة… (زر «لا» خجول شوية)</p>
-    <div class="arena" id="arena"><button class="btn clay" id="yes">طبعاً أعرف</button><button class="btn" id="no">لا</button></div>
-    <div class="stamp" id="stamp">معتمد<small>مبروك التخرج · ٢٠٢٦</small></div>
-    <div class="sign" id="sg2" style="font-size:44px;margin-top:150px;position:relative"></div>
-    <button class="btn" id="again" style="display:none;position:relative;margin-top:20px">من البداية</button>
-  </div>
+ <!-- 0 seal -->
+ <div class="scene" id="s0" style="overflow:hidden"><div class="rays" id="rays"></div>
+  <svg id="env" viewBox="0 0 200 170"><rect x="20" y="50" width="160" height="110" fill="#e8dcbc" stroke="var(--ink)" stroke-width="2"/>
+   <g class="pp"><rect x="34" y="58" width="132" height="90" fill="#fbf7ec" stroke="var(--ink)" stroke-width="1.5"/><g stroke="#7a1f2e" stroke-width="2" stroke-linecap="round"><path d="M50 76H150M50 90H150M50 104H120"/></g></g>
+   <path d="M20 160L100 105L180 160" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+   <polygon class="flap" points="20,50 180,50 100,115" fill="#d9ca9f" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+   <g class="seal"><circle cx="100" cy="108" r="19" fill="#7a1f2e" stroke="#4d1019" stroke-width="2"/><svg x="86" y="94" width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#f1e9d8" stroke-width="3.5"><use href="#sc"/></svg></g></svg>
+  <div class="hint" id="hint">اضغطي لكسر الختم</div><div class="type" id="gt" style="min-height:0;font-size:25px"></div></div>
+ <!-- 1 notes -->
+ <div class="scene" id="s1"><div class="note">المرافعة الافتتاحية</div><div class="type" id="t1"></div></div>
+ <!-- 2 id -->
+ <div class="scene" id="s2">
+  <div class="cw" id="cw"><div class="card3" id="c3">
+   <div class="face front"><div class="hd"><span>هوية محامٍ</span><svg viewBox="0 0 48 48"><use href="#sc"/></svg></div>
+    <div class="bd"><div class="ph"><svg viewBox="0 0 70 80"><circle cx="35" cy="26" r="16"/><path d="M4 80C4 54 20 46 35 46S66 54 66 80Z"/></svg></div>
+     <div class="inf"><small>الاسم</small><b id="cn"></b><small>الصفة: <span style="color:#14213a;font-weight:700">محامية</span></small><br><small>رقم الهوية: <span id="cno"></span></small><br><small>سنة الإصدار: <span id="cy"></span></small></div></div>
+    <div class="holo"></div></div>
+   <div class="face back"><svg viewBox="0 0 48 48" width="46" height="46" fill="none" stroke="#d2ad63" stroke-width="2.4" style="margin:0 auto 8px"><use href="#sc"/></svg><div class="k" style="font-size:22px;color:#d2ad63">مبروك يا محامية</div><div style="margin-top:6px;font-size:17px" id="cb"></div><div class="holo"></div></div>
+  </div></div>
+  <div class="hint" id="h2" style="margin-top:12px;font-size:16px">اضغطي على الهوية لتقلبيها</div>
+  <div class="nm" id="nm">المحامية <em>مي</em></div>
+  <div class="sub" id="sb">من أيام قليلة صار اسمكِ مسبوقاً بكلمة «المحامية»</div>
+ </div>
+ <!-- 3 trial -->
+ <div class="scene top" id="s3">
+  <svg id="gv" viewBox="0 0 120 92"><rect x="14" y="82" width="92" height="8" rx="3" fill="#8a5a2b" stroke="var(--ink)" stroke-width="1.5"/><g id="gavel"><rect x="55" y="30" width="10" height="56" rx="4" fill="#a8743c" stroke="var(--ink)" stroke-width="1.5"/><rect x="26" y="12" width="68" height="26" rx="7" fill="#8a5a2b" stroke="var(--ink)" stroke-width="1.5"/><rect x="40" y="12" width="6" height="26" fill="var(--brass)"/><rect x="74" y="12" width="6" height="26" fill="var(--brass)"/></g></svg>
+  <h2 style="margin-bottom:8px"><b>٠٤</b>جلسة المحكمة</h2>
+  <div class="case" id="cs"></div><div class="opts" id="op"></div><div id="vd"></div>
+ </div>
+ <!-- 4 scale -->
+ <div class="scene top" id="s4">
+  <h2 style="margin-bottom:4px"><b>٠٥</b>ميزان العدالة</h2>
+  <p style="color:var(--mute);font-size:16px;max-width:380px">وزن «الحق» ستة. ضيفي الأدلة والشهود والحجج حتى تتعادل الكفتان.</p>
+  <svg id="sv" viewBox="0 0 300 250"></svg>
+  <div class="bt" id="bt"><button class="btn o" data-w="2">دليل +٢</button><button class="btn o" data-w="3">شاهد +٣</button><button class="btn o" data-w="1">حجة +١</button></div>
+  <div id="sm"></div>
+ </div>
+ <!-- 5 rows -->
+ <div class="scene" id="s5"><h2><b>٠٦</b>مراحل القضية</h2><div class="rows" id="rw"></div></div>
+ <!-- 6 letter -->
+ <div class="scene" id="s6"><h2><b>٠٧</b>رسالة</h2><div class="paper"><div class="type" id="t6"></div><div class="sign" id="sg"></div></div></div>
+ <!-- 7 finale -->
+ <div class="scene" id="s7">
+  <h2 style="display:block;font-size:clamp(26px,7vw,40px)" id="q">هل تعرفين أنكِ أشطر محامية بالدنيا؟</h2>
+  <p id="qs" style="color:var(--mute);font-size:19px">جاوبي بصراحة… (والاعتراض مرفوض مقدماً)</p>
+  <div class="arena" id="arena"><button class="btn w" id="yes">طبعاً أعرف</button><button class="btn o" id="no">أعترض!</button></div>
+  <div id="toast"></div>
+  <div class="stamp" id="stamp">حكم نهائي<small>غير قابل للاستئناف</small></div>
+  <div class="sign" id="sg2" style="font-size:42px;margin-top:130px;position:relative"></div>
+  <button class="btn" id="again" style="display:none;position:relative;margin-top:16px">من البداية</button>
+ </div>
 </div>
 
 <script>
 /* ======= عدّلي النصوص من هنا ======= */
 const DATA={
-  intro:["قبل أربع سنوات…","كانت خطوط على ورقة بيضاء","واليوم صارت بيوتاً تشبه أصحابها."],
-  swatches:[["رخام","نجاح ثابت","يبقى جميلاً مهما مرّ الزمن","linear-gradient(115deg,transparent 40%,rgba(120,120,120,.25) 41% 42%,transparent 43%),linear-gradient(135deg,#f4f1ea,#d8d2c6)","-2deg"],
-            ["بلوط","بدايات دافئة","جذور قوية وبيت مليان حب","repeating-linear-gradient(90deg,#b8905a 0 7px,#a77f4b 7px 10px,#c09a66 10px 15px)","2deg"],
-            ["مخمل","سعادة ناعمة","فرح يلفّ قلبكِ كل يوم","radial-gradient(circle at 30% 30%,#d4694b,#8e3a24)","1.5deg"],
-            ["نحاس","طموح يلمع","كل حلم يتحقق بإذن الله","linear-gradient(120deg,#8a6a2c,#e3c680 45%,#8a6a2c)","-1.5deg"]],
-  years:[["١","الخط الأول","بدأتِ بقلم رصاص وحلم كبير."],["٢","المقياس","تعلمتِ إن التفاصيل الصغيرة تصنع الفرق."],["٣","الضوء","سهرتِ الليالي حتى صار لتصاميمكِ روح."],["٤","التسليم","واليوم تسلّمين أجمل مشروع: نفسكِ يا مهندسة."]],
-  letter:"مبروك يا منار! اليوم نحتفل بكِ وبكل لحظة تعب وإصرار وصلت بكِ لهذا اليوم. كل مساحة ستصممينها ستشبهكِ: راقية، دافئة، ومليئة بالروح. نحن فخورون بكِ جداً، وتستاهلين كل الفرح.",
-  from:"أحمد"
+  name:"مي", from:"أحمد", cardNo:"٠٠٠٠", cardYear:"٢٠٢٦",
+  intro:["قبل سنوات…","بدأت بمواد وقوانين وقهوة الليل","واليوم صارت تدافع عن الحق باسمها."],
+  cases:[
+   {t:"القضية الأولى",who:"المتهم: العم «أحمد»",ch:"التهمة: أكل آخر قطعة بيتزا بدون إذن",o:[["أدفع بأن الجوع قوة قاهرة","حكمت المحكمة بالبراءة! الجوع فعلاً ظرف قاهر."],["أقدّم دليلاً أن القطعة كانت صغيرة أصلاً","حكمت المحكمة بالبراءة! الدليل قاطع."],["أتهم الثلاجة بالتحريض","حكمت المحكمة بالبراءة وإحالة الثلاجة للتحقيق!"]]},
+   {t:"القضية الثانية",who:"المتهمة: «القهوة»",ch:"التهمة: سرقة النوم من طلاب الحقوق",o:[["أقول إنها ساعدتهم ينجحون","حكمت المحكمة بالبراءة مع شكر القهوة على جهودها!"],["أطلب شهادة الطلاب الناجحين","حكمت المحكمة بالبراءة! الشهود كلهم محامون الآن."],["أدفع بالحصانة الدستورية للكافيين","حكمت المحكمة بالبراءة! مرافعة لا تُقهر."]]},
+   {t:"القضية الثالثة",who:"المتهم: «المنبّه»",ch:"التهمة: إزعاج الآمنين الساعة السادسة صباحاً",o:[["أقول إنه كان ينفذ تعليمات صاحبه","حكمت المحكمة بالبراءة! الأمر مكتوب بخط اليد."],["أطلب تأجيل الجلسة خمس دقائق","حكمت المحكمة بالتأجيل ثم البراءة!"],["أثبت أنه ما يزعج إلا الكسالى","حكمت المحكمة بالبراءة وبتبرئة المحامية من الكسل!"]]}],
+  years:[["دراسة الحقوق","سنوات من المواد والقوانين والامتحانات."],["التمرين","تعلمتِ إن المحاماة صبر وشغف ما ينتهي."],["الاختبار","تعبتِ وسهرتِ وما وقفتِ عند أول عثرة."],["الهوية","واليوم اسمكِ فيه كلمة «المحامية» بالفخر."]],
+  letter:"مبروك الهوية يا مي! أخيراً صارت الكلمة اللي تعبتِ عليها سنوات حقيقة بإيدكِ. أنتِ من اللي ينصرون الحق بشجاعة وهدوء، وكل موكّل يقف جنبكِ رح يكون محظوظ. نحن فخورون بكِ جداً، وهذا أول سطر من حكاية طويلة وجميلة."
 };
 /* ================================== */
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],wait=ms=>new Promise(r=>setTimeout(r,ms));
 const scenes=$$('.scene'),AR=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);let cur=-1,busy=false;
 $('#dots').innerHTML=scenes.map(()=>'<i></i>').join('');
-/* ---- الغرفة (إيزومتريك) ---- */
-const iso=(x,y,z)=>[200+(x-y)*20,110+(x+y)*10-z],pt=a=>a.map(p=>p.join(',')).join(' ');
-const pl=(a,f)=>`<polygon points="${pt(a)}" fill="${f}" stroke="var(--ink)" stroke-width="1.2" stroke-linejoin="round"/>`;
-const bx=(x,y,z,w,d,h,c)=>`<g class="pc">${pl([iso(x,y+d,z),iso(x+w,y+d,z),iso(x+w,y+d,z+h),iso(x,y+d,z+h)],c[1])}${pl([iso(x+w,y,z),iso(x+w,y+d,z),iso(x+w,y+d,z+h),iso(x+w,y,z+h)],c[2])}${pl([iso(x,y,z+h),iso(x+w,y,z+h),iso(x+w,y+d,z+h),iso(x,y+d,z+h)],c[0])}</g>`;
-const g=(s)=>`<g class="pc">${s}</g>`;
-const clay=['#c9694c','#9c4429','#b04f33'],oak=['#d1ad74','#9d7b45','#b8935a'],olv=['#6c7a52','#4a5536','#586641'],cream=['#fbefc8','#e8d49a','#f2e1ac'];
-$('#room').innerHTML=`<defs><radialGradient id="gw"><stop offset="0" stop-color="#ffd98a" stop-opacity=".85"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient></defs>`+
- g(pl([iso(0,0,0),iso(8,0,0),iso(8,8,0),iso(0,8,0)],'var(--floor)'))+
- g(pl([iso(0,0,0),iso(0,8,0),iso(0,8,120),iso(0,0,120)],'var(--wall2)'))+
- g(pl([iso(0,0,0),iso(8,0,0),iso(8,0,120),iso(0,0,120)],'var(--wall)'))+
- g(pl([iso(0,2.4,56),iso(0,5.6,56),iso(0,5.6,102),iso(0,2.4,102)],'#cfe0e0')+`<path d="M${pt([iso(0,4,56),iso(0,4,102)])}M${pt([iso(0,2.4,79),iso(0,5.6,79)])}" stroke="var(--ink)" stroke-width="1.2" fill="none"/>`)+
- g(pl([iso(3,0,56),iso(6.4,0,56),iso(6.4,0,100),iso(3,0,100)],'#fbf8f1')+pl([iso(3.5,0,62),iso(5.9,0,62),iso(5.9,0,94),iso(3.5,0,94)],'#55603f')+`<circle cx="${iso(4.7,0,80)[0]}" cy="${iso(4.7,0,80)[1]}" r="9" fill="#b8553a" stroke="var(--ink)" stroke-width="1.2"/>`)+
- g(pl([iso(2.4,1.8,.4),iso(7.2,1.8,.4),iso(7.2,7,.4),iso(2.4,7,.4)],'#b8553a').replace('stroke-width="1.2"','stroke-width="1.2" opacity=".85"'))+
- bx(.3,2.2,0,.9,3.8,34,clay)+bx(.3,2.2,0,2.4,3.8,15,clay)+bx(.3,2.2,12,2.4,.7,12,clay)+bx(.3,5.3,12,2.4,.7,12,clay)+
- bx(4.4,3.6,0,2,2,10,oak)+
- bx(6.6,.4,0,1.1,1.1,13,olv)+
- g(['M318 164C300 140 296 118 306 100','M318 164C328 136 340 118 336 98','M318 164C316 132 312 110 318 86','M318 164C296 150 282 138 280 122','M318 164C340 152 352 140 354 124'].map(d=>`<path d="${d}" fill="none" stroke="#4a6a35" stroke-width="7" stroke-linecap="round"/>`).join(''))+
- g(`<line x1="196" y1="128" x2="196" y2="30" stroke="var(--ink)" stroke-width="2.5"/><circle id="glow" cx="196" cy="22" r="44" fill="url(#gw)"/>`)+bx(.2,.5,84,1.2,1.2,18,cream);
-const parts=$$('#room > g');parts.forEach((e,i)=>e.style.setProperty('--i',i));
-/* ---- المشاهد ---- */
+$('#iname').textContent=DATA.name;$('#ip').innerHTML='إلى المحامية '+DATA.name+'<br>هدية من '+DATA.from;
+$('#tb3').textContent='من: '+DATA.from;$('#cn').textContent=DATA.name;$('#cno').textContent=DATA.cardNo;$('#cy').textContent=DATA.cardYear;$('#cb').textContent='من '+DATA.from+' مع كل الحب';
 async function type(el,t,sp=55){el.classList.remove('done');el.textContent='';for(const c of t){el.textContent+=c;await wait(sp)}el.classList.add('done')}
-function ready(auto){const n=$('#next');n.classList.add('show');busy=false;if(auto){const m=cur;setTimeout(()=>{if(cur===m)next()},auto)}}
+function ready(a){$('#next').classList.add('show');busy=false;if(a){const m=cur;setTimeout(()=>{if(cur===m)next()},a)}}
 async function next(){if(busy)return;busy=true;$('#next').classList.remove('show');go(cur+1)}
-async function go(i){
-  const c=$('#curtain');c.classList.remove('sweep');void c.offsetWidth;c.classList.add('sweep');await wait(650);
-  if(scenes[cur])scenes[cur].classList.remove('on');
-  cur=i;scenes[i].scrollTop=0;scenes[i].classList.add('on');
-  $$('#dots i').forEach((d,k)=>d.classList.toggle('on',k<=i));
-  $('#tb1').textContent='لوحة '+AR(i+1)+' / '+AR(scenes.length);
-  await wait(450);run[i]()}
+async function go(i){const c=$('#curtain');c.classList.remove('sweep');void c.offsetWidth;c.classList.add('sweep');await wait(620);
+ if(scenes[cur])scenes[cur].classList.remove('on');cur=i;scenes[i].scrollTop=0;scenes[i].classList.add('on');
+ $$('#dots i').forEach((d,k)=>d.classList.toggle('on',k<=i));$('#tb1').textContent='الجلسة '+AR(i+1)+' / '+AR(scenes.length);
+ await wait(450);run[i]()}
+/* ---- بطاقة الهوية ---- */
+const c3=$('#c3');let flip=0;
+$('#cw').addEventListener('click',()=>{flip^=180;c3.style.setProperty('--fl',flip+'deg')});
+function tilt(e){const r=$('#cw').getBoundingClientRect(),p=e.touches?e.touches[0]:e,x=(p.clientX-r.left)/r.width-.5,y=(p.clientY-r.top)/r.height-.5;c3.style.setProperty('--ry',x*24+'deg');c3.style.setProperty('--rx',-y*24+'deg')}
+$('#cw').addEventListener('mousemove',tilt);$('#cw').addEventListener('touchmove',tilt,{passive:true});
+['mouseleave','touchend'].forEach(v=>$('#cw').addEventListener(v,()=>{c3.style.setProperty('--ry','0deg');c3.style.setProperty('--rx','0deg')}));
+/* ---- المحكمة ---- */
+let ci=0;
+function showCase(){const c=DATA.cases[ci];$('#vd').textContent='';$('#cs').innerHTML=`<small>${c.t} · ${AR(ci+1)}/${AR(DATA.cases.length)}</small><h3>${c.who}</h3><p>${c.ch}</p>`;
+ $('#op').innerHTML=c.o.map((o,i)=>`<button class="btn o" data-i="${i}">${o[0]}</button>`).join('');
+ $$('#op .btn').forEach(b=>b.onclick=()=>verdict(+b.dataset.i))}
+async function verdict(i){const c=DATA.cases[ci];$('#op').innerHTML='';
+ $('#gavel').classList.add('hit');thud();$('#s3').classList.add('shake');await wait(350);$('#s3').classList.remove('shake');$('#gavel').classList.remove('hit');
+ await type($('#vd'),c.o[i][1],32);boom(40);await wait(1200);ci++;
+ if(ci<DATA.cases.length){$('#op').innerHTML='<button class="btn w" id="nc">القضية التالية</button>';$('#nc').onclick=showCase}else{$('#vd').textContent+=' — انتهت الجلسات بثلاث براءات!';ready()}}
+/* ---- الميزان ---- */
+let R=0,lock=false;const L=6;
+function drawScale(){const a=Math.max(-20,Math.min(20,(R-L)*5)),rd=a*Math.PI/180,cx=150,cy=60,h=100,
+ lx=cx-h*Math.cos(rd),ly=cy-h*Math.sin(rd),rx=cx+h*Math.cos(rd),ry=cy+h*Math.sin(rd);
+ const items=window._it||[];
+ const pan=(x,y,blocks)=>`<line x1='${x}' y1='${y}' x2='${x-34}' y2='${y+70}' stroke='var(--brass)' stroke-width='2'/><line x1='${x}' y1='${y}' x2='${x+34}' y2='${y+70}' stroke='var(--brass)' stroke-width='2'/>`+blocks+`<path d='M${x-42} ${y+70}H${x+42}Q${x+36} ${y+92} ${x} ${y+92}Q${x-36} ${y+92} ${x-42} ${y+70}Z' fill='var(--brass)' stroke='var(--ink)' stroke-width='1.5'/>`;
+ const lb=`<rect x='${lx-26}' y='${ly+70-46}' width='52' height='46' fill='#7a1f2e' stroke='var(--ink)' stroke-width='1.5'/><text x='${lx}' y='${ly+70-17}' text-anchor='middle' fill='#fff' font-family='Reem Kufi' font-size='17'>الحق</text>`;
+ let yy=ry+70,rb='';items.forEach(t=>{const hh=10+t[1]*6;yy-=hh;rb+=`<rect x='${rx-26}' y='${yy}' width='52' height='${hh}' fill='${t[2]}' stroke='var(--ink)' stroke-width='1.2'/><text x='${rx}' y='${yy+hh/2+5}' text-anchor='middle' fill='#fff' font-family='Reem Kufi' font-size='13'>${t[0]}</text>`});
+ $('#sv').innerHTML=`<path d='M150 60V215M110 222H190' stroke='var(--ink)' stroke-width='5' stroke-linecap='round' fill='none'/><circle cx='150' cy='54' r='7' fill='var(--brass)' stroke='var(--ink)' stroke-width='1.5'/><line x1='${lx}' y1='${ly}' x2='${rx}' y2='${ry}' stroke='var(--ink)' stroke-width='6' stroke-linecap='round'/>`+pan(lx,ly,lb)+pan(rx,ry,rb)}
+window._it=[];drawScale();
+$$('#bt .btn').forEach(b=>b.onclick=async()=>{if(lock)return;const w=+b.dataset.w;R+=w;window._it.push([b.textContent.split(' ')[0],w,['#3f5873','#55603f','#9a7a34'][w-1]]);drawScale();
+ if(R===L){lock=true;$('#sm').textContent='توازن! هيك تكون العدالة… وهيك تكون المحامية مي.';boom(80);await wait(800);ready()}
+ else if(R>L){lock=true;$('#sm').textContent='زادت شوية! خلينا نعيدها…';await wait(1400);R=0;window._it=[];$('#sm').textContent='';drawScale();lock=false}});
+/* ---- المشاهد ---- */
 const run=[
- async()=>{busy=true;const gf=$('#gift');gf.onclick=async()=>{if(gf.classList.contains('open'))return;gf.classList.add('open');$('#hint').style.display='none';$('#rays').classList.add('on');boom(110);await wait(900);await type($('#gt'),'هدية صغيرة من أحمد إلى منار…',60);await wait(1400);busy=false;next()}},
- async()=>{for(const l of DATA.intro){await type($('#t1'),l,65);await wait(900)}ready(700)},
- async()=>{$('#room').classList.add('go');await wait(parts.length*300+900);$('#nm').classList.add('show');await wait(1500);$('#sb').classList.add('show');boom(40);await wait(1000);ready()},
- async()=>{$('#sw').innerHTML=DATA.swatches.map(s=>`<div class="s" style="--r:${s[4]}"><i style="background:${s[3]}"></i><h3>${s[0]} · ${s[1]}</h3><p>${s[2]}</p></div>`).join('');
-   for(const e of $$('.s')){await wait(450);e.classList.add('show')}await wait(1200);ready()},
- async()=>{$('#rw').innerHTML=DATA.years.map(y=>`<div class="r"><b>٠${y[0]}</b><div><small>مراجعة ${y[0]}</small><h3>${y[1]}</h3><p>${y[2]}</p></div></div>`).join('');
+ async()=>{busy=true;const e=$('#env');e.onclick=async()=>{if(e.classList.contains('open'))return;e.classList.add('open');$('#hint').style.display='none';$('#rays').classList.add('on');boom(100);await wait(1400);await type($('#gt'),'هدية صغيرة لمحامية جديدة…',60);await wait(1300);busy=false;next()}},
+ async()=>{for(const l of DATA.intro){await type($('#t1'),l,62);await wait(900)}ready(700)},
+ async()=>{c3.classList.add('in');await wait(1500);$('#nm').classList.add('show');await wait(1400);$('#sb').classList.add('show');boom(50);await wait(1200);ready()},
+ async()=>{busy=true;ci=0;showCase()},
+ async()=>{busy=true;R=0;lock=false;window._it=[];$('#sm').textContent='';drawScale()},
+ async()=>{$('#rw').innerHTML=DATA.years.map((y,i)=>`<div class="r"><b>٠${i+1}</b><div><h3>${y[0]}</h3><p>${y[1]}</p></div></div>`).join('');
    for(const e of $$('.r')){await wait(450);e.classList.add('show');await wait(1100)}ready()},
- async()=>{busy=true;$('#done').style.display='';$('#score').textContent='';mkCtl();renderGame()},
- async()=>{await type($('#t5'),DATA.letter,42);$('#sg').textContent=DATA.from;$('#sg').classList.add('show');await wait(1800);ready()},
+ async()=>{await type($('#t6'),DATA.letter,42);$('#sg').textContent=DATA.from;$('#sg').classList.add('show');await wait(1800);ready()},
  async()=>{busy=true}
 ];
 $('#next').onclick=next;
-/* ---- الزر الهارب + الختم ---- */
-const no=$('#no'),ar=$('#arena');
-function flee(){no.style.insetInlineStart=Math.random()*(ar.clientWidth-no.offsetWidth)+'px';no.style.top=Math.random()*(ar.clientHeight-no.offsetHeight)+'px'}
+/* ---- الزر الهارب والختم ---- */
+const no=$('#no'),ar=$('#arena');let nf=0;
+function flee(){no.style.insetInlineStart=Math.random()*(ar.clientWidth-no.offsetWidth)+'px';no.style.top=Math.random()*(ar.clientHeight-no.offsetHeight)+'px';
+ $('#toast').textContent=['اعتراض مرفوض!','المحكمة ترفض الاعتراض','حاولي مرة ثانية يا مي'][nf++%3]}
 no.addEventListener('mouseenter',flee);no.addEventListener('click',flee);
 no.addEventListener('touchstart',e=>{e.preventDefault();flee()},{passive:false});
 document.addEventListener('mousemove',e=>{const r=no.getBoundingClientRect();if(no.offsetParent&&Math.hypot(e.clientX-(r.left+r.width/2),e.clientY-(r.top+r.height/2))<90)flee()});
-$('#yes').onclick=async()=>{
-  $('#q').textContent='تمّ الاعتماد';['#yes','#no','#qs'].forEach(s=>$(s).style.display='none');ar.style.height='120px';
-  await wait(300);$('#stamp').classList.add('hit');await wait(450);$('#s6').classList.add('shake');boom(140);
-  $('#sg2').textContent='مبروك يا منار — '+DATA.from;$('#sg2').classList.add('show');
-  await wait(1000);boom(90);$('#again').style.display='inline-block'};
-$('#again').onclick=()=>{$('#again').style.display='none';['#yes','#no','#qs'].forEach(s=>$(s).style.display='');ar.style.height='';$('#q').textContent='هل تعرفين أنكِ فخر العائلة؟';
-  $('#stamp').classList.remove('hit');$('#gift').classList.remove('open');$('#hint').style.display='';$('#rays').classList.remove('on');$('#gt').textContent='';$('#s6').classList.remove('shake');$$('.show').forEach(e=>e.classList.remove('show'));$('#room').classList.remove('go');$('#sg2').textContent='';busy=true;go(0)};
-function boom(n){for(let i=0;i<n;i++){const c=document.createElement('i');c.className='cf';c.style.left=Math.random()*100+'vw';c.style.background=['#b8553a','#b08d4a','#55603f','#efe8dc','#d77a5c'][i%5];c.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),5000)}}
-/* ---- لعبة التصميم الداخلي ---- */
-const GP={wall:[['#f6f1e7','#e9e0cf'],['#c9d3b8','#b3bf9f'],['#f1d3cb','#e2bcb2'],['#c8d8e4','#b2c6d6'],['#5a5144','#463f34']],floor:['#d8c9ad','#9a7650','#e6e2da','#a9a59c'],rug:['#b8553a','#55603f','#3f5873','#b08d4a'],sofa:[clay,['#6c7a52','#4a5536','#586641'],['#4a6a8a','#34495e','#3f5873'],['#d9a93c','#a97f21','#c2922b'],['#e3a9a0','#b9786f','#cf9189']]};
-const GS={wall:0,floor:0,rug:0,sofa:0,t:0,p:0,l:0,f:0,w:0};
-function renderGame(){
- const wl=GP.wall[GS.wall],S=GP.sofa[GS.sofa],gr=$('#gr');
- const leaf=['M318 164C300 140 296 118 306 100','M318 164C328 136 340 118 336 98','M318 164C316 132 312 110 318 86','M318 164C296 150 282 138 280 122','M318 164C340 152 352 140 354 124'].map(d=>`<path d='${d}' fill='none' stroke='#4a6a35' stroke-width='7' stroke-linecap='round'/>`).join('');
- gr.innerHTML=`<defs><radialGradient id='gw2'><stop offset='0' stop-color='#ffd98a' stop-opacity='.85'/><stop offset='1' stop-color='#ffd98a' stop-opacity='0'/></radialGradient></defs>`+
-  pl([iso(0,0,0),iso(8,0,0),iso(8,8,0),iso(0,8,0)],GP.floor[GS.floor])+pl([iso(0,0,0),iso(0,8,0),iso(0,8,120),iso(0,0,120)],wl[1])+pl([iso(0,0,0),iso(8,0,0),iso(8,0,120),iso(0,0,120)],wl[0])+
-  (GS.w?pl([iso(0,2.4,56),iso(0,5.6,56),iso(0,5.6,102),iso(0,2.4,102)],'#cfe0e0')+`<path d='M${pt([iso(0,4,56),iso(0,4,102)])}M${pt([iso(0,2.4,79),iso(0,5.6,79)])}' stroke='var(--ink)' stroke-width='1.2' fill='none'/>`:'')+
-  (GS.f?pl([iso(3,0,56),iso(6.4,0,56),iso(6.4,0,100),iso(3,0,100)],'#fbf8f1')+pl([iso(3.5,0,62),iso(5.9,0,62),iso(5.9,0,94),iso(3.5,0,94)],'#55603f')+`<circle cx='${iso(4.7,0,80)[0]}' cy='${iso(4.7,0,80)[1]}' r='9' fill='#b8553a' stroke='var(--ink)' stroke-width='1.2'/>`:'')+
-  pl([iso(2.4,1.8,.4),iso(7.2,1.8,.4),iso(7.2,7,.4),iso(2.4,7,.4)],GP.rug[GS.rug])+
-  bx(.3,2.2,0,.9,3.8,34,S)+bx(.3,2.2,0,2.4,3.8,15,S)+bx(.3,2.2,12,2.4,.7,12,S)+bx(.3,5.3,12,2.4,.7,12,S)+
-  (GS.t?bx(4.4,3.6,0,2,2,10,oak):'')+(GS.p?bx(6.6,.4,0,1.1,1.1,13,olv)+leaf:'')+
-  (GS.l?`<line x1='196' y1='128' x2='196' y2='30' stroke='var(--ink)' stroke-width='2.5'/><circle cx='196' cy='22' r='44' fill='url(#gw2)'/>`+bx(.2,.5,84,1.2,1.2,18,cream):'');
- gr.classList.remove('bump');void gr.getBoundingClientRect();gr.classList.add('bump')}
-function mkCtl(){
- const rows=[['الجدران','wall',GP.wall.map(w=>w[0])],['الأرضية','floor',GP.floor],['السجادة','rug',GP.rug],['الكنبة','sofa',GP.sofa.map(s=>s[0])]];
- $('#ctl').innerHTML=rows.map(r=>`<div class='row'><span>${r[0]}</span>${r[2].map((c,i)=>`<button class='dot${GS[r[1]]===i?' on':''}' data-k='${r[1]}' data-v='${i}' style='background:${c}'></button>`).join('')}</div>`).join('')+
-  `<div class='row'>${[['t','طاولة'],['p','نبتة'],['l','لمبة'],['f','لوحة'],['w','شباك']].map(t=>`<button class='tg${GS[t[0]]?' on':''}' data-t='${t[0]}'>${t[1]}</button>`).join('')}<button class='tg' id='rnd'>عشوائي</button></div>`;
- $$('#ctl .dot').forEach(b=>b.onclick=()=>{GS[b.dataset.k]=+b.dataset.v;mkCtl();renderGame()});
- $$('#ctl [data-t]').forEach(b=>b.onclick=()=>{GS[b.dataset.t]^=1;mkCtl();renderGame()});
- $('#rnd').onclick=()=>{const r=n=>Math.floor(Math.random()*n);Object.assign(GS,{wall:r(5),floor:r(4),rug:r(4),sofa:r(5),t:r(2),p:r(2),l:r(2),f:r(2),w:r(2)});mkCtl();renderGame()}}
-$('#done').onclick=()=>{const n=GS.t+GS.p+GS.l+GS.f+GS.w,sc=Math.min(100,90+n*2+Math.floor(Math.random()*3));$('#score').textContent='لجنة التحكيم: '+AR(sc)+'٪ — ذوق رفيع يا مهندسة';boom(70);$('#done').style.display='none';ready()};
+$('#yes').onclick=async()=>{$('#q').textContent='صدر الحكم';['#yes','#no','#qs','#toast'].forEach(s=>$(s).style.display='none');ar.style.height='110px';
+ await wait(300);$('#stamp').classList.add('hit');thud();await wait(450);$('#s7').classList.add('shake');boom(140);
+ $('#sg2').textContent='مبروك يا مي — '+DATA.from;$('#sg2').classList.add('show');await wait(1000);boom(90);$('#again').style.display='inline-block'};
+$('#again').onclick=()=>{$('#again').style.display='none';['#yes','#no','#qs','#toast'].forEach(s=>$(s).style.display='');ar.style.height='';$('#toast').textContent='';$('#q').textContent='هل تعرفين أنكِ أشطر محامية بالدنيا؟';
+ $('#stamp').classList.remove('hit');$('#s7').classList.remove('shake');$$('.show,.in').forEach(e=>e.classList.remove('show','in'));$('#env').classList.remove('open');$('#hint').style.display='';$('#rays').classList.remove('on');$('#gt').textContent='';$('#sg2').textContent='';busy=true;go(0)};
+function boom(n){for(let i=0;i<n;i++){const c=document.createElement('i');c.className='cf';c.style.left=Math.random()*100+'vw';c.style.background=['#7a1f2e','#d2ad63','#14213a','#f1e9d8','#d0546a'][i%5];c.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),5000)}}
 /* ---- موسيقى ---- */
 let ac,master,timer,playing=false,step=0;
-const ch=[[220,261.6,329.6],[174.6,220,261.6],[261.6,329.6,392],[196,246.9,293.7]];
+const ch=[[196,246.9,293.7],[164.8,196,246.9],[220,261.6,329.6],[146.8,185,220]];
 function tone(f,t,d,ty,v){const o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.08);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.1)}
-function startMusic(){if(!ac){ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.5;const dl=ac.createDelay(1),fb=ac.createGain(),wet=ac.createGain();dl.delayTime.value=.42;fb.gain.value=.45;wet.gain.value=.5;master.connect(ac.destination);master.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(wet);wet.connect(ac.destination)}
+function thud(){if(!ac||!playing)return;const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(40,t+.2);g.gain.setValueAtTime(.9,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+.35)}
+function startMusic(){if(!ac){ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.5;const dl=ac.createDelay(1),fb=ac.createGain(),wet=ac.createGain();dl.delayTime.value=.45;fb.gain.value=.45;wet.gain.value=.5;master.connect(ac.destination);master.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(wet);wet.connect(ac.destination)}
  ac.resume();playing=true;$('#music').textContent='♪';
- timer=setInterval(()=>{const t=ac.currentTime+.05,c=ch[Math.floor(step/8)%4],n=step%8;if(n===0)c.forEach(f=>tone(f/2,t,4,'sine',.09));tone(c[[0,1,2,1,2,1,0,2][n]]*2,t,1.4,'triangle',.07);if(n%4===0)tone(c[0]*4,t+.25,1.8,'sine',.03);step++},520)}
+ timer=setInterval(()=>{const t=ac.currentTime+.05,c=ch[Math.floor(step/8)%4],n=step%8;if(n===0)c.forEach(f=>tone(f/2,t,4,'sine',.09));tone(c[[0,1,2,1,2,1,0,2][n]]*2,t,1.4,'triangle',.07);if(n%4===0)tone(c[0]*4,t+.25,1.8,'sine',.03);step++},540)}
 function stopMusic(){clearInterval(timer);playing=false;$('#music').textContent='×'}
 $('#music').onclick=()=>playing?stopMusic():startMusic();
 $('#enter').onclick=()=>{startMusic();$('#intro').classList.add('off');busy=true;setTimeout(()=>go(0),600)};

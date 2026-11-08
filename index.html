@@ -1,365 +1,276 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>إلى صفا ✨</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background: radial-gradient(circle, #2a0818 0%, #0f020a 100%);
-      font-family: 'Cairo', serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      color: #fce4ec;
-      user-select: none;
-    }
-    .card {
-      background: rgba(35, 10, 25, 0.92);
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      padding: 40px 20px;
-      border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
-      max-width: 480px;
-      width: 90%;
-      text-align: center;
-      position: relative;
-      backdrop-filter: blur(10px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    h1 {
-      font-family: 'Amiri', serif;
-      color: #d4af37;
-      font-size: 2.1rem;
-      margin-bottom: 20px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    p {
-      color: #f8bbd0;
-      font-size: 1.1rem;
-      line-height: 1.9;
-      margin-bottom: 25px;
-      font-weight: 300;
-    }
-    .funny-status {
-      color: #d4af37;
-      font-size: 0.95rem;
-      font-weight: 600;
-      min-height: 25px;
-      margin-bottom: 10px;
-    }
-    .btn-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      position: relative;
-      min-height: 140px;
-    }
-    button {
-      padding: 12px 30px;
-      font-size: 1.05rem;
-      font-family: 'Cairo', sans-serif;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      letter-spacing: 1px;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .btn-main {
-      background: linear-gradient(45deg, #8a1c4a, #c2185b);
-      color: #ffffff;
-      border: 1px solid #d4af37;
-      box-shadow: 0 4px 15px rgba(194, 24, 91, 0.4);
-      transition: all 0.3s ease;
-      z-index: 2;
-    }
-    .btn-main:hover {
-      background: linear-gradient(45deg, #c2185b, #e91e63);
-      box-shadow: 0 6px 20px rgba(194, 24, 91, 0.6);
-      transform: translateY(-2px);
-    }
-    .btn-no {
-      background: #4a1525;
-      color: #ffffff;
-      border: 2px solid #d4af37;
-      position: absolute;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease-out;
-      z-index: 10;
-    }
-    .hidden {
-      display: none;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    .visible {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .funny-note {
-      font-size: 0.95rem;
-      color: #d4af37;
-      margin-top: 15px;
-      font-style: italic;
-    }
-
-    /* إشعار الآيفون الوهمي */
-    .iphone-notification {
-      position: fixed;
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 400px;
-      background: rgba(40, 20, 35, 0.95);
-      border: 1px solid rgba(212, 175, 55, 0.5);
-      border-radius: 14px;
-      padding: 12px 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      backdrop-filter: blur(15px);
-      z-index: 9999;
-      transition: top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      text-align: right;
-    }
-    .iphone-notification.show {
-      top: 20px;
-    }
-    .notif-header {
-      font-size: 0.75rem;
-      color: #d4af37;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 4px;
-      font-weight: 600;
-    }
-    .notif-body {
-      font-size: 0.9rem;
-      color: #ffffff;
-      line-height: 1.4;
-    }
-
-    /* منطقة البص الملموسة */
-    .fingerprint-box {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-    .fingerprint-btn {
-      font-size: 3rem;
-      background: transparent;
-      border: 2px dashed #d4af37;
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .fingerprint-btn:active {
-      transform: scale(0.9);
-      border-color: #e91e63;
-      background: rgba(233, 30, 99, 0.2);
-    }
-    .stamp-approved {
-      color: #4caf50;
-      font-weight: bold;
-      font-size: 1.2rem;
-      border: 2px solid #4caf50;
-      padding: 5px 15px;
-      border-radius: 8px;
-      display: inline-block;
-      transform: rotate(-5deg);
-      margin-top: 10px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>هدية تخرج لمنار</title>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#efe8dc;--paper2:#e4dac8;--ink:#1d1b17;--mute:#6b6254;--clay:#b8553a;--olive:#55603f;--brass:#b08d4a;--wall:#f6f1e7;--wall2:#e9e0cf;--floor:#d8c9ad;box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#16130f;--paper2:#201b15;--ink:#efe6d6;--mute:#a89d89;--clay:#d77a5c;--olive:#8c9b6c;--brass:#cfa75a;--wall:#2b251d;--wall2:#231e17;--floor:#3a3125}}
+:root[data-theme="dark"]{--paper:#16130f;--paper2:#201b15;--ink:#efe6d6;--mute:#a89d89;--clay:#d77a5c;--olive:#8c9b6c;--brass:#cfa75a;--wall:#2b251d;--wall2:#231e17;--floor:#3a3125}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden}
+body{background:var(--paper);color:var(--ink);font-family:Tajawal,Tahoma,sans-serif;position:relative}
+body::before{content:"";position:fixed;inset:0;z-index:0;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .35 0 0 0 0 .3 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.k{font-family:'Reem Kufi',Tajawal,sans-serif}
+.frame{position:fixed;z-index:6;inset:calc(10px + env(safe-area-inset-top,0px)) 10px calc(10px + env(safe-area-inset-bottom,0px)) 10px;border:1.5px solid var(--ink);pointer-events:none}
+.frame::after{content:"";position:absolute;inset:4px;border:1px solid var(--ink);opacity:.5}
+.tb{position:fixed;z-index:7;inset-inline:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));height:38px;display:grid;grid-template-columns:1fr 1.6fr 1fr;border-top:1.5px solid var(--ink);font-size:12px;background:var(--paper);pointer-events:none}
+.tb div{display:flex;align-items:center;justify-content:center;border-inline-start:1px solid var(--ink);padding:0 6px;text-align:center}
+.tb div:first-child{border:0}
+#stage{position:fixed;inset:0;z-index:2}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(34px + env(safe-area-inset-top,0px)) 24px calc(150px + env(safe-area-inset-bottom,0px));opacity:0;visibility:hidden;transition:opacity .8s,visibility .8s;overflow-y:auto}
+.scene.on{opacity:1;visibility:visible}
+h2{font:700 clamp(30px,8vw,48px) 'Reem Kufi';margin-bottom:20px;display:flex;align-items:baseline;gap:12px;justify-content:center}
+h2 b{font-size:.8em;color:transparent;-webkit-text-stroke:1.2px var(--clay)}
+.note{font:500 13px Tajawal;letter-spacing:3px;color:var(--clay);border:1px solid var(--clay);padding:4px 14px;border-radius:2px;margin-bottom:22px}
+.type{font:700 clamp(26px,7vw,42px)/1.9 'Reem Kufi';max-width:620px;min-height:2em}
+.type::after{content:"|";color:var(--clay);animation:bl .8s infinite}
+.type.done::after{content:""}
+@keyframes bl{50%{opacity:0}}
+#room{width:min(430px,94vw);height:auto;overflow:visible}
+#room .pc{opacity:0;transform-box:fill-box}
+#room.go .pc{animation:drop .8s cubic-bezier(.2,1.3,.4,1) forwards;animation-delay:calc(var(--i)*.3s)}
+@keyframes drop{from{opacity:0;transform:translateY(-34px)}to{opacity:1;transform:none}}
+#glow{animation:gl 3s ease-in-out infinite}
+@keyframes gl{50%{opacity:.35}}
+.nm{font:700 clamp(84px,26vw,170px)/1 'Reem Kufi';color:var(--ink);clip-path:inset(0 0 0 100%);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1);margin-top:2px}
+.nm.show{clip-path:inset(0)}
+.nm em{font-style:normal;color:var(--clay)}
+.sub{font:500 clamp(15px,4vw,19px) Tajawal;color:var(--mute);letter-spacing:1px;opacity:0;transition:opacity 1s;margin-top:4px}
+.sub.show{opacity:1}
+.sw{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%;max-width:440px}
+.s{background:#fbf8f1;color:#1d1b17;padding:8px 8px 10px;box-shadow:0 10px 24px rgba(0,0,0,.22);opacity:0;transform:translateY(60px) rotate(var(--r));transition:all .9s cubic-bezier(.2,1.2,.3,1);position:relative}
+.s.show{opacity:1;transform:rotate(var(--r))}
+.s::before{content:"";position:absolute;top:-8px;left:50%;width:14px;height:14px;border-radius:50%;background:var(--clay);box-shadow:0 2px 4px rgba(0,0,0,.4);transform:translateX(-50%)}
+.s i{display:block;height:86px}
+.s h3{font:700 19px 'Reem Kufi';margin-top:8px}
+.s p{font-size:13px;color:#6b6254;line-height:1.5}
+.rows{width:100%;max-width:500px;text-align:start}
+.r{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--ink);opacity:0;transform:translateX(70px);transition:all .8s cubic-bezier(.2,.9,.3,1)}
+.r.show{opacity:1;transform:none}
+.r b{font:700 52px 'Reem Kufi';color:transparent;-webkit-text-stroke:1.3px var(--clay);min-width:70px;text-align:center}
+.r small{color:var(--clay);font-weight:700;letter-spacing:1px}
+.r h3{font:700 22px 'Reem Kufi'}
+.r p{color:var(--mute);font-size:15px;line-height:1.6}
+.paper{background:#fbf8f1;color:#2a2620;max-width:540px;width:100%;padding:26px 24px 20px;box-shadow:0 18px 40px rgba(0,0,0,.28);text-align:start;transform:rotate(-1deg);background-image:repeating-linear-gradient(transparent 0 35px,rgba(184,85,58,.18) 35px 36px)}
+.paper .type{font:400 clamp(20px,5.2vw,25px)/36px 'Aref Ruqaa';min-height:11em;color:#2a2620}
+.sign{font:700 38px 'Aref Ruqaa';color:var(--clay);text-align:end;clip-path:inset(0 0 0 100%);transition:clip-path 1.6s ease;margin-top:6px}
+.sign.show{clip-path:inset(0)}
+.btn{padding:13px 32px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);font:700 17px 'Reem Kufi';cursor:pointer;letter-spacing:1px;transition:.25s}
+.btn:active{transform:scale(.95)}
+.btn.clay{background:var(--clay);border-color:var(--clay);color:#fff}
+#next{position:fixed;z-index:9;left:50%;bottom:calc(66px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;visibility:hidden;transition:.5s}
+#next.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+#music{position:fixed;z-index:9;top:calc(20px + env(safe-area-inset-top,0px));inset-inline-start:20px;width:40px;height:40px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);font-size:17px;cursor:pointer}
+#dots{position:fixed;z-index:9;top:calc(26px + env(safe-area-inset-top,0px));inset-inline:70px;display:flex;gap:6px}
+#dots i{flex:1;height:3px;background:var(--ink);opacity:.18;transition:.5s}
+#dots i.on{background:var(--clay);opacity:1}
+.arena{position:relative;width:100%;max-width:400px;height:230px;margin-top:10px}
+.arena .btn{position:absolute}
+#yes{top:10px;inset-inline-start:calc(50% - 105px);width:210px}
+#no{top:130px;inset-inline-start:calc(50% - 32px);background:transparent;color:var(--mute);border-color:var(--mute);transition:inset .25s,top .25s}
+.stamp{position:absolute;z-index:5;border:5px double var(--clay);color:var(--clay);padding:10px 26px;font:700 clamp(44px,13vw,70px)/1.2 'Reem Kufi';text-align:center;transform:rotate(-11deg) scale(3);opacity:0;pointer-events:none;background:color-mix(in srgb,var(--paper) 70%,transparent)}
+.stamp small{display:block;font:500 15px Tajawal;letter-spacing:2px}
+.stamp.hit{animation:hit .5s cubic-bezier(.2,2,.4,1) forwards}
+@keyframes hit{to{opacity:.95;transform:rotate(-11deg) scale(1)}}
+.shake{animation:shk .35s}
+@keyframes shk{25%{transform:translate(6px,4px)}50%{transform:translate(-6px,-3px)}75%{transform:translate(3px,-4px)}}
+.curtain{position:fixed;inset:0;z-index:40;background:var(--clay);opacity:0;clip-path:circle(0% at 50% 90%);pointer-events:none}
+.curtain.sweep{animation:wipe 1.4s}
+@keyframes wipe{0%{clip-path:circle(0% at 50% 90%);opacity:1}45%{clip-path:circle(150% at 50% 90%);opacity:1}100%{clip-path:circle(150% at 50% 90%);opacity:0}}
+#intro{position:fixed;inset:0;z-index:100;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;transition:opacity 1s,visibility 1s}
+#intro.off{opacity:0;visibility:hidden}
+#intro .cv{font:500 13px Tajawal;letter-spacing:4px;color:var(--clay)}
+#intro h1{font:700 clamp(96px,30vw,200px)/1.05 'Reem Kufi';margin:10px 0}
+#intro p{color:var(--mute);margin-bottom:28px;line-height:1.9}
+#intro svg{width:120px;margin-bottom:6px}
+#intro path{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 2.4s .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cf{position:fixed;top:-20px;width:9px;height:15px;z-index:60;pointer-events:none;animation:fall 3.2s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+#gift{width:min(260px,70vw);cursor:pointer;overflow:visible;-webkit-tap-highlight-color:transparent;animation:wob 2.2s ease-in-out infinite;position:relative;z-index:2}
+#gift .lid{transition:transform 1s cubic-bezier(.3,1.5,.5,1),opacity 1s;transform-box:fill-box;transform-origin:center}
+#gift.open{animation:none}
+#gift.open .lid{transform:translateY(-130px) rotate(-22deg);opacity:0}
+@keyframes wob{0%,40%,100%{transform:rotate(0)}10%{transform:rotate(-4deg)}20%{transform:rotate(4deg)}30%{transform:rotate(-2deg)}}
+.rays{position:absolute;inset:0;margin:auto;width:140vmax;height:140vmax;border-radius:50%;background:repeating-conic-gradient(var(--brass) 0 6deg,transparent 6deg 18deg);opacity:0;pointer-events:none;-webkit-mask-image:radial-gradient(circle,#000,transparent 55%);mask-image:radial-gradient(circle,#000,transparent 55%)}
+.rays.on{animation:rays 2.4s ease-out forwards}
+@keyframes rays{0%{opacity:.65;transform:scale(0) rotate(0)}100%{opacity:0;transform:scale(1) rotate(60deg)}}
+.hint{margin-top:18px;color:var(--mute);font-size:18px;animation:bl 1.4s infinite}
+.gm{display:flex;flex-direction:column;align-items:center;width:100%;max-width:440px}
+#gr{width:min(370px,86vw);height:auto;overflow:visible}
+.bump{animation:bump .35s}
+@keyframes bump{50%{transform:scale(1.035)}}
+.ctl{width:100%;margin-top:6px}
+.row{display:flex;align-items:center;gap:9px;justify-content:center;margin:7px 0;flex-wrap:wrap}
+.row span{font:700 14px 'Reem Kufi';min-width:58px;text-align:start}
+.dot{width:30px;height:30px;border-radius:50%;border:2px solid var(--ink);cursor:pointer;padding:0;transition:transform .2s}
+.dot.on{transform:scale(1.25);box-shadow:0 0 0 3px var(--clay)}
+.tg{padding:7px 14px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font:700 14px 'Reem Kufi';cursor:pointer}
+.tg.on{background:var(--ink);color:var(--paper)}
+#score{font:700 21px 'Reem Kufi';color:var(--clay);min-height:1.5em;margin-top:10px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
+</style>
 </head>
 <body>
+<div class="frame"></div>
+<div class="tb"><div id="tb1"></div><div>هدية التخرج · إلى منار</div><div>من: أحمد</div></div>
+<div class="curtain" id="curtain"></div>
 
-  <!-- إشعار الآيفون -->
-  <div id="iphoneNotif" class="iphone-notification">
-    <div class="notif-header">
-      <span>💬 iMessage</span>
-      <span>الآن</span>
-    </div>
-    <div class="notif-body">
-      <strong>القلب:</strong> تم قفل خيار التراجع بنجاح! لا توجد استردادات ولا استبدال 🔒❤️
-    </div>
+<div id="intro">
+  <svg viewBox="0 0 120 70" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"><path d="M10 66V30A50 50 0 0 1 110 30V66M4 66H116M30 66V36A30 30 0 0 1 90 36V66"/></svg>
+  <div class="cv">هدية التخرج</div>
+  <h1>منار</h1>
+  <p>إلى مهندسة التصميم الداخلي<br>هدية من أحمد</p>
+  <button class="btn clay" id="enter">ابدأي</button>
+</div>
+
+<div id="dots"></div>
+<button id="music" aria-label="الموسيقى">♪</button>
+<button class="btn" id="next">التالي ←</button>
+
+<div id="stage">
+  <div class="scene" id="s0" style="overflow:hidden"><div class="rays" id="rays"></div>
+    <svg id="gift" viewBox="0 0 200 200"><g><rect x="35" y="95" width="130" height="90" fill="var(--clay)" stroke="var(--ink)" stroke-width="2"/><rect x="90" y="95" width="20" height="90" fill="var(--brass)" stroke="var(--ink)" stroke-width="2"/></g><g class="lid"><rect x="28" y="68" width="144" height="30" fill="#c9694c" stroke="var(--ink)" stroke-width="2"/><rect x="90" y="68" width="20" height="30" fill="var(--brass)" stroke="var(--ink)" stroke-width="2"/><path d="M100 68C80 30 50 40 70 62C80 70 100 68 100 68ZM100 68C120 30 150 40 130 62C120 70 100 68 100 68Z" fill="var(--brass)" stroke="var(--ink)" stroke-width="2"/></g></svg>
+    <div class="hint" id="hint">اضغطي على الهدية</div><div class="type" id="gt" style="min-height:0;font-size:26px"></div></div>
+
+  <div class="scene" id="s1"><div class="note">ملاحظات المصمم</div><div class="type" id="t1"></div></div>
+
+  <div class="scene" id="s2">
+    <svg id="room" viewBox="0 -20 400 310"></svg>
+    <div class="nm" id="nm">م<em>ن</em>ار</div>
+    <div class="sub" id="sb">مهندسة التصميم الداخلي · مبروك التخرج</div>
   </div>
 
-  <!-- المرحلة 1 -->
-  <div id="step1" class="card visible">
-    <h1>يا صفا... ✨</h1>
-    <p>بدون أي مقدمات أو مناسبة، أردت أن أذكركِ بأنكِ أجمل شيء حدث في حياتي...</p>
-    <button class="btn-main" onclick="nextStep(2)">افتحي الرسالة</button>
+  <div class="scene" id="s3"><h2><b>٠٤</b>لوحة الخامات</h2><div class="sw" id="sw"></div></div>
+
+  <div class="scene" id="s4"><h2><b>٠٥</b>مراجعات التصميم</h2><div class="rows" id="rw"></div></div>
+
+  <div class="scene" id="sg6" style="justify-content:flex-start;padding-top:calc(58px + env(safe-area-inset-top,0px))">
+    <h2 style="margin-bottom:4px"><b>٠٦</b>صمّمي غرفتكِ</h2>
+    <p style="color:var(--mute);font-size:14px;margin-bottom:4px">غيّري الألوان وأضيفي القطع على كيفكِ</p>
+    <div class="gm"><svg id="gr" viewBox="0 -20 400 310"></svg><div class="ctl" id="ctl"></div><button class="btn clay" id="done" style="margin-top:10px">تسليم التصميم</button><div id="score"></div></div></div>
+
+  <div class="scene" id="s5"><h2><b>٠٧</b>رسالة</h2><div class="paper"><div class="type" id="t5"></div><div class="sign" id="sg"></div></div></div>
+
+  <div class="scene" id="s6" style="position:absolute">
+    <h2 style="display:block;font-size:clamp(28px,7vw,42px)" id="q">هل تعرفين أنكِ فخر العائلة؟</h2>
+    <p id="qs" style="color:var(--mute)">جاوبي بصراحة… (زر «لا» خجول شوية)</p>
+    <div class="arena" id="arena"><button class="btn clay" id="yes">طبعاً أعرف</button><button class="btn" id="no">لا</button></div>
+    <div class="stamp" id="stamp">معتمد<small>مبروك التخرج · ٢٠٢٦</small></div>
+    <div class="sign" id="sg2" style="font-size:44px;margin-top:150px;position:relative"></div>
+    <button class="btn" id="again" style="display:none;position:relative;margin-top:20px">من البداية</button>
   </div>
+</div>
 
-  <!-- المرحلة 2 -->
-  <div id="step2" class="card hidden">
-    <h1>نعمة وجودكِ</h1>
-    <p>معكِ عرفت كيف تكون الحياة دافئة ومليئة بالحب، أنتِ لستِ مجرد حبيبة، أنتِ راحتي وأجمل أملاكي...</p>
-    <button class="btn-main" onclick="nextStep(3)">متابعة</button>
-  </div>
-
-  <!-- المرحلة 3 -->
-  <div id="step3" class="card hidden">
-    <h1>حقائق لا تُنكر</h1>
-    <p>وجودكِ يغير نبرة اليوم بالكامل، وأنتِ الشخص الوحيد الذي لا أملّ من الحديث معه أبداً...</p>
-    <button class="btn-main" onclick="nextStep(4)">متابعة</button>
-  </div>
-
-  <!-- المرحلة 4 -->
-  <div id="step4" class="card hidden">
-    <h1>سؤال يحدد المصير!</h1>
-    <p>وصلنا للنقطة الحاسمة، والموضوع يحتاج اعتراف صريح منكِ الآن...</p>
-    <button class="btn-main" onclick="nextStep(5)">جاهزة؟</button>
-  </div>
-
-  <!-- المرحلة 5: السؤال والزر الهارب -->
-  <div id="step5" class="card hidden">
-    <h1>يا صفا... تحبيني قدر ما أحبكِ؟</h1>
-    <p>المجال مفتوح للاعتراف الصريح فقط!</p>
-    <div id="funnyStatus" class="funny-status"></div>
-    <div class="btn-container" id="container5">
-      <button class="btn-main" onclick="acceptLove()">أحبك جداً وأكثر!</button>
-      <button id="runawayBtn" class="btn-no" 
-              onmouseover="moveButton(event)" 
-              ontouchstart="moveButton(event)" 
-              onclick="moveButton(event)">لا، مستحيل أحبك</button>
-    </div>
-  </div>
-
-  <!-- المرحلة 6: النهاية + الختم بالبصمة -->
-  <div id="step6" class="card hidden">
-    <h1>أعظم وأذكاش خيار! 🎉✨</h1>
-    <p>كنت أعرف أنكِ ستحبينني، أصلاً ما كان عندكِ خيار ثاني!</p>
-    <p>أحبكِ جداً يا صفا، وأتمنى أن تبقي في حياتي دائماً وأبداً ❤️</p>
-    
-    <!-- قسم البصمة الملموسة -->
-    <div class="fingerprint-box" id="fpSection">
-      <p style="font-size: 0.9rem; margin-bottom: 5px; color: #d4af37;">اضغطي مطولاً بالبصمة لتأكيد العقد مدى الحياة: 👆</p>
-      <div class="fingerprint-btn" id="fpBtn" 
-           onmousedown="startFingerprint()" 
-           onmouseup="cancelFingerprint()" 
-           ontouchstart="startFingerprint()" 
-           ontouchend="cancelFingerprint()">🖕🏻</div>
-      <span id="fpStatus" style="font-size: 0.8rem; color: #aaa;">اضغطي لمدة ثانيتين...</span>
-    </div>
-
-    <p class="funny-note" id="funnyFinalNote">(ملاحظة: زر "لا" تعب وهو ينهرب بالموبايل، تحية لإصراركِ الفاشل!)</p>
-  </div>
-
-  <script>
-    let escapeCount = 0;
-    let fpTimer = null;
-
-    const funnyTexts = [
-      "عفواً، وين رايحة باللمس؟ 😂",
-      "الزر هرب منكِ خلاص!",
-      "لا تحاولين، زر لا ديكور بس!",
-      "المحاولة رقم {c}: صفا ترة مصختيها! 😜",
-      "FaceID: تم كشف المحاولة الفاشلة رقم {c}!"
-    ];
-
-    function triggerVibration(pattern) {
-      if (navigator.vibrate) {
-        navigator.vibrate(pattern);
-      }
-    }
-
-    function nextStep(stepNumber) {
-      triggerVibration(40);
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        card.classList.remove('visible');
-        card.classList.add('hidden');
-      });
-
-      const nextCard = document.getElementById('step' + stepNumber);
-      nextCard.classList.remove('hidden');
-      setTimeout(() => {
-        nextCard.classList.add('visible');
-      }, 50);
-    }
-
-    function acceptLove() {
-      triggerVibration([100, 50, 100]);
-      alert("⚠️ تنبيه النظام:\nتم تسجيل الاعتراف بنجاح، ولا يمكن التراجع أو التعديل نهائياً! الضمان يسري لمدى الحياة ❤️");
-      
-      nextStep(6);
-
-      setTimeout(() => {
-        const notif = document.getElementById('iphoneNotif');
-        notif.classList.add('show');
-        triggerVibration([80, 40, 80]);
-        
-        setTimeout(() => {
-          notif.classList.remove('show');
-        }, 5000);
-      }, 500);
-    }
-
-    function moveButton(e) {
-      if (e) e.preventDefault();
-      escapeCount++;
-      triggerVibration(60);
-      
-      const btn = document.getElementById('runawayBtn');
-      const container = document.getElementById('container5');
-      const status = document.getElementById('funnyStatus');
-      
-      const cWidth = container.clientWidth;
-      const cHeight = container.clientHeight;
-      const bWidth = btn.offsetWidth;
-      const bHeight = btn.offsetHeight;
-      
-      const newX = Math.floor(Math.random() * (cWidth - bWidth));
-      const newY = Math.floor(Math.random() * (cHeight - bHeight));
-      
-      btn.style.left = newX + 'px';
-      btn.style.top = newY + 'px';
-
-      const randomIndex = Math.floor(Math.random() * funnyTexts.length);
-      let text = funnyTexts[randomIndex].replace('{c}', escapeCount);
-      status.innerText = text;
-    }
-
-    // تفاعل البصمة الملموسة
-    function startFingerprint() {
-      triggerVibration([50, 50, 50, 50, 50]);
-      document.getElementById('fpStatus').innerText = "جاري الفحص بالبصمة... ⏳";
-      
-      fpTimer = setTimeout(() => {
-        triggerVibration([150, 80, 150]);
-        document.getElementById('fpSection').innerHTML = `
-          <div class="stamp-approved">تم الختم بالبصمة بنجاح ✍️❤️</div>
-          <p style="font-size: 0.85rem; color: #4caf50; margin-top:5px;">العقد نافذ مدى الحياة!</p>
-        `;
-      }, 2000);
-    }
-
-    function cancelFingerprint() {
-      if (fpTimer) {
-        clearTimeout(fpTimer);
-        document.getElementById('fpStatus').innerText = "فشلت البصمة! اضغطي باستمرار بدون رفعة إيد 😜";
-      }
-    }
-  </script>
+<script>
+/* ======= عدّلي النصوص من هنا ======= */
+const DATA={
+  intro:["قبل أربع سنوات…","كانت خطوط على ورقة بيضاء","واليوم صارت بيوتاً تشبه أصحابها."],
+  swatches:[["رخام","نجاح ثابت","يبقى جميلاً مهما مرّ الزمن","linear-gradient(115deg,transparent 40%,rgba(120,120,120,.25) 41% 42%,transparent 43%),linear-gradient(135deg,#f4f1ea,#d8d2c6)","-2deg"],
+            ["بلوط","بدايات دافئة","جذور قوية وبيت مليان حب","repeating-linear-gradient(90deg,#b8905a 0 7px,#a77f4b 7px 10px,#c09a66 10px 15px)","2deg"],
+            ["مخمل","سعادة ناعمة","فرح يلفّ قلبكِ كل يوم","radial-gradient(circle at 30% 30%,#d4694b,#8e3a24)","1.5deg"],
+            ["نحاس","طموح يلمع","كل حلم يتحقق بإذن الله","linear-gradient(120deg,#8a6a2c,#e3c680 45%,#8a6a2c)","-1.5deg"]],
+  years:[["١","الخط الأول","بدأتِ بقلم رصاص وحلم كبير."],["٢","المقياس","تعلمتِ إن التفاصيل الصغيرة تصنع الفرق."],["٣","الضوء","سهرتِ الليالي حتى صار لتصاميمكِ روح."],["٤","التسليم","واليوم تسلّمين أجمل مشروع: نفسكِ يا مهندسة."]],
+  letter:"مبروك يا منار! اليوم نحتفل بكِ وبكل لحظة تعب وإصرار وصلت بكِ لهذا اليوم. كل مساحة ستصممينها ستشبهكِ: راقية، دافئة، ومليئة بالروح. نحن فخورون بكِ جداً، وتستاهلين كل الفرح.",
+  from:"أحمد"
+};
+/* ================================== */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],wait=ms=>new Promise(r=>setTimeout(r,ms));
+const scenes=$$('.scene'),AR=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);let cur=-1,busy=false;
+$('#dots').innerHTML=scenes.map(()=>'<i></i>').join('');
+/* ---- الغرفة (إيزومتريك) ---- */
+const iso=(x,y,z)=>[200+(x-y)*20,110+(x+y)*10-z],pt=a=>a.map(p=>p.join(',')).join(' ');
+const pl=(a,f)=>`<polygon points="${pt(a)}" fill="${f}" stroke="var(--ink)" stroke-width="1.2" stroke-linejoin="round"/>`;
+const bx=(x,y,z,w,d,h,c)=>`<g class="pc">${pl([iso(x,y+d,z),iso(x+w,y+d,z),iso(x+w,y+d,z+h),iso(x,y+d,z+h)],c[1])}${pl([iso(x+w,y,z),iso(x+w,y+d,z),iso(x+w,y+d,z+h),iso(x+w,y,z+h)],c[2])}${pl([iso(x,y,z+h),iso(x+w,y,z+h),iso(x+w,y+d,z+h),iso(x,y+d,z+h)],c[0])}</g>`;
+const g=(s)=>`<g class="pc">${s}</g>`;
+const clay=['#c9694c','#9c4429','#b04f33'],oak=['#d1ad74','#9d7b45','#b8935a'],olv=['#6c7a52','#4a5536','#586641'],cream=['#fbefc8','#e8d49a','#f2e1ac'];
+$('#room').innerHTML=`<defs><radialGradient id="gw"><stop offset="0" stop-color="#ffd98a" stop-opacity=".85"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient></defs>`+
+ g(pl([iso(0,0,0),iso(8,0,0),iso(8,8,0),iso(0,8,0)],'var(--floor)'))+
+ g(pl([iso(0,0,0),iso(0,8,0),iso(0,8,120),iso(0,0,120)],'var(--wall2)'))+
+ g(pl([iso(0,0,0),iso(8,0,0),iso(8,0,120),iso(0,0,120)],'var(--wall)'))+
+ g(pl([iso(0,2.4,56),iso(0,5.6,56),iso(0,5.6,102),iso(0,2.4,102)],'#cfe0e0')+`<path d="M${pt([iso(0,4,56),iso(0,4,102)])}M${pt([iso(0,2.4,79),iso(0,5.6,79)])}" stroke="var(--ink)" stroke-width="1.2" fill="none"/>`)+
+ g(pl([iso(3,0,56),iso(6.4,0,56),iso(6.4,0,100),iso(3,0,100)],'#fbf8f1')+pl([iso(3.5,0,62),iso(5.9,0,62),iso(5.9,0,94),iso(3.5,0,94)],'#55603f')+`<circle cx="${iso(4.7,0,80)[0]}" cy="${iso(4.7,0,80)[1]}" r="9" fill="#b8553a" stroke="var(--ink)" stroke-width="1.2"/>`)+
+ g(pl([iso(2.4,1.8,.4),iso(7.2,1.8,.4),iso(7.2,7,.4),iso(2.4,7,.4)],'#b8553a').replace('stroke-width="1.2"','stroke-width="1.2" opacity=".85"'))+
+ bx(.3,2.2,0,.9,3.8,34,clay)+bx(.3,2.2,0,2.4,3.8,15,clay)+bx(.3,2.2,12,2.4,.7,12,clay)+bx(.3,5.3,12,2.4,.7,12,clay)+
+ bx(4.4,3.6,0,2,2,10,oak)+
+ bx(6.6,.4,0,1.1,1.1,13,olv)+
+ g(['M318 164C300 140 296 118 306 100','M318 164C328 136 340 118 336 98','M318 164C316 132 312 110 318 86','M318 164C296 150 282 138 280 122','M318 164C340 152 352 140 354 124'].map(d=>`<path d="${d}" fill="none" stroke="#4a6a35" stroke-width="7" stroke-linecap="round"/>`).join(''))+
+ g(`<line x1="196" y1="128" x2="196" y2="30" stroke="var(--ink)" stroke-width="2.5"/><circle id="glow" cx="196" cy="22" r="44" fill="url(#gw)"/>`)+bx(.2,.5,84,1.2,1.2,18,cream);
+const parts=$$('#room > g');parts.forEach((e,i)=>e.style.setProperty('--i',i));
+/* ---- المشاهد ---- */
+async function type(el,t,sp=55){el.classList.remove('done');el.textContent='';for(const c of t){el.textContent+=c;await wait(sp)}el.classList.add('done')}
+function ready(auto){const n=$('#next');n.classList.add('show');busy=false;if(auto){const m=cur;setTimeout(()=>{if(cur===m)next()},auto)}}
+async function next(){if(busy)return;busy=true;$('#next').classList.remove('show');go(cur+1)}
+async function go(i){
+  const c=$('#curtain');c.classList.remove('sweep');void c.offsetWidth;c.classList.add('sweep');await wait(650);
+  if(scenes[cur])scenes[cur].classList.remove('on');
+  cur=i;scenes[i].scrollTop=0;scenes[i].classList.add('on');
+  $$('#dots i').forEach((d,k)=>d.classList.toggle('on',k<=i));
+  $('#tb1').textContent='لوحة '+AR(i+1)+' / '+AR(scenes.length);
+  await wait(450);run[i]()}
+const run=[
+ async()=>{busy=true;const gf=$('#gift');gf.onclick=async()=>{if(gf.classList.contains('open'))return;gf.classList.add('open');$('#hint').style.display='none';$('#rays').classList.add('on');boom(110);await wait(900);await type($('#gt'),'هدية صغيرة من أحمد إلى منار…',60);await wait(1400);busy=false;next()}},
+ async()=>{for(const l of DATA.intro){await type($('#t1'),l,65);await wait(900)}ready(700)},
+ async()=>{$('#room').classList.add('go');await wait(parts.length*300+900);$('#nm').classList.add('show');await wait(1500);$('#sb').classList.add('show');boom(40);await wait(1000);ready()},
+ async()=>{$('#sw').innerHTML=DATA.swatches.map(s=>`<div class="s" style="--r:${s[4]}"><i style="background:${s[3]}"></i><h3>${s[0]} · ${s[1]}</h3><p>${s[2]}</p></div>`).join('');
+   for(const e of $$('.s')){await wait(450);e.classList.add('show')}await wait(1200);ready()},
+ async()=>{$('#rw').innerHTML=DATA.years.map(y=>`<div class="r"><b>٠${y[0]}</b><div><small>مراجعة ${y[0]}</small><h3>${y[1]}</h3><p>${y[2]}</p></div></div>`).join('');
+   for(const e of $$('.r')){await wait(450);e.classList.add('show');await wait(1100)}ready()},
+ async()=>{busy=true;$('#done').style.display='';$('#score').textContent='';mkCtl();renderGame()},
+ async()=>{await type($('#t5'),DATA.letter,42);$('#sg').textContent=DATA.from;$('#sg').classList.add('show');await wait(1800);ready()},
+ async()=>{busy=true}
+];
+$('#next').onclick=next;
+/* ---- الزر الهارب + الختم ---- */
+const no=$('#no'),ar=$('#arena');
+function flee(){no.style.insetInlineStart=Math.random()*(ar.clientWidth-no.offsetWidth)+'px';no.style.top=Math.random()*(ar.clientHeight-no.offsetHeight)+'px'}
+no.addEventListener('mouseenter',flee);no.addEventListener('click',flee);
+no.addEventListener('touchstart',e=>{e.preventDefault();flee()},{passive:false});
+document.addEventListener('mousemove',e=>{const r=no.getBoundingClientRect();if(no.offsetParent&&Math.hypot(e.clientX-(r.left+r.width/2),e.clientY-(r.top+r.height/2))<90)flee()});
+$('#yes').onclick=async()=>{
+  $('#q').textContent='تمّ الاعتماد';['#yes','#no','#qs'].forEach(s=>$(s).style.display='none');ar.style.height='120px';
+  await wait(300);$('#stamp').classList.add('hit');await wait(450);$('#s6').classList.add('shake');boom(140);
+  $('#sg2').textContent='مبروك يا منار — '+DATA.from;$('#sg2').classList.add('show');
+  await wait(1000);boom(90);$('#again').style.display='inline-block'};
+$('#again').onclick=()=>{$('#again').style.display='none';['#yes','#no','#qs'].forEach(s=>$(s).style.display='');ar.style.height='';$('#q').textContent='هل تعرفين أنكِ فخر العائلة؟';
+  $('#stamp').classList.remove('hit');$('#gift').classList.remove('open');$('#hint').style.display='';$('#rays').classList.remove('on');$('#gt').textContent='';$('#s6').classList.remove('shake');$$('.show').forEach(e=>e.classList.remove('show'));$('#room').classList.remove('go');$('#sg2').textContent='';busy=true;go(0)};
+function boom(n){for(let i=0;i<n;i++){const c=document.createElement('i');c.className='cf';c.style.left=Math.random()*100+'vw';c.style.background=['#b8553a','#b08d4a','#55603f','#efe8dc','#d77a5c'][i%5];c.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),5000)}}
+/* ---- لعبة التصميم الداخلي ---- */
+const GP={wall:[['#f6f1e7','#e9e0cf'],['#c9d3b8','#b3bf9f'],['#f1d3cb','#e2bcb2'],['#c8d8e4','#b2c6d6'],['#5a5144','#463f34']],floor:['#d8c9ad','#9a7650','#e6e2da','#a9a59c'],rug:['#b8553a','#55603f','#3f5873','#b08d4a'],sofa:[clay,['#6c7a52','#4a5536','#586641'],['#4a6a8a','#34495e','#3f5873'],['#d9a93c','#a97f21','#c2922b'],['#e3a9a0','#b9786f','#cf9189']]};
+const GS={wall:0,floor:0,rug:0,sofa:0,t:0,p:0,l:0,f:0,w:0};
+function renderGame(){
+ const wl=GP.wall[GS.wall],S=GP.sofa[GS.sofa],gr=$('#gr');
+ const leaf=['M318 164C300 140 296 118 306 100','M318 164C328 136 340 118 336 98','M318 164C316 132 312 110 318 86','M318 164C296 150 282 138 280 122','M318 164C340 152 352 140 354 124'].map(d=>`<path d='${d}' fill='none' stroke='#4a6a35' stroke-width='7' stroke-linecap='round'/>`).join('');
+ gr.innerHTML=`<defs><radialGradient id='gw2'><stop offset='0' stop-color='#ffd98a' stop-opacity='.85'/><stop offset='1' stop-color='#ffd98a' stop-opacity='0'/></radialGradient></defs>`+
+  pl([iso(0,0,0),iso(8,0,0),iso(8,8,0),iso(0,8,0)],GP.floor[GS.floor])+pl([iso(0,0,0),iso(0,8,0),iso(0,8,120),iso(0,0,120)],wl[1])+pl([iso(0,0,0),iso(8,0,0),iso(8,0,120),iso(0,0,120)],wl[0])+
+  (GS.w?pl([iso(0,2.4,56),iso(0,5.6,56),iso(0,5.6,102),iso(0,2.4,102)],'#cfe0e0')+`<path d='M${pt([iso(0,4,56),iso(0,4,102)])}M${pt([iso(0,2.4,79),iso(0,5.6,79)])}' stroke='var(--ink)' stroke-width='1.2' fill='none'/>`:'')+
+  (GS.f?pl([iso(3,0,56),iso(6.4,0,56),iso(6.4,0,100),iso(3,0,100)],'#fbf8f1')+pl([iso(3.5,0,62),iso(5.9,0,62),iso(5.9,0,94),iso(3.5,0,94)],'#55603f')+`<circle cx='${iso(4.7,0,80)[0]}' cy='${iso(4.7,0,80)[1]}' r='9' fill='#b8553a' stroke='var(--ink)' stroke-width='1.2'/>`:'')+
+  pl([iso(2.4,1.8,.4),iso(7.2,1.8,.4),iso(7.2,7,.4),iso(2.4,7,.4)],GP.rug[GS.rug])+
+  bx(.3,2.2,0,.9,3.8,34,S)+bx(.3,2.2,0,2.4,3.8,15,S)+bx(.3,2.2,12,2.4,.7,12,S)+bx(.3,5.3,12,2.4,.7,12,S)+
+  (GS.t?bx(4.4,3.6,0,2,2,10,oak):'')+(GS.p?bx(6.6,.4,0,1.1,1.1,13,olv)+leaf:'')+
+  (GS.l?`<line x1='196' y1='128' x2='196' y2='30' stroke='var(--ink)' stroke-width='2.5'/><circle cx='196' cy='22' r='44' fill='url(#gw2)'/>`+bx(.2,.5,84,1.2,1.2,18,cream):'');
+ gr.classList.remove('bump');void gr.getBoundingClientRect();gr.classList.add('bump')}
+function mkCtl(){
+ const rows=[['الجدران','wall',GP.wall.map(w=>w[0])],['الأرضية','floor',GP.floor],['السجادة','rug',GP.rug],['الكنبة','sofa',GP.sofa.map(s=>s[0])]];
+ $('#ctl').innerHTML=rows.map(r=>`<div class='row'><span>${r[0]}</span>${r[2].map((c,i)=>`<button class='dot${GS[r[1]]===i?' on':''}' data-k='${r[1]}' data-v='${i}' style='background:${c}'></button>`).join('')}</div>`).join('')+
+  `<div class='row'>${[['t','طاولة'],['p','نبتة'],['l','لمبة'],['f','لوحة'],['w','شباك']].map(t=>`<button class='tg${GS[t[0]]?' on':''}' data-t='${t[0]}'>${t[1]}</button>`).join('')}<button class='tg' id='rnd'>عشوائي</button></div>`;
+ $$('#ctl .dot').forEach(b=>b.onclick=()=>{GS[b.dataset.k]=+b.dataset.v;mkCtl();renderGame()});
+ $$('#ctl [data-t]').forEach(b=>b.onclick=()=>{GS[b.dataset.t]^=1;mkCtl();renderGame()});
+ $('#rnd').onclick=()=>{const r=n=>Math.floor(Math.random()*n);Object.assign(GS,{wall:r(5),floor:r(4),rug:r(4),sofa:r(5),t:r(2),p:r(2),l:r(2),f:r(2),w:r(2)});mkCtl();renderGame()}}
+$('#done').onclick=()=>{const n=GS.t+GS.p+GS.l+GS.f+GS.w,sc=Math.min(100,90+n*2+Math.floor(Math.random()*3));$('#score').textContent='لجنة التحكيم: '+AR(sc)+'٪ — ذوق رفيع يا مهندسة';boom(70);$('#done').style.display='none';ready()};
+/* ---- موسيقى ---- */
+let ac,master,timer,playing=false,step=0;
+const ch=[[220,261.6,329.6],[174.6,220,261.6],[261.6,329.6,392],[196,246.9,293.7]];
+function tone(f,t,d,ty,v){const o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.08);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.1)}
+function startMusic(){if(!ac){ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.5;const dl=ac.createDelay(1),fb=ac.createGain(),wet=ac.createGain();dl.delayTime.value=.42;fb.gain.value=.45;wet.gain.value=.5;master.connect(ac.destination);master.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(wet);wet.connect(ac.destination)}
+ ac.resume();playing=true;$('#music').textContent='♪';
+ timer=setInterval(()=>{const t=ac.currentTime+.05,c=ch[Math.floor(step/8)%4],n=step%8;if(n===0)c.forEach(f=>tone(f/2,t,4,'sine',.09));tone(c[[0,1,2,1,2,1,0,2][n]]*2,t,1.4,'triangle',.07);if(n%4===0)tone(c[0]*4,t+.25,1.8,'sine',.03);step++},520)}
+function stopMusic(){clearInterval(timer);playing=false;$('#music').textContent='×'}
+$('#music').onclick=()=>playing?stopMusic():startMusic();
+$('#enter').onclick=()=>{startMusic();$('#intro').classList.add('off');busy=true;setTimeout(()=>go(0),600)};
+</script>
 </body>
 </html>

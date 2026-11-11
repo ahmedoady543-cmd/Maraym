@@ -149,9 +149,9 @@ h2 b{font-size:.8em;color:transparent;-webkit-text-stroke:1.2px var(--brass)}
   <div class="scene" id="s4"><h2><b>٠٥</b>محطات السرعة</h2><div class="rows" id="rw"></div></div>
 
   <div class="scene" id="sg6" style="justify-content:flex-start;padding-top:calc(58px + env(safe-area-inset-top,0px))">
-    <h2 style="margin-bottom:4px"><b>٠٦</b>جهّز مطعمك وسهرتك</h2>
-    <p style="color:var(--mute);font-size:14px;margin-bottom:4px">غيّري الديكور والأجواء على ذوقك الشيفي</p>
-    <div class="gm"><svg id="gr" viewBox="0 -20 400 310"></svg><div class="ctl" id="ctl"></div><button class="btn clay" id="done" type="button" style="margin-top:10px">اعتماد السهرة</button><div id="score"></div></div></div>
+    <h2 style="margin-bottom:4px"><b>٠٦</b>صمّم مطعمك الاحترافي</h2>
+    <p style="color:var(--mute);font-size:14px;margin-bottom:4px">جهّز المطبخ، طاولة التحضير، والإضاءة على ذوقك الشيفي</p>
+    <div class="gm"><svg id="gr" viewBox="0 -20 400 310"></svg><div class="ctl" id="ctl"></div><button class="btn clay" id="done" type="button" style="margin-top:10px">اعتماد المطبخ</button><div id="score"></div></div></div>
 
   <div class="scene" id="s5"><h2><b>٠٧</b>رسالة خاصة</h2><div class="paper"><div class="type" id="t5"></div><div class="sign" id="sg"></div></div></div>
 
@@ -245,7 +245,7 @@ no.addEventListener('mouseenter',flee);no.addEventListener('click',flee);
 no.addEventListener('touchstart',e=>{e.preventDefault();flee()},{passive:false});
 document.addEventListener('mousemove',e=>{const r=no.getBoundingClientRect();if(no.offsetParent&&Math.hypot(e.clientX-(r.left+r.width/2),e.clientY-(r.top+r.height/2))<90)flee()});
 $('#yes').onclick=async()=>{
-  $('#q').textContent='تم الاعتماد برتبة شيف أول';['#yes','#no','#qs'].forEach(s=>$(s).style.display='none');ar.style.height='120px';
+  $('#q').textContent='تم اعتماد مطعم الشيف';['#yes','#no','#qs'].forEach(s=>$(s).style.display='none');ar.style.height='120px';
   await wait(300);$('#stamp').classList.add('hit');await wait(450);$('#s6').classList.add('shake');boom(140);
   $('#sg2').textContent='كل عام وأنت بخير يا ديار — '+DATA.from;$('#sg2').classList.add('show');
   await wait(1000);boom(90);$('#again').style.display='inline-block'};
@@ -268,13 +268,13 @@ function renderGame(){
   (GS.l?`<line x1='196' y1='128' x2='196' y2='30' stroke='var(--brass)' stroke-width='2.5'/><circle cx='196' cy='22' r='44' fill='url(#gw2)'/>`+bx(.2,.5,84,1.2,1.2,18,cream):'');
  gr.classList.remove('bump');void gr.getBoundingClientRect();gr.classList.add('bump')}
 function mkCtl(){
- const rows=[['الجدران','wall',GP.wall.map(w=>w[0])],['الأرضية','floor',GP.floor],['السجادة','rug',GP.rug],['الكنبة','sofa',GP.sofa.map(s=>s[0])]];
+ const rows=[['ديكور المطبخ','wall',GP.wall.map(w => w[0])],['الأرضية','floor',GP.floor],['السجادة','rug',GP.rug],['طاولة التقديم','sofa',GP.sofa.map(s => s[0])]];
  $('#ctl').innerHTML=rows.map(r=>`<div class='row'><span>${r[0]}</span>${r[2].map((c,i)=>`<button class='dot${GS[r[1]]===i?' on':''}' data-k='${r[1]}' data-v='${i}' style='background:${c}' type='button'></button>`).join('')}</div>`).join('')+
-  `<div class='row'>${[['t','طاولة'],['p','نبتة'],['l','لمبة'],['f','لوحة'],['w','شباك']].map(t=>`<button class='tg${GS[t[0]]?' on':''}' data-t='${t[0]}' type='button'>${t[1]}</button>`).join('')}<button class='tg' id='rnd' type='button'>عشوائي</button></div>`;
+  `<div class='row'>${[['t','طاولة تحضير'],['p','نبتة مطبخ'],['l','إضاءة السقف'],['f','لوحة الأطباق'],['w','شباك المطبخ']].map(t=>`<button class='tg${GS[t[0]]?' on':''}' data-t='${t[0]}' type='button'>${t[1]}</button>`).join('')}<button class='tg' id='rnd' type='button'>عشوائي</button></div>`;
  $$('#ctl .dot').forEach(b=>b.onclick=()=>{GS[b.dataset.k]=+b.dataset.v;mkCtl();renderGame()});
  $$('#ctl [data-t]').forEach(b=>b.onclick=()=>{GS[b.dataset.t]^=1;mkCtl();renderGame()});
  $('#rnd').onclick=()=>{const r=n=>Math.floor(Math.random()*n);Object.assign(GS,{wall:r(5),floor:r(4),rug:r(4),sofa:r(5),t:r(2),p:r(2),l:r(2),f:r(2),w:r(2)});mkCtl();renderGame()}}
-$('#done').onclick=()=>{const n=GS.t+GS.p+GS.l+GS.f+GS.w,sc=Math.min(100,92+n*2+Math.floor(Math.random()*3));$('#score').textContent='تقييم الشيف: '+AR(sc)+'٪ — ذوقك أصلي ورهيب يا ديار';boom(70);$('#done').style.display='none';ready()};
+$('#done').onclick=()=>{const n=GS.t+GS.p+GS.l+GS.f+GS.w,sc=Math.min(100,92+n*2+Math.floor(Math.random()*3));$('#score').textContent='تقييم مطعم الشيف: '+AR(sc)+'٪ — إبداع وفن يا ديار';boom(70);$('#done').style.display='none';ready()};
 
 let ac,master,timer,playing=false,step=0;
 const ch=[[220,261.6,329.6],[174.6,220,261.6],[261.6,329.6,392],[196,246.9,293.7]];

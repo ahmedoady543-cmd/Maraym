@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>عيد ميلاد الشيف ديار</title>
+<title>عيد ميلاد سعيد - الشيف ديار</title>
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#071e22;--bg2:#0b2b30;--ink:#f5f7f8;--mute:#8ca1a6;--tile:#1d8a99;--rose:#ff4d6d;--gold:#e9c46a;--card:#10373d;
@@ -20,43 +20,19 @@ body::before{content:"";position:fixed;inset:0;background:var(--lat);z-index:0}
 #stage{position:fixed;inset:0;z-index:2}
 .scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(52px + env(safe-area-inset-top,0px)) 20px calc(100px + env(safe-area-inset-bottom,0px));opacity:0;visibility:hidden;transition:opacity .9s,visibility .9s;overflow-y:auto}
 .scene.on{opacity:1;visibility:visible}
-.top{justify-content:flex-start}
-.arch{width:min(400px,100%);padding:56px 24px 34px;border:2px solid var(--gold);border-radius:24px;background:var(--card);box-shadow:0 0 0 6px var(--bg),0 0 0 8px var(--gold),0 30px 70px rgba(0,0,0,.6);position:relative}
-.bs{font:700 clamp(18px,4.5vw,22px) 'Reem Kufi';color:var(--gold)}
-.inv{font-size:clamp(16px,4.2vw,19px);line-height:1.9;margin:12px auto 16px;max-width:290px;color:var(--mute)}
+.arch{width:min(400px,100%);padding:46px 24px 34px;border:2px solid var(--gold);border-radius:24px;background:var(--card);box-shadow:0 0 0 6px var(--bg),0 0 0 8px var(--gold),0 30px 70px rgba(0,0,0,.6);position:relative}
+.bs{font:700 clamp(18px,4.5vw,22px) 'Reem Kufi';color:var(--gold);margin-bottom:8px}
+.inv{font-size:clamp(16px,4.2vw,19px);line-height:1.9;margin:12px auto;color:var(--mute)}
 .nmz span{font:700 clamp(52px,15vw,78px)/1.15 'Reem Kufi';color:var(--gold);opacity:0;filter:blur(14px);transform:translateY(20px);transition:all 1.3s cubic-bezier(.2,.8,.2,1);display:block}
 .nmz span.s{opacity:1;filter:none;transform:none}
 .dt{font:700 clamp(18px,4.8vw,22px) 'Reem Kufi';color:var(--rose);margin-top:16px;opacity:0;transition:opacity 1s}
 .dt.s,.lc.s{opacity:1}
 .lc{color:var(--mute);margin-top:6px;font-size:17px;opacity:0;transition:opacity 1s}
-h2{font:700 clamp(26px,7vw,38px) 'Reem Kufi';margin-bottom:18px;color:var(--ink)}
-h2 small{display:block;font:400 clamp(16px,4.2vw,20px) 'Reem Kufi';color:var(--gold)}
-.ev{display:flex;gap:16px;text-align:start;width:100%;max-width:420px;opacity:0;transform:translateX(60px);transition:all .8s cubic-bezier(.2,.9,.3,1);margin-bottom:12px}
-.ev.s{opacity:1;transform:none}
-.ev .bl{display:flex;flex-direction:column;align-items:center}
-.ev .bl svg{width:32px;height:32px;flex:none}
-.ev .bl i{width:2px;flex:1;background:var(--gold);opacity:.5;margin:3px 0}
-.ev:last-child .bl i{display:none}
-.ev .tx{padding-bottom:16px}
-.ev h3{font:700 20px 'Reem Kufi'}.ev b{display:block;color:var(--rose);font:700 16px 'Reem Kufi'}.ev p{color:var(--mute);font-size:16px;line-height:1.6}
-.vn{width:100%;max-width:400px;background:var(--card);border:1.5px solid var(--gold);padding:18px;border-radius:18px}
-.vn h3{font:700 22px 'Reem Kufi'}.vn p{color:var(--mute);font-size:17px;margin:4px 0 12px}
 .btn{display:inline-block;padding:11px 26px;border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);font:700 16px 'Reem Kufi';cursor:pointer;text-decoration:none;transition:.25s;margin:3px;border-radius:8px}
 .btn:active{transform:scale(.95)}
 .btn.r{background:var(--tile);border-color:var(--tile);color:#fff}.btn.o{background:transparent;color:var(--ink);border-color:var(--gold)}
-.fm{width:100%;max-width:400px}
-.fm input{width:100%;padding:13px;border:1.5px solid var(--gold);background:var(--card);color:var(--ink);font:700 20px 'Reem Kufi';text-align:center;border-radius:8px;outline:none;margin-bottom:10px}
-.st{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px;font:700 17px 'Reem Kufi'}
-.st button{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--gold);background:transparent;color:var(--gold);font:700 22px sans-serif;cursor:pointer}
-.tk{display:flex;width:100%;max-width:400px;background:var(--card);border:1.5px solid var(--gold);border-radius:12px;position:relative;margin:6px 0 12px;box-shadow:0 12px 30px rgba(0,0,0,.4);transform:rotate(-1deg)}
-.tk .l{flex:1;padding:16px;text-align:start;border-inline-end:2px dashed var(--gold)}
-.tk .l small{color:var(--rose);font:700 13px 'Reem Kufi';letter-spacing:1px}
-.tk .l b{display:block;font:700 24px 'Reem Kufi';margin:2px 0;word-break:break-word}
-.tk .l span{color:var(--mute);font-size:15px}
-.tk .rt{width:92px;padding:12px 8px;display:flex;align-items:center;justify-content:center}
-#bc{display:flex;gap:2px;height:64px;align-items:stretch}#bc i{width:3px;background:var(--gold)}
 #cnt{font:700 20px 'Reem Kufi';color:var(--rose);margin-top:6px;min-height:1.5em}
-#zg{font:700 clamp(24px,6vw,32px) 'Reem Kufi';color:var(--rose);min-height:1.4em}
+#zg{font:700 clamp(26px,7vw,36px) 'Reem Kufi';color:var(--rose);margin-bottom:10px}
 #next{position:fixed;z-index:9;left:50%;bottom:calc(26px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;visibility:hidden;transition:.5s}
 #next.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
 #music{position:fixed;z-index:9;top:calc(14px + env(safe-area-inset-top,0px));inset-inline-start:14px;width:40px;height:40px;border:1.5px solid var(--gold);border-radius:50%;background:var(--card);color:var(--gold);font-size:17px;cursor:pointer}
@@ -94,7 +70,7 @@ h2 small{display:block;font:400 clamp(16px,4.2vw,20px) 'Reem Kufi';color:var(--g
     <div class="p pl"></div><div class="p pr"></div>
     <svg id="kn" viewBox="0 0 60 84" fill="none" stroke="#e9c46a" stroke-width="6"><circle cx="30" cy="12" r="9" fill="#1d8a99" stroke="#e9c46a" stroke-width="2"/><circle cx="30" cy="52" r="23" stroke="#e9c46a"/><circle cx="30" cy="52" r="23" stroke="#1d8a99" stroke-width="2"/></svg>
   </div>
-  <div id="dh">اضغط هنا لاقتحام احتفال الشيف ديار</div>
+  <div id="dh">افتح مفاجأة عيد الميلاد 🎁</div>
 </div>
 
 <div id="dots"></div>
@@ -103,51 +79,34 @@ h2 small{display:block;font:400 clamp(16px,4.2vw,20px) 'Reem Kufi';color:var(--g
 
 <div id="stage">
  <div class="scene" id="s0"><div class="arch">
-  <div class="bs">إلى أسطورة الطبخ وسيد الطريق</div>
-  <p class="inv">يسعدنا دعوتكم للاحتفال بعيد ميلاد الشيف والراكب المميز</p>
+  <div class="bs">إلى أسطورة الطبخ وسيد الطريق 🏍️👨‍🍳</div>
+  <p class="inv">اليوم مو يوم عادي، اليوم عيد ميلاد أغلى الأصدقاء والوجع مالته الشيف والمحترف</p>
   <div class="nmz"><span id="n1">ديار</span></div>
-  <div class="dt k" id="dt"></div><div class="lc" id="lc">ننتظركم لنعيش أجمل اللحظات معاً</div>
+  <div class="dt k" id="dt">كل عام وأنت بألف خير يا بطل</div>
  </div></div>
 
- <div class="scene top" id="s1" style="padding-top:calc(84px + env(safe-area-inset-top,0px))">
-  <h2><small>برنامج الحفل</small>فعاليات الليلة</h2><div id="evs" style="width:100%;max-width:420px"></div></div>
+ <div class="scene" id="s1"><div class="arch">
+  <div class="bs">كلمة من القلب</div>
+  <p class="inv">صديق الدرب، شيف المطبخ اللي أكلاته تنوكل بالگلب، وراكب الدراجة اللي ماكو أسرع منه بالساعة!</p>
+  <div style="font-size:45px; margin:15px 0">🔥 🍳 🏍️</div>
+  <p class="dt k s">تمنياتنا لك بسنة مليئة بالنجاحات، السرعة، والبهجة الدائمة.</p>
+ </div></div>
 
- <div class="scene top" id="s2" style="padding-top:calc(84px + env(safe-area-inset-top,0px))">
-  <h2><small>للحظة الكبيرة</small>تفاصيل المكان</h2>
-  <div class="vn"><h3 id="vn"></h3><p id="va"></p><a class="btn r" id="vm" target="_blank" rel="noopener">افتح الموقع</a></div></div>
-
- <div class="scene top" id="s3" style="padding-top:calc(84px + env(safe-area-inset-top,0px))">
-  <h2><small>بطاقة دخول الاحتفال</small>سجّل حضورك</h2>
-  <div class="fm"><input id="gn" placeholder="اكتب اسمك هنا" maxlength="22" autocomplete="off">
-   <div class="st"><button id="mn" type="button">−</button><span>مرافقون: <b id="gc">١</b></span><button id="pl" type="button">+</button></div></div>
-  <div class="tk"><div class="l"><small>VIP PASS · ٢٠٢٦</small><b id="tn">اسم الضيف</b><span id="tg">١ مرافق</span></div><div class="rt"><div id="bc"></div></div></div>
-  <a class="btn r" id="wa" target="_blank" rel="noopener">تأكيد الحضور عبر واتساب</a></div>
-
- <div class="scene" id="s4">
-  <div style="font-size:60px">🏍️ 🍳 🔥</div>
+ <div class="scene" id="s2">
   <div id="zg">عيد ميلاد سعيد يا ديار!</div>
-  <p id="hint" class="k" style="color:var(--mute);font-size:18px;margin-top:6px">اضغط على الشاشة لإطلاق الألعاب النارية والتهاني</p>
+  <p id="hint" class="k" style="color:var(--mute);font-size:18px;margin-top:6px">اضغط على أي مكان بالشاشة لإطلاق الألعاب النارية والتهاني 🎉</p>
   <div id="cnt"></div>
-  <div id="end" style="opacity:1;margin-top:8px"><p style="color:var(--mute);font-size:18px">تمنياتنا لك بسنة مليئة بالنجاح والسرعة واللذة!</p><button class="btn o" id="again" type="button">من البداية</button></div>
+  <div id="end" style="opacity:1;margin-top:16px"><button class="btn o" id="again" type="button">إعادة المعايدة من البداية</button></div>
  </div>
 </div>
 
 <script>
-const DATA={
-  name:"ديار",
-  dateText:"اليوم · سهرة خاصة",
-  events:[["وصول الضيوف والترحيب","الميلاد","الساعة ٧ مساءً","استقبال الأصدقاء في أجواء مميزة"],
-          ["قطع الكيك ووصفات الشيف","المطبخ الملكي","الساعة ٨:٣٠ مساءً","تذوق أشهى الأطباق وإشعال الشموع"],
-          ["جولة الدراجات والسهرة","الشارع والمكان","الساعة ١٠ مساءً","احتفال خاص وموسيقى حتى الصباح"]],
-  venue:"مطعم ومقهاي ديار", address:"بغداد · شارع الحارثية", mapUrl:"https://maps.google.com/?q=Baghdad",
-  wa:"9647700000000"
-};
+const DATA={name:"ديار"};
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],wait=ms=>new Promise(r=>setTimeout(r,ms));
 const AR=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
 const scenes=$$('.scene');let cur=-1,busy=false,taps=0;
 $('#dots').innerHTML=scenes.map(()=>'<i></i>').join('');
-$('#n1').textContent=DATA.name;$('#dt').textContent=DATA.dateText;
-$('#vn').textContent=DATA.venue;$('#va').textContent=DATA.address;$('#vm').href=DATA.mapUrl;
+$('#n1').textContent=DATA.name;
 
 for(let i=0;i<14;i++){const p=document.createElement('i');p.className='pt';p.style.left=Math.random()*100+'vw';p.style.setProperty('--dx',(Math.random()*120-60)+'px');p.style.animationDuration=(8+Math.random()*7)+'s';p.style.animationDelay=(-Math.random()*15)+'s';$('#petals').appendChild(p)}
 
@@ -166,29 +125,8 @@ async function go(i,skip){
  run[i]();
 }
 
-const star=`<svg viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.8"><rect x="8" y="8" width="24" height="24"/><rect x="8" y="8" width="24" height="24" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="4" fill="var(--tile)" stroke="none"/></svg>`;
-
-function bars(t){let h=7;for(const c of t)h=(h*31+c.charCodeAt(0))>>>0;let o='';for(let i=0;i<18;i++){h=(h*1103515245+12345)>>>0;o+=`<i style="width:${1+(h>>8)%4}px"></i>`}$('#bc').innerHTML=o}
-
-let gc=1;
-function tk(){
-  const n=$('#gn').value.trim();
-  $('#tn').textContent=n||'اسم الضيف';
-  $('#gc').textContent=AR(gc);
-  $('#tg').textContent=AR(gc)+(gc>2?' مرافقين':' مرافق');
-  bars(n+gc);
-  $('#wa').href='https://wa.me/'+DATA.wa+'?text='+encodeURIComponent('السلام عليكم، أنا '+(n||'صديقك')+' وراح أحضر عيد ميلادك يا ديار، المرافقون: '+gc);
-}
-$('#gn').oninput=tk;
-$('#mn').onclick=()=>{gc=Math.max(1,gc-1);tk()};
-$('#pl').onclick=()=>{gc=Math.min(8,gc+1);tk()};
-tk();
-
 const run=[
- async()=>{for(const id of ['#n1']){$(id).classList.add('s');await wait(800)}$('#dt').classList.add('s');await wait(700);$('#lc').classList.add('s');boom(30);await wait(1200);ready()},
- async()=>{$('#evs').innerHTML=DATA.events.map(e=>`<div class="ev"><div class="bl">${star}<i></i></div><div class="tx"><h3>${e[0]}</h3><b>${e[1]}</b><p>${e[2]}<br>${e[3]}</p></div></div>`).join('');
-   for(const e of $$('.ev')){await wait(450);e.classList.add('s');await wait(900)}ready()},
- async()=>{await wait(900);ready()},
+ async()=>{$('#n1').classList.add('s');await wait(800);$('#dt').classList.add('s');boom(30);await wait(1200);ready()},
  async()=>{await wait(800);ready()},
  async()=>{busy=false;taps=0;$('#cnt').textContent='';}
 ];
@@ -196,17 +134,17 @@ const run=[
 function ready(){$('#next').classList.add('show');busy=false}
 $('#next').onclick=next;
 
-$('#s4').addEventListener('pointerdown',async e=>{
-  if(cur!==4||e.target.closest('button'))return;
+document.body.addEventListener('pointerdown',async e=>{
+  if(cur!==2||e.target.closest('button'))return;
   throwPetals(e.clientX,e.clientY);
   taps++;
   $('#hint').style.display='none';
-  $('#cnt').textContent='شرارة: '+AR(taps*10);
-  if(taps===6){
-    boom(120);
-    $('#s4').classList.add('sh');
+  $('#cnt').textContent='شرارة الفرح: '+AR(taps*10);
+  if(taps===5){
+    boom(100);
+    document.body.classList.add('sh');
     await wait(400);
-    $('#s4').classList.remove('sh');
+    document.body.classList.remove('sh');
   }
 });
 
@@ -264,7 +202,6 @@ function stopMusic(){
 
 $('#music').onclick=()=>playing?stopMusic():startMusic();
 
-// فتح الباب عند الضغط في أي مكان على الباب أو الزر
 async function openDoor(){
   const d=$('#door');
   if(d.dataset.s)return;

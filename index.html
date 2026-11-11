@@ -3,47 +3,166 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عيد ميلاد الغالي مصطفى</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<title>عيد ميلاد أسطورة الموستنك - مصطفى 30</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&family=VT323&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#0b0f19;color:#fff;font-family:'Cairo',sans-serif;min-height:100vh;display:flex;justify-content:center;align-items:center;overflow-x:hidden}
-  .card{background:linear-gradient(135deg, #161b26 0%, #0d1117 100%);border:2px solid #d3182a;border-radius:20px;padding:30px 20px;width:90%;max-width:450px;text-align:center;box-shadow:0 15px 35px rgba(211,24,42,0.25);position:relative}
-  .badge{background:#d3182a;color:#fff;font-size:13px;font-weight:700;padding:5px 15px;border-radius:20px;display:inline-block;margin-bottom:15px;letter-spacing:1px}
-  h1{font-size:36px;font-weight:900;margin-bottom:10px;color:#f0f6fc}
-  h1 span{color:#d3182a}
-  .sub-title{color:#8b949e;font-size:16px;margin-bottom:25px;font-weight:600}
-  .info-box{background:#1f242d;border-radius:12px;padding:15px;margin-bottom:20px;text-align:right;border-right:4px solid #d3182a}
-  .info-box p{font-size:15px;color:#c9d1d9;margin:6px 0;line-height:1.6}
-  .info-box p b{color:#fff}
-  .message{background:#11161d;border-radius:12px;padding:20px;font-size:15px;color:#c9d1d9;line-height:1.8;margin-bottom:25px;text-align:right;border:1px solid #30363d}
-  .btn{background:#d3182a;color:#fff;border:none;padding:12px 30px;font-size:16px;font-weight:700;border-radius:10px;cursor:pointer;width:100%;transition:0.3s;font-family:'Cairo',sans-serif}
-  .btn:hover{background:#b11220;transform:translateY(-2px)}
-  .footer-note{margin-top:20px;font-size:13px;color:#8b949e}
+  body{background:#050508;color:#00ffcc;font-family:'Cairo',sans-serif;min-height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden;padding:15px}
+  .arcade-box{background:#0f121d;border:3px solid #ff0055;border-radius:15px;max-width:480px;width:100%;padding:25px;box-shadow:0 0 30px rgba(255,0,85,0.4);text-align:center;position:relative}
+  .screen{background:#000;border:2px solid #00ffcc;border-radius:8px;padding:20px;min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;margin-bottom:20px;box-shadow:inset 0 0 15px rgba(0,255,204,0.3)}
+  .retro-font{font-family:'VT323',monospace;font-size:32px;color:#00ffcc;letter-spacing:2px;line-height:1.4}
+  .title{color:#ff0055;font-size:22px;font-weight:900;margin-bottom:10px}
+  .btn{background:#ff0055;color:#fff;border:none;width:100%;padding:14px;font-size:18px;font-weight:900;border-radius:8px;cursor:pointer;font-family:'Cairo',sans-serif;transition:0.2s;box-shadow:0 5px 15px rgba(255,0,85,0.4)}
+  .btn:active{transform:scale(0.96)}
+  .btn-green{background:#00ffcc;color:#050508;box-shadow:0 5px 15px rgba(0,255,204,0.4)}
+  .hidden{display:none}
+  .stats{text-align:right;width:100%;font-size:15px;color:#fff;margin-bottom:15px;line-height:1.8}
+  .stats span{color:#ff0055;font-weight:900}
 </style>
 </head>
 <body>
 
-<div class="card">
-  <div class="badge">عيد ميلاد سعيد</div>
-  <h1><span>مصطفى</span> الغالي</h1>
-  <div class="sub-title">الذكرى الـ 30 لإطلاق أسطورة التحليلات والموستنك</div>
-
-  <div class="info-box">
-    <p><b>الاسم:</b> مصطفى</p>
-    <p><b>العمر:</b> 30 سنة (العقد الجديد)</p>
-    <p><b>الاختصاص:</b> أخصائي تحليلات مرضية</p>
-    <p><b>السيارة الرسمية:</b> موستنك جبارة</p>
-  </div>
-
-  <div class="message">
-    كل عام وأنت بألف خير يا دكتور مصطفى! عسى أيامك كلها صحة وفرح ونجاح. بخصوص التحليلات، فحوصاتك أثبتت إنك بطل ومتمكن، وبخصوص الموستنك فالطرقات تنتظر عزمك. أتمنى لك سنة سعيدة وكلها توفيق.
-  </div>
-
-  <button class="btn" onclick="alert('كل عام وأنت بخير يا مصطفى وعقبال الـ 100 سنة! - من أخوك أحمد')">اضغط للتهنئة 🚗💉</button>
+<div class="arcade-box" id="app">
+  <div class="title">SYSTEM v30.0 // مختبر الموستنك</div>
   
-  <div class="footer-note">إهداء خاص من أخوك: <b>أحمد</b></div>
+  <!-- المرحلة الأولى: البداية -->
+  <div id="step-1">
+    <div class="screen">
+      <div class="retro-font">مرحباً بالدكتور مصطفى.<br>تم رصد إكمال 30 عاماً بنجاح.<br>اضغط للبدء وفحص النظام!</div>
+    </div>
+    <button class="btn" onclick="playClickSound(); nextStep(2);">بدء الفحص المخبري</button>
+  </div>
+
+  <!-- المرحلة الثانية: فحص الدم والتحليلات -->
+  <div id="step-2" class="hidden">
+    <div class="screen" style="align-items:flex-start;text-align:right;">
+      <div style="color:#ff0055;font-weight:900;margin-bottom:8px;">نتائج عينة الدم والتحليلات:</div>
+      <div class="stats">
+        • نسبة عشق الموستنك: <span>100% (تجاوز الحدود)</span><br>
+        • هرمون الشغل والروقان: <span>طبيعي ومستقر</span><br>
+        • مؤشر الثلاثين سنة: <span>تم إشعال المحرك بنجاح</span>
+      </div>
+    </div>
+    <button class="btn btn-green" onclick="playRevSound(); nextStep(3);">فحص عزم المحرك (Rev)</button>
+  </div>
+
+  <!-- المرحلة الثالثة: اختبار سرعة الاستجابة للموستنك -->
+  <div id="step-3" class="hidden">
+    <div class="screen" id="race-screen" onclick="boostHit(); playRevSound();" style="cursor:pointer;background:#110011">
+      <div class="retro-font" id="race-text" style="color:#ff0055">اضغط بسرعة لإطلاق دعسة الموستنك!</div>
+      <div id="counter" style="font-size:40px;color:#fff;margin-top:10px">0 / 5</div>
+    </div>
+  </div>
+
+  <!-- المرحلة الرابعة: رسالة التهنئة النهائية من أحمد -->
+  <div id="step-4" class="hidden">
+    <div class="screen" style="text-align:right;align-items:flex-start">
+      <div style="color:#00ffcc;font-size:18px;line-height:1.9;font-weight:700;">
+        "كل عام وأنت بألف خير يا دكتور مصطفى! الثلاثين سنة ذي مجرد بداية العزم الحقيقي. تحليلاتك دقيقة ومحرك موستنكك ما يوكف. تبقى الصديق الغالي والأسطورة بكل شي."
+      </div>
+    </div>
+    <div style="color:#ff0055;font-weight:900;margin-bottom:15px;font-size:16px;">إهداء خاص من: أحمد 🚗💉</div>
+    <button class="btn" onclick="playClickSound(); location.reload();">إعادة اللعبة</button>
+  </div>
+
 </div>
+
+<script>
+  // نظام الصوتيات التفاعلي عبر Web Audio API
+  let audioCtx = null;
+
+  function initAudio() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  }
+
+  // صوت ضغطة الأزرار الكلاسيكي
+  function playClickSound() {
+    initAudio();
+    let osc = audioCtx.createOscillator();
+    let gain = audioCtx.createGain();
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.08);
+    gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.08);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.09);
+  }
+
+  // صوت محرك الموستنك الحقيقي (محاكاة متقدمة لـ Engine Rev)
+  function playRevSound() {
+    initAudio();
+    let now = audioCtx.currentTime;
+    
+    // مذبذب الصوت الخشن للمحرك (Sawtooth)
+    let osc = audioCtx.createOscillator();
+    let osc2 = audioCtx.createOscillator();
+    let filter = audioCtx.createBiquadFilter();
+    let gain = audioCtx.createGain();
+
+    osc.type = 'sawtooth';
+    osc2.type = 'square';
+
+    // الترددات التي تحاكي هدير عادم الموستنك عند الدعسة
+    osc.frequency.setValueAtTime(80, now);
+    osc.frequency.exponentialRampToValueAtTime(280, now + 0.25);
+    osc.frequency.exponentialRampToValueAtTime(110, now + 0.6);
+
+    osc2.frequency.setValueAtTime(40, now);
+    osc2.frequency.exponentialRampToValueAtTime(140, now + 0.25);
+    osc2.frequency.exponentialRampToValueAtTime(55, now + 0.6);
+
+    // فلتر لتنقيع الصوت وإعطاء طابع العادم الرياضي
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(400, now);
+    filter.frequency.linearRampToValueAtTime(1200, now + 0.25);
+    filter.frequency.linearRampToValueAtTime(500, now + 0.6);
+
+    // التحكم بمستوى الصوت (Fade In / Fade Out)
+    gain.gain.setValueAtTime(0.01, now);
+    gain.gain.linearRampToValueAtTime(0.35, now + 0.1);
+    gain.gain.setValueAtTime(0.35, now + 0.4);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.65);
+
+    // الربط وتشغيل الأصوات
+    osc.connect(filter);
+    osc2.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start(now);
+    osc2.start(now);
+    osc.stop(now + 0.7);
+    osc2.stop(now + 0.7);
+  }
+
+  function nextStep(step) {
+    document.querySelectorAll('.arcade-box > div:not(.title)').forEach(el => el.classList.add('hidden'));
+    document.getElementById('step-' + step).classList.remove('hidden');
+    if(step === 3) initRace();
+  }
+
+  let clicks = 0;
+  function initRace() {
+    clicks = 0;
+    document.getElementById('counter').innerText = clicks + ' / 5';
+  }
+
+  function boostHit() {
+    clicks++;
+    document.getElementById('counter').innerText = clicks + ' / 5';
+    if(clicks >= 5) {
+      setTimeout(() => nextStep(4), 500);
+    }
+  }
+</script>
 
 </body>
 </html>

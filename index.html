@@ -124,12 +124,12 @@ h2 b{font-size:.8em;color:transparent;-webkit-text-stroke:1.2px var(--brass)}
   <div class="cv">مفاجأة عيد الميلاد</div>
   <h1>ديار</h1>
   <p>إلى شيف المطبخ وسيد الطريق 🏍️👨‍🍳<br>معايدة خاصة مليئة بالحب والسرعة</p>
-  <button class="btn clay" id="enter">افتح المفاجأة</button>
+  <button class="btn clay" id="enter" type="button">افتح المفاجأة</button>
 </div>
 
 <div id="dots"></div>
-<button id="music" aria-label="الموسيقى">♪</button>
-<button class="btn" id="next">التالي ←</button>
+<button id="music" type="button" aria-label="الموسيقى">♪</button>
+<button class="btn" id="next" type="button">التالي ←</button>
 
 <div id="stage">
   <div class="scene" id="s0" style="overflow:hidden"><div class="rays" id="rays"></div>
@@ -151,23 +151,23 @@ h2 b{font-size:.8em;color:transparent;-webkit-text-stroke:1.2px var(--brass)}
   <div class="scene" id="sg6" style="justify-content:flex-start;padding-top:calc(58px + env(safe-area-inset-top,0px))">
     <h2 style="margin-bottom:4px"><b>٠٦</b>جهّز مطعمك وسهرتك</h2>
     <p style="color:var(--mute);font-size:14px;margin-bottom:4px">غيّري الديكور والأجواء على ذوقك الشيفي</p>
-    <div class="gm"><svg id="gr" viewBox="0 -20 400 310"></svg><div class="ctl" id="ctl"></div><button class="btn clay" id="done" style="margin-top:10px">اعتماد السهرة</button><div id="score"></div></div></div>
+    <div class="gm"><svg id="gr" viewBox="0 -20 400 310"></svg><div class="ctl" id="ctl"></div><button class="btn clay" id="done" type="button" style="margin-top:10px">اعتماد السهرة</button><div id="score"></div></div></div>
 
   <div class="scene" id="s5"><h2><b>٠٧</b>رسالة خاصة</h2><div class="paper"><div class="type" id="t5"></div><div class="sign" id="sg"></div></div></div>
 
   <div class="scene" id="s6" style="position:absolute">
     <h2 style="display:block;font-size:clamp(28px,7vw,42px)" id="q">هل تعرف أنك أفضل شيف وراكب بالكون؟</h2>
     <p id="qs" style="color:var(--mute)">اختر إجابتك… (زر «لا» يهرب منك كالعادة)</p>
-    <div class="arena" id="arena"><button class="btn clay" id="yes">طبعاً وأفتخر</button><button class="btn" id="no">لا</button></div>
+    <div class="arena" id="arena"><button class="btn clay" id="yes" type="button">طبعاً وأفتخر</button><button class="btn" id="no" type="button">لا</button></div>
     <div class="stamp" id="stamp">معتمد<small>عيد ميلاد سعيد · ٢٠٢٦</small></div>
     <div class="sign" id="sg2" style="font-size:38px;margin-top:150px;position:relative"></div>
-    <button class="btn" id="again" style="display:none;position:relative;margin-top:20px">من البداية</button>
+    <button class="btn" id="again" type="button" style="display:none;position:relative;margin-top:20px">من البداية</button>
   </div>
 </div>
 
 <script>
 const DATA={
-  intro:[“صديق الدرب والسرعة…”,”اليوم نطفئ شموع سنة جديدة من الإبداع”,”سواء بالمطبخ أو عالدراجة، أنت مبدع بكل ما تحمله الكلمة.”],
+  intro:["صديق الدرب والسرعة…","اليوم نطفئ شموع سنة جديدة من الإبداع","سواء بالمطبخ أو عالدراجة، أنت مبدع بكل ما تحمله الكلمة."],
   swatches:[["نار هادئة","طبخات تفتح النفس","نكهات مضبوطة عالفرازة على أصولها","linear-gradient(115deg,transparent 40%,rgba(233,196,106,.25) 41% 42%,transparent 43%),linear-gradient(135deg,#0b2b30,#1d8a99)","-2deg"],
             ["أسفلت طريق","دراجات وسرعة حماسية","طرقات بغداد تشهد على جولاتها","repeating-linear-gradient(90deg,#2f3e46 0 7px,#354f52 7px 10px,#52796f 10px 15px)","2deg"],
             ["بهارات خاصة","سر الصنعة والطعم","كل وجبة من إيدك تحكي قصة","radial-gradient(circle at 30% 30%,#e76f51,#264653)","1.5deg"],
@@ -211,7 +211,22 @@ async function go(i){
   $('#tb1').textContent='محطة '+AR(i+1)+' / '+AR(scenes.length);
   await wait(450);run[i]()}
 const run=[
- async()=>{busy=true;const gf=$('#gift');gf.onclick=async()=>{if(gf.classList.contains('open'))return;gf.classList.add('open');$('#hint').style.display='none';$('#rays').classList.add('on');boom(110);await wait(900);await type($('#gt'),'مفاجأة عيد الميلاد لشيفنا الغالي…',60);await wait(1400);busy=false;next()}},
+ async()=>{
+    busy=false;
+    const gf=$('#gift');
+    gf.onclick = async()=>{
+      if(gf.classList.contains('open'))return;
+      gf.classList.add('open');
+      $('#hint').style.display='none';
+      $('#rays').classList.add('on');
+      boom(110);
+      await wait(900);
+      await type($('#gt'),'مفاجأة عيد الميلاد لشيفنا الغالي…',60);
+      await wait(1400);
+      busy=false;
+      next();
+    };
+ },
  async()=>{for(const l of DATA.intro){await type($('#t1'),l,65);await wait(900)}ready(700)},
  async()=>{$('#room').classList.add('go');await wait(parts.length*300+900);$('#nm').classList.add('show');await wait(1500);$('#sb').classList.add('show');boom(40);await wait(1000);ready()},
  async()=>{$('#sw').innerHTML=DATA.swatches.map(s=>`<div class="s" style="--r:${s[4]}"><i style="background:${s[3]}"></i><h3>${s[0]} · ${s[1]}</h3><p>${s[2]}</p></div>`).join('');
@@ -235,7 +250,7 @@ $('#yes').onclick=async()=>{
   $('#sg2').textContent='كل عام وأنت بخير يا ديار — '+DATA.from;$('#sg2').classList.add('show');
   await wait(1000);boom(90);$('#again').style.display='inline-block'};
 $('#again').onclick=()=>{$('#again').style.display='none';['#yes','#no','#qs'].forEach(s=>$(s).style.display='');ar.style.height='';$('#q').textContent='هل تعرف أنك أفضل شيف وراكب بالكون؟';
-  $('#stamp').classList.remove('hit');$('#gift').classList.remove('open');$('#hint').style.display='';$('#rays').classList.remove('on');$('#gt').textContent='';$('#s6').classList.remove('shake');$$('.show').forEach(e=>e.classList.remove('show'));$('#room').classList.remove('go');$('#sg2').textContent='';busy=true;go(0)};
+  $('#stamp').classList.remove('hit');$('#gift').classList.remove('open');$('#hint').style.display='';$('#rays').classList.remove('on');$('#gt').textContent='';$('#s6').classList.remove('shake');$$('.show').forEach(e=>e.classList.remove('show'));$('#room').classList.remove('go');$('#sg2').textContent='';busy=false;go(0)};
 function boom(n){for(let i=0;i<n;i++){const c=document.createElement('i');c.className='cf';c.style.left=Math.random()*100+'vw';c.style.background=['#1d8a99','#e9c46a','#f4a261','#e76f51','#f5f7f8'][i%5];c.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),5000)}}
 
 const GP={wall:[['#10373d','#0b2b30'],['#144952','#0f383f'],['#264653','#1d3557'],['#2a9d8f','#1d6f65'],['#071e22','#051518']],floor:['#061417','#0b2b30','#10373d','#092026'],rug:['#1d8a99','#e9c46a','#f4a261','#e76f51'],sofa:[clay,['#2a9d8f','#264653','#1d6f65'],['#e76f51','#c55334','#d9534f'],['#e9c46a','#d9a93c','#c2922b'],['#457b9d','#1d3557','#293241']]};
@@ -254,8 +269,8 @@ function renderGame(){
  gr.classList.remove('bump');void gr.getBoundingClientRect();gr.classList.add('bump')}
 function mkCtl(){
  const rows=[['الجدران','wall',GP.wall.map(w=>w[0])],['الأرضية','floor',GP.floor],['السجادة','rug',GP.rug],['الكنبة','sofa',GP.sofa.map(s=>s[0])]];
- $('#ctl').innerHTML=rows.map(r=>`<div class='row'><span>${r[0]}</span>${r[2].map((c,i)=>`<button class='dot${GS[r[1]]===i?' on':''}' data-k='${r[1]}' data-v='${i}' style='background:${c}'></button>`).join('')}</div>`).join('')+
-  `<div class='row'>${[['t','طاولة'],['p','نبتة'],['l','لمبة'],['f','لوحة'],['w','شباك']].map(t=>`<button class='tg${GS[t[0]]?' on':''}' data-t='${t[0]}'>${t[1]}</button>`).join('')}<button class='tg' id='rnd'>عشوائي</button></div>`;
+ $('#ctl').innerHTML=rows.map(r=>`<div class='row'><span>${r[0]}</span>${r[2].map((c,i)=>`<button class='dot${GS[r[1]]===i?' on':''}' data-k='${r[1]}' data-v='${i}' style='background:${c}' type='button'></button>`).join('')}</div>`).join('')+
+  `<div class='row'>${[['t','طاولة'],['p','نبتة'],['l','لمبة'],['f','لوحة'],['w','شباك']].map(t=>`<button class='tg${GS[t[0]]?' on':''}' data-t='${t[0]}' type='button'>${t[1]}</button>`).join('')}<button class='tg' id='rnd' type='button'>عشوائي</button></div>`;
  $$('#ctl .dot').forEach(b=>b.onclick=()=>{GS[b.dataset.k]=+b.dataset.v;mkCtl();renderGame()});
  $$('#ctl [data-t]').forEach(b=>b.onclick=()=>{GS[b.dataset.t]^=1;mkCtl();renderGame()});
  $('#rnd').onclick=()=>{const r=n=>Math.floor(Math.random()*n);Object.assign(GS,{wall:r(5),floor:r(4),rug:r(4),sofa:r(5),t:r(2),p:r(2),l:r(2),f:r(2),w:r(2)});mkCtl();renderGame()}}
@@ -266,10 +281,10 @@ const ch=[[220,261.6,329.6],[174.6,220,261.6],[261.6,329.6,392],[196,246.9,293.7
 function tone(f,t,d,ty,v){const o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.08);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.1)}
 function startMusic(){if(!ac){ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.5;const dl=ac.createDelay(1),fb=ac.createGain(),wet=ac.createGain();dl.delayTime.value=.42;fb.gain.value=.45;wet.gain.value=.5;master.connect(ac.destination);master.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(wet);wet.connect(ac.destination)}
  ac.resume();playing=true;$('#music').textContent='♪';
- timer=setInterval(()=>{const t=ac.currentTime+.05,c=ch[Math.floor(step/8)%4],n=step%8;if(n===0)c.forEach(f=>tone(f/2,t,4,'sine',.09));tone(c[[0,1,2,1,2,1,0,2][n]]*2,t,1.4,'triangle',.07);if(n%4===0)tone(c[0]*4,t+.25,1.8,'sine',.03);step++},520)}
-function stopMusic(){clearInterval(timer);playing=false;$('#music').textContent='×'}
+ if(!timer){timer=setInterval(()=>{const t=ac.currentTime+.05,c=ch[Math.floor(step/8)%4],n=step%8;if(n===0)c.forEach(f=>tone(f/2,t,4,'sine',.09));tone(c[[0,1,2,1,2,1,0,2][n]]*2,t,1.4,'triangle',.07);if(n%4===0)tone(c[0]*4,t+.25,1.8,'sine',.03);step++},520)}}
+function stopMusic(){clearInterval(timer);timer=null;playing=false;$('#music').textContent='×'}
 $('#music').onclick=()=>playing?stopMusic():startMusic();
-$('#enter').onclick=()=>{startMusic();$('#intro').classList.add('off');busy=true;setTimeout(()=>go(0),600)};
+$('#enter').onclick=()=>{startMusic();$('#intro').classList.add('off');go(0)};
 </script>
 </body>
 </html>

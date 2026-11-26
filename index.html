@@ -3,288 +3,233 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>عيد ميلاد سعيد - الشيف ديار</title>
-<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<title>دعوة زفاف</title>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#071e22;--paper2:#0b2b30;--ink:#f5f7f8;--mute:#8ca1a6;--clay:#1d8a99;--olive:#e9c46a;--brass:#f4a261;--wall:#10373d;--wall2:#0a262b;--floor:#061417;box-sizing:border-box}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#071e22;--paper2:#0b2b30;--ink:#f5f7f8;--mute:#8ca1a6;--clay:#1d8a99;--olive:#e9c46a;--brass:#f4a261;--wall:#10373d;--wall2:#0a262b;--floor:#061417}}
-:root[data-theme="dark"]{--paper:#071e22;--paper2:#0b2b30;--ink:#f5f7f8;--mute:#8ca1a6;--clay:#1d8a99;--olive:#e9c46a;--brass:#f4a261;--wall:#10373d;--wall2:#0a262b;--floor:#061417}
+:root{--bg:#f2e9d6;--bg2:#e7dbc0;--ink:#123b44;--mute:#5d7077;--tile:#1b7f8a;--rose:#b8404f;--gold:#a97a1f;--card:#fbf5e6;
+--lat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60' fill='none' stroke='%231b7f8a' stroke-opacity='.2' stroke-width='1'%3E%3Crect x='10' y='10' width='40' height='40'/%3E%3Crect x='10' y='10' width='40' height='40' transform='rotate(45 30 30)'/%3E%3C/svg%3E");
+--star:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23d9b66b' stroke-width='2'%3E%3Crect x='22' y='22' width='56' height='56'/%3E%3Crect x='22' y='22' width='56' height='56' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='10'/%3E%3C/svg%3E");box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b2a31;--bg2:#103a43;--ink:#f2e9d6;--mute:#93aab0;--tile:#3fb0ba;--rose:#e0707f;--gold:#e0b250;--card:#14424c}}
+:root[data-theme="dark"]{--bg:#0b2a31;--bg2:#103a43;--ink:#f2e9d6;--mute:#93aab0;--tile:#3fb0ba;--rose:#e0707f;--gold:#e0b250;--card:#14424c}
 *{box-sizing:border-box;margin:0}
 html,body{height:100%;overflow:hidden}
-body{background:var(--paper);color:var(--ink);font-family:'Reem Kufi',Tajawal,sans-serif;position:relative}
-body::before{content:"";position:fixed;inset:0;z-index:0;opacity:.25;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .1 0 0 0 0 .5 0 0 0 0 .6 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
-.k{font-family:'Reem Kufi',sans-serif}
-.frame{position:fixed;z-index:6;inset:calc(10px + env(safe-area-inset-top,0px)) 10px calc(10px + env(safe-area-inset-bottom,0px)) 10px;border:1.5px solid var(--brass);pointer-events:none}
-.frame::after{content:"";position:absolute;inset:4px;border:1px solid var(--brass);opacity:.5}
-.tb{position:fixed;z-index:7;inset-inline:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));height:38px;display:grid;grid-template-columns:1fr 1.6fr 1fr;border-top:1.5px solid var(--brass);font-size:12px;background:var(--paper);pointer-events:none}
-.tb div{display:flex;align-items:center;justify-content:center;border-inline-start:1px solid var(--brass);padding:0 6px;text-align:center}
-.tb div:first-child{border:0}
+body{background:radial-gradient(circle at 50% 0,var(--bg2),var(--bg) 75%);color:var(--ink);font-family:Amiri,serif}
+body::before{content:"";position:fixed;inset:0;background:var(--lat);z-index:0}
+.k{font-family:'Reem Kufi',sans-serif}.ar{font-family:'Aref Ruqaa',serif}
+#petals{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.pt{position:fixed;top:-30px;width:13px;height:17px;background:radial-gradient(circle at 30% 30%,var(--rose),#7d2430);border-radius:60% 0 60% 0;opacity:.75;animation:pf linear infinite;pointer-events:none}
+@keyframes pf{to{transform:translate(var(--dx),112vh) rotate(720deg)}}
+.pb{position:fixed;width:13px;height:17px;background:radial-gradient(circle at 30% 30%,var(--rose),#7d2430);border-radius:60% 0 60% 0;z-index:30;pointer-events:none;animation:pbf 2.2s cubic-bezier(.3,.6,.5,1) forwards}
+@keyframes pbf{0%{transform:translate(0,0) rotate(0)}35%{transform:translate(calc(var(--dx)*.6),var(--up)) rotate(200deg)}100%{transform:translate(var(--dx),70vh) rotate(720deg);opacity:0}}
 #stage{position:fixed;inset:0;z-index:2}
-.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(34px + env(safe-area-inset-top,0px)) 24px calc(150px + env(safe-area-inset-bottom,0px));opacity:0;visibility:hidden;transition:opacity .8s,visibility .8s;overflow-y:auto}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(52px + env(safe-area-inset-top,0px)) 20px calc(100px + env(safe-area-inset-bottom,0px));opacity:0;visibility:hidden;transition:opacity .9s,visibility .9s;overflow-y:auto}
 .scene.on{opacity:1;visibility:visible}
-h2{font:700 clamp(30px,8vw,48px) 'Reem Kufi';margin-bottom:20px;display:flex;align-items:baseline;gap:12px;justify-content:center;color:var(--ink)}
-h2 b{font-size:.8em;color:transparent;-webkit-text-stroke:1.2px var(--brass)}
-.note{font:500 14px 'Reem Kufi';letter-spacing:2px;color:var(--brass);border:1px solid var(--brass);padding:4px 14px;border-radius:4px;margin-bottom:22px}
-.type{font:700 clamp(24px,6.5vw,38px)/1.9 'Reem Kufi';max-width:620px;min-height:2em}
-.type::after{content:"|";color:var(--brass);animation:bl .8s infinite}
-.type.done::after{content:""}
-@keyframes bl{50%{opacity:0}}
-#room{width:min(430px,94vw);height:auto;overflow:visible}
-#room .pc{opacity:0;transform-box:fill-box}
-#room.go .pc{animation:drop .8s cubic-bezier(.2,1.3,.4,1) forwards;animation-delay:calc(var(--i)*.3s)}
-@keyframes drop{from{opacity:0;transform:translateY(-34px)}to{opacity:1;transform:none}}
-#glow{animation:gl 3s ease-in-out infinite}
-@keyframes gl{50%{opacity:.35}}
-.nm{font:700 clamp(74px,22vw,150px)/1 'Reem Kufi';color:var(--ink);clip-path:inset(0 0 0 100%);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1);margin-top:2px}
-.nm.show{clip-path:inset(0)}
-.nm em{font-style:normal;color:var(--clay)}
-.sub{font:500 clamp(15px,4vw,19px) 'Reem Kufi';color:var(--mute);letter-spacing:1px;opacity:0;transition:opacity 1s;margin-top:4px}
-.sub.show{opacity:1}
-.sw{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%;max-width:440px}
-.s{background:#10373d;color:#f5f7f8;border:1px solid var(--brass);padding:12px;box-shadow:0 10px 24px rgba(0,0,0,.3);opacity:0;transform:translateY(60px) rotate(var(--r));transition:all .9s cubic-bezier(.2,1.2,.3,1);position:relative;border-radius:10px}
-.s.show{opacity:1;transform:rotate(var(--r))}
-.s::before{content:"";position:absolute;top:-8px;left:50%;width:14px;height:14px;border-radius:50%;background:var(--brass);box-shadow:0 2px 4px rgba(0,0,0,.4);transform:translateX(-50%)}
-.s i{display:block;height:75px;border-radius:6px}
-.s h3{font:700 18px 'Reem Kufi';margin-top:8px;color:var(--brass)}
-.s p{font-size:13px;color:var(--mute);line-height:1.5}
-.rows{width:100%;max-width:500px;text-align:start}
-.r{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--brass);opacity:0;transform:translateX(70px);transition:all .8s cubic-bezier(.2,.9,.3,1)}
-.r.show{opacity:1;transform:none}
-.r b{font:700 48px 'Reem Kufi';color:transparent;-webkit-text-stroke:1.3px var(--brass);min-width:60px;text-align:center}
-.r small{color:var(--brass);font-weight:700;letter-spacing:1px}
-.r h3{font:700 20px 'Reem Kufi';color:var(--ink)}
-.r p{color:var(--mute);font-size:15px;line-height:1.6}
-.paper{background:#10373d;color:#f5f7f8;border:1px solid var(--brass);max-width:540px;width:100%;padding:26px 24px 20px;box-shadow:0 18px 40px rgba(0,0,0,.35);text-align:start;transform:rotate(-1deg);border-radius:12px;background-image:repeating-linear-gradient(transparent 0 38px,rgba(233,196,106,.1) 38px 39px)}
-.paper .type{font:700 clamp(18px,4.8vw,23px)/38px 'Reem Kufi';min-height:9em;color:#f5f7f8}
-.sign{font:700 34px 'Reem Kufi';color:var(--brass);text-align:end;clip-path:inset(0 0 0 100%);transition:clip-path 1.6s ease;margin-top:10px}
-.sign.show{clip-path:inset(0)}
-.btn{padding:13px 32px;border:1.5px solid var(--brass);background:var(--clay);color:#fff;font:700 17px 'Reem Kufi';cursor:pointer;letter-spacing:1px;transition:.25s;border-radius:8px}
+.top{justify-content:flex-start}
+.arch{width:min(400px,100%);padding:56px 24px 34px;border:2px solid var(--gold);border-radius:999px 999px 18px 18px;background:var(--card);box-shadow:0 0 0 6px var(--bg),0 0 0 8px var(--gold),0 26px 60px rgba(0,0,0,.25);position:relative}
+.bs{font:400 clamp(20px,5.4vw,24px) 'Aref Ruqaa';color:var(--gold)}
+.inv{font-size:clamp(17px,4.4vw,20px);line-height:1.9;margin:10px auto 14px;max-width:290px;color:var(--mute)}
+.nmz{display:flex;flex-direction:column;align-items:center;gap:0}
+.nmz span{font:700 clamp(58px,17vw,84px)/1.15 'Aref Ruqaa';color:var(--ink);opacity:0;filter:blur(14px);transform:translateY(20px);transition:all 1.3s cubic-bezier(.2,.8,.2,1)}
+.nmz span.s{opacity:1;filter:none;transform:none}
+.nmz svg{width:34px;height:34px;margin:-2px 0;opacity:0;transition:opacity 1s,transform 1.4s;transform:rotate(-90deg)}
+.nmz svg.s{opacity:1;transform:none}
+.dt{font:700 clamp(19px,5vw,23px) 'Reem Kufi';color:var(--rose);margin-top:16px;opacity:0;transition:opacity 1s}
+.dt.s,.lc.s{opacity:1}
+.lc{color:var(--mute);margin-top:6px;font-size:18px;opacity:0;transition:opacity 1s}
+h2{font:700 clamp(28px,7.5vw,42px) 'Reem Kufi';margin-bottom:18px;color:var(--ink)}
+h2 small{display:block;font:400 clamp(18px,4.6vw,22px) 'Aref Ruqaa';color:var(--gold)}
+.ev{display:flex;gap:16px;text-align:start;width:100%;max-width:420px;opacity:0;transform:translateX(60px);transition:all .8s cubic-bezier(.2,.9,.3,1);margin-bottom:6px}
+.ev.s{opacity:1;transform:none}
+.ev .bl{display:flex;flex-direction:column;align-items:center}
+.ev .bl svg{width:34px;height:34px;flex:none}
+.ev .bl i{width:2px;flex:1;background:var(--gold);opacity:.5;margin:3px 0}
+.ev:last-child .bl i{display:none}
+.ev .tx{padding-bottom:22px}
+.ev h3{font:700 22px 'Reem Kufi'}.ev b{display:block;color:var(--rose);font:700 17px 'Reem Kufi'}.ev p{color:var(--mute);font-size:17px;line-height:1.6}
+.cd{display:flex;gap:10px;direction:ltr;margin-bottom:18px}
+.cd div{width:70px;padding:12px 0 8px;background:var(--card);border:1.5px solid var(--gold);border-radius:12px;position:relative}
+.cd div::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--gold);opacity:.4}
+.cd b{display:block;font:700 34px 'Reem Kufi';color:var(--ink)}.cd small{font-size:14px;color:var(--mute)}
+.vn{width:100%;max-width:400px;background:var(--card);border:1.5px solid var(--gold);padding:18px;border-radius:18px 18px 4px 4px}
+.vn h3{font:700 23px 'Reem Kufi'}.vn p{color:var(--mute);font-size:18px;margin:4px 0 12px}
+.btn{display:inline-block;padding:11px 26px;border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);font:700 16px 'Reem Kufi';cursor:pointer;text-decoration:none;transition:.25s;margin:3px}
 .btn:active{transform:scale(.95)}
-.btn.clay{background:var(--clay);border-color:var(--brass);color:#fff}
-#next{position:fixed;z-index:9;left:50%;bottom:calc(66px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;visibility:hidden;transition:.5s}
+.btn.r{background:var(--rose);border-color:var(--rose);color:#fff}.btn.o{background:transparent;color:var(--ink)}
+.fm{width:100%;max-width:400px}
+.fm input{width:100%;padding:13px;border:1.5px solid var(--gold);background:var(--card);color:var(--ink);font:700 20px 'Reem Kufi';text-align:center;border-radius:6px;outline:none;margin-bottom:10px}
+.st{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px;font:700 17px 'Reem Kufi'}
+.st button{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font:700 22px sans-serif;cursor:pointer}
+.tk{display:flex;width:100%;max-width:400px;background:var(--card);border:1.5px solid var(--gold);border-radius:10px;position:relative;margin:6px 0 12px;box-shadow:0 12px 30px rgba(0,0,0,.2);transform:rotate(-1.5deg)}
+.tk .l{flex:1;padding:16px;text-align:start;border-inline-end:2px dashed var(--gold)}
+.tk .l small{color:var(--rose);font:700 13px 'Reem Kufi';letter-spacing:1px}
+.tk .l b{display:block;font:700 26px 'Reem Kufi';margin:2px 0;word-break:break-word}
+.tk .l span{color:var(--mute);font-size:16px}
+.tk .rt{width:92px;padding:12px 8px;display:flex;align-items:center;justify-content:center}
+.tk::before,.tk::after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);inset-inline-end:82px}
+.tk::before{top:-11px}.tk::after{bottom:-11px}
+#bc{display:flex;gap:2px;height:64px;align-items:stretch}#bc i{width:3px;background:var(--ink)}
+#cp{width:min(300px,76vw);height:auto}
+#cnt{font:700 20px 'Reem Kufi';color:var(--rose);margin-top:6px;min-height:1.5em}
+#zg{font:700 clamp(26px,7vw,36px) 'Aref Ruqaa';color:var(--rose);min-height:1.4em}
+#next{position:fixed;z-index:9;left:50%;bottom:calc(26px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;visibility:hidden;transition:.5s}
 #next.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
-#music{position:fixed;z-index:9;top:calc(20px + env(safe-area-inset-top,0px));inset-inline-start:20px;width:40px;height:40px;border:1.5px solid var(--brass);background:var(--paper);color:var(--brass);font-size:17px;cursor:pointer;border-radius:50%}
+#music{position:fixed;z-index:9;top:calc(14px + env(safe-area-inset-top,0px));inset-inline-start:14px;width:40px;height:40px;border:1.5px solid var(--gold);border-radius:50%;background:var(--card);color:var(--gold);font-size:17px;cursor:pointer}
 #dots{position:fixed;z-index:9;top:calc(26px + env(safe-area-inset-top,0px));inset-inline:70px;display:flex;gap:6px}
-#dots i{flex:1;height:3px;background:var(--brass);opacity:.2;transition:.5s}
-#dots i.on{background:var(--clay);opacity:1}
-.arena{position:relative;width:100%;max-width:400px;height:230px;margin-top:10px}
-.arena .btn{position:absolute}
-#yes{top:10px;inset-inline-start:calc(50% - 105px);width:210px}
-#no{top:130px;inset-inline-start:calc(50% - 32px);background:transparent;color:var(--mute);border-color:var(--mute);transition:inset .25s,top .25s}
-.stamp{position:absolute;z-index:5;border:5px double var(--brass);color:var(--brass);padding:10px 26px;font:700 clamp(36px,11vw,60px)/1.2 'Reem Kufi';text-align:center;transform:rotate(-11deg) scale(3);opacity:0;pointer-events:none;background:color-mix(in srgb,var(--paper) 80%,transparent);border-radius:12px}
-.stamp small{display:block;font:500 14px 'Reem Kufi';letter-spacing:2px}
-.stamp.hit{animation:hit .5s cubic-bezier(.2,2,.4,1) forwards}
-@keyframes hit{to{opacity:.95;transform:rotate(-11deg) scale(1)}}
-.shake{animation:shk .35s}
-@keyframes shk{25%{transform:translate(6px,4px)}50%{transform:translate(-6px,-3px)}75%{transform:translate(3px,-4px)}}
-.curtain{position:fixed;inset:0;z-index:40;background:var(--clay);opacity:0;clip-path:circle(0% at 50% 90%);pointer-events:none}
-.curtain.sweep{animation:wipe 1.4s}
-@keyframes wipe{0%{clip-path:circle(0% at 50% 90%);opacity:1}45%{clip-path:circle(150% at 50% 90%);opacity:1}100%{clip-path:circle(150% at 50% 90%);opacity:0}}
-#intro{position:fixed;inset:0;z-index:100;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;transition:opacity 1s,visibility 1s}
-#intro.off{opacity:0;visibility:hidden}
-#intro .cv{font:500 15px 'Reem Kufi';letter-spacing:3px;color:var(--brass)}
-#intro h1{font:700 clamp(70px,22vw,140px)/1.05 'Reem Kufi';margin:10px 0;color:var(--ink)}
-#intro p{color:var(--mute);margin-bottom:28px;line-height:1.9;font-size:18px}
-#intro svg{width:100px;margin-bottom:6px}
-#intro path{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 2.4s .3s forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.cf{position:fixed;top:-20px;width:10px;height:10px;z-index:60;border-radius:50%;pointer-events:none;animation:fall 3.2s linear forwards}
+#dots i{flex:1;height:3px;background:var(--ink);opacity:.18;transition:.5s}#dots i.on{background:var(--rose);opacity:1}
+.curtain{position:fixed;inset:0;z-index:40;background:var(--lat),var(--tile);pointer-events:none;transform:translateX(100%)}
+.curtain.sweep{animation:sw 1.3s cubic-bezier(.7,0,.3,1)}
+@keyframes sw{0%{transform:translateX(100%)}45%,55%{transform:none}100%{transform:translateX(-100%)}}
+/* door */
+#door{position:fixed;inset:0;z-index:100;background:var(--lat),#134e57;display:flex;flex-direction:column;align-items:center;justify-content:center;perspective:1300px;transition:opacity .9s .1s}
+#door.zoom{opacity:0}
+.dr{position:relative;width:min(320px,82vw);height:min(520px,70vh);border-radius:999px 999px 6px 6px;overflow:hidden;border:10px solid #3a2616;box-shadow:0 0 0 4px #d9b66b,0 30px 70px rgba(0,0,0,.55);background:radial-gradient(ellipse at 50% 70%,#fff3c9,#f0b94c 45%,#a8541f 100%);transition:transform .9s ease-in}
+#door.zoom .dr{transform:scale(3.2)}
+.p{position:absolute;top:0;bottom:0;width:50.5%;background:repeating-linear-gradient(90deg,#5e3d25 0 6px,#4f311e 6px 9px,#684529 9px 15px);box-shadow:inset 0 0 40px rgba(0,0,0,.55);transition:transform 1.8s cubic-bezier(.6,0,.2,1)}
+.p::before{content:"";position:absolute;inset:10px;border:2px solid rgba(217,182,107,.7);border-radius:6px;background:var(--star) center 24%/76% no-repeat,var(--star) center 76%/76% no-repeat}
+.pl{left:0;transform-origin:left center}.pr{right:0;transform-origin:right center}
+#door.open .pl{transform:rotateY(108deg)}#door.open .pr{transform:rotateY(-108deg)}
+#kn{position:absolute;left:50%;top:48%;width:58px;margin-left:-29px;z-index:5;cursor:pointer;transform-origin:50% 0;transition:opacity .5s;-webkit-tap-highlight-color:transparent;animation:kh 2.2s ease-in-out infinite}
+#kn.knock{animation:kk 1.2s}
+#door.open #kn{opacity:0}
+@keyframes kh{50%{transform:rotate(7deg)}}
+@keyframes kk{0%,100%{transform:rotate(0)}15%,50%,85%{transform:rotate(-34deg)}30%,65%,100%{transform:rotate(0)}}
+#dh{margin-top:26px;font:500 21px 'Reem Kufi';color:#f2e9d6;animation:bl 1.4s infinite}
+@keyframes bl{50%{opacity:.3}}
+.sh{animation:shk .35s}@keyframes shk{25%{transform:translate(6px,4px)}50%{transform:translate(-6px,-3px)}75%{transform:translate(3px,-4px)}}
+.cf{position:fixed;top:-20px;width:9px;height:15px;z-index:60;pointer-events:none;animation:fall 3.2s linear forwards}
 @keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
-#gift{width:min(260px,70vw);cursor:pointer;overflow:visible;-webkit-tap-highlight-color:transparent;animation:wob 2.2s ease-in-out infinite;position:relative;z-index:2}
-#gift .lid{transition:transform 1s cubic-bezier(.3,1.5,.5,1),opacity 1s;transform-box:fill-box;transform-origin:center}
-#gift.open{animation:none}
-#gift.open .lid{transform:translateY(-130px) rotate(-22deg);opacity:0}
-@keyframes wob{0%,40%,100%{transform:rotate(0)}10%{transform:rotate(-4deg)}20%{transform:rotate(4deg)}30%{transform:rotate(-2deg)}}
-.rays{position:absolute;inset:0;margin:auto;width:140vmax;height:140vmax;border-radius:50%;background:repeating-conic-gradient(var(--brass) 0 6deg,transparent 6deg 18deg);opacity:0;pointer-events:none;-webkit-mask-image:radial-gradient(circle,#000,transparent 55%);mask-image:radial-gradient(circle,#000,transparent 55%)}
-.rays.on{animation:rays 2.4s ease-out forwards}
-@keyframes rays{0%{opacity:.65;transform:scale(0) rotate(0)}100%{opacity:0;transform:scale(1) rotate(60deg)}}
-.hint{margin-top:18px;color:var(--brass);font-size:18px;animation:bl 1.4s infinite}
-.gm{display:flex;flex-direction:column;align-items:center;width:100%;max-width:440px}
-#gr{width:min(370px,86vw);height:auto;overflow:visible}
-.bump{animation:bump .35s}
-@keyframes bump{50%{transform:scale(1.035)}}
-.ctl{width:100%;margin-top:6px}
-.row{display:flex;align-items:center;gap:9px;justify-content:center;margin:7px 0;flex-wrap:wrap}
-.row span{font:700 14px 'Reem Kufi';min-width:65px;text-align:start;color:var(--brass)}
-.dot{width:30px;height:30px;border-radius:50%;border:2px solid var(--brass);cursor:pointer;padding:0;transition:transform .2s}
-.dot.on{transform:scale(1.25);box-shadow:0 0 0 3px var(--clay)}
-.tg{padding:7px 14px;border:1.5px solid var(--brass);background:transparent;color:var(--ink);font:700 14px 'Reem Kufi';cursor:pointer;border-radius:6px}
-.tg.on{background:var(--brass);color:var(--paper)}
-#score{font:700 21px 'Reem Kufi';color:var(--brass);min-height:1.5em;margin-top:10px}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
 </style>
 </head>
 <body>
-<div class="frame"></div>
-<div class="tb"><div id="tb1"></div><div>معايدة عيد ميلاد · الشيف ديار</div><div>من صديقك</div></div>
+<div id="petals"></div>
 <div class="curtain" id="curtain"></div>
 
-<div id="intro">
-  <svg viewBox="0 0 120 70" fill="none" stroke="var(--brass)" stroke-width="2" stroke-linecap="round"><path d="M10 66V30A50 50 0 0 1 110 30V66M4 66H116M30 66V36A30 30 0 0 1 90 36V66"/></svg>
-  <div class="cv">مفاجأة عيد الميلاد</div>
-  <h1>ديار</h1>
-  <p>إلى شيف المطبخ وسيد الطريق 🏍️👨‍🍳<br>معايدة خاصة مليئة بالحب والسرعة</p>
-  <button class="btn clay" id="enter" type="button">افتح المفاجأة</button>
+<div id="door">
+  <div class="dr">
+    <div class="p pl"></div><div class="p pr"></div>
+    <svg id="kn" viewBox="0 0 60 84" fill="none" stroke="#d9b66b" stroke-width="6"><circle cx="30" cy="12" r="9" fill="#a97a1f" stroke="#5a3a10" stroke-width="3"/><circle cx="30" cy="52" r="23" stroke="#d9b66b"/><circle cx="30" cy="52" r="23" stroke="#a97a1f" stroke-width="2"/></svg>
+  </div>
+  <div id="dh">اطرق الباب</div>
 </div>
 
 <div id="dots"></div>
-<button id="music" type="button" aria-label="الموسيقى">♪</button>
-<button class="btn" id="next" type="button">التالي ←</button>
+<button id="music" aria-label="الموسيقى">♪</button>
+<button class="btn r" id="next">التالي ←</button>
 
 <div id="stage">
-  <div class="scene" id="s0" style="overflow:hidden"><div class="rays" id="rays"></div>
-    <svg id="gift" viewBox="0 0 200 200"><g><rect x="35" y="95" width="130" height="90" fill="var(--clay)" stroke="var(--brass)" stroke-width="2"/><rect x="90" y="95" width="20" height="90" fill="var(--olive)" stroke="var(--brass)" stroke-width="2"/></g><g class="lid"><rect x="28" y="68" width="144" height="30" fill="#144952" stroke="var(--brass)" stroke-width="2"/><rect x="90" y="68" width="20" height="30" fill="var(--olive)" stroke="var(--brass)" stroke-width="2"/><path d="M100 68C80 30 50 40 70 62C80 70 100 68 100 68ZM100 68C120 30 150 40 130 62C120 70 100 68 100 68Z" fill="var(--olive)" stroke="var(--brass)" stroke-width="2"/></g></svg>
-    <div class="hint" id="hint">اضغط على الهدية لإشعال الشرارة</div><div class="type" id="gt" style="min-height:0;font-size:26px"></div></div>
+ <div class="scene" id="s0"><div class="arch">
+  <div class="bs">بسم الله الرحمن الرحيم</div>
+  <p class="inv">يتشرف أهل العروسين بدعوتكم لحضور حفل زفاف نجليهما</p>
+  <div class="nmz"><span id="n1"></span>
+   <svg id="st" viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.8"><rect x="8" y="8" width="24" height="24"/><rect x="8" y="8" width="24" height="24" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="4" fill="var(--rose)" stroke="none"/></svg>
+   <span id="n2"></span></div>
+  <div class="dt k" id="dt"></div><div class="lc" id="lc">ويشرفنا حضوركم ومشاركتنا الفرحة</div>
+ </div></div>
 
-  <div class="scene" id="s1"><div class="note">وصفات ومهارات</div><div class="type" id="t1"></div></div>
+ <div class="scene top" id="s1" style="padding-top:calc(84px + env(safe-area-inset-top,0px))">
+  <h2><small>ليالي الفرح</small>برنامج الأفراح</h2><div id="evs" style="width:100%;max-width:420px"></div></div>
 
-  <div class="scene" id="s2">
-    <svg id="room" viewBox="0 -20 400 310"></svg>
-    <div class="nm" id="nm">د<em>يا</em>ر</div>
-    <div class="sub" id="sb">أسطورة الطبخ وسيد الدراجات · كل عام وأنت بخير</div>
-  </div>
+ <div class="scene top" id="s2" style="padding-top:calc(84px + env(safe-area-inset-top,0px))">
+  <h2><small>باقي على الفرح</small>العدّ التنازلي</h2>
+  <div class="cd"><div><b id="cd">٠</b><small>يوم</small></div><div><b id="ch">٠</b><small>ساعة</small></div><div><b id="cm">٠</b><small>دقيقة</small></div><div><b id="cs">٠</b><small>ثانية</small></div></div>
+  <div class="vn"><h3 id="vn"></h3><p id="va"></p><a class="btn r" id="vm" target="_blank" rel="noopener">افتح الموقع</a><button class="btn o" id="vc">انسخ العنوان</button></div></div>
 
-  <div class="scene" id="s3"><h2><b>٠٤</b>أسرار الشيف</h2><div class="sw" id="sw"></div></div>
+ <div class="scene top" id="s3" style="padding-top:calc(84px + env(safe-area-inset-top,0px))">
+  <h2><small>بطاقة دخولكم</small>سجّلوا حضوركم</h2>
+  <div class="fm"><input id="gn" placeholder="اكتب اسمك هنا" maxlength="22" autocomplete="off">
+   <div class="st"><button id="mn">−</button><span>عدد الحضور: <b id="gc">١</b></span><button id="pl">+</button></div></div>
+  <div class="tk"><div class="l"><small>بطاقة دخول · ٢٠٢٧</small><b id="tn">اسمكم هنا</b><span id="tg">١ شخص</span></div><div class="rt"><div id="bc"></div></div></div>
+  <a class="btn r" id="wa" target="_blank" rel="noopener">تأكيد الحضور عبر واتساب</a></div>
 
-  <div class="scene" id="s4"><h2><b>٠٥</b>محطات السرعة</h2><div class="rows" id="rw"></div></div>
-
-  <div class="scene" id="sg6" style="justify-content:flex-start;padding-top:calc(58px + env(safe-area-inset-top,0px))">
-    <h2 style="margin-bottom:4px"><b>٠٦</b>صمّم مطعمك الاحترافي</h2>
-    <p style="color:var(--mute);font-size:14px;margin-bottom:4px">جهّز المطبخ، طاولة التحضير، والإضاءة على ذوقك الشيفي</p>
-    <div class="gm"><svg id="gr" viewBox="0 -20 400 310"></svg><div class="ctl" id="ctl"></div><button class="btn clay" id="done" type="button" style="margin-top:10px">اعتماد المطبخ</button><div id="score"></div></div></div>
-
-  <div class="scene" id="s5"><h2><b>٠٧</b>رسالة خاصة</h2><div class="paper"><div class="type" id="t5"></div><div class="sign" id="sg"></div></div></div>
-
-  <div class="scene" id="s6" style="position:absolute">
-    <h2 style="display:block;font-size:clamp(28px,7vw,42px)" id="q">هل تعرف أنك أفضل شيف وراكب بالكون؟</h2>
-    <p id="qs" style="color:var(--mute)">اختر إجابتك… (زر «لا» يهرب منك كالعادة)</p>
-    <div class="arena" id="arena"><button class="btn clay" id="yes" type="button">طبعاً وأفتخر</button><button class="btn" id="no" type="button">لا</button></div>
-    <div class="stamp" id="stamp">معتمد<small>عيد ميلاد سعيد · ٢٠٢٦</small></div>
-    <div class="sign" id="sg2" style="font-size:38px;margin-top:150px;position:relative"></div>
-    <button class="btn" id="again" type="button" style="display:none;position:relative;margin-top:20px">من البداية</button>
-  </div>
+ <div class="scene" id="s4">
+  <svg id="cp" viewBox="0 0 220 190"><ellipse cx="110" cy="182" rx="95" ry="6" fill="rgba(0,0,0,.18)"/>
+   <path d="M44 74L84 74L92 176L36 176Z" fill="#17404a"/><path d="M60 74L68 100L76 74Z" fill="#f2e9d6"/><path d="M66 90L70 112L74 90Z" fill="#b8404f"/><circle cx="64" cy="52" r="17" fill="#d9a77c"/><path d="M47 48C48 30 80 28 81 48C74 40 56 40 47 48Z" fill="#2a1b12"/>
+   <path d="M142 80C132 124 112 170 104 178H214C204 164 174 120 166 80Z" fill="#fbf5e6" stroke="#d9b66b" stroke-width="2"/><circle cx="154" cy="62" r="16" fill="#d9a77c"/><path d="M136 56C138 36 172 34 172 58C164 48 146 48 136 56Z" fill="#2a1b12"/>
+   <path d="M130 52C124 100 112 150 108 180" fill="none" stroke="rgba(251,245,230,.8)" stroke-width="10" stroke-linecap="round"/>
+   <path d="M84 100Q110 112 138 100" fill="none" stroke="#d9a77c" stroke-width="8" stroke-linecap="round"/></svg>
+  <div id="zg"></div>
+  <p id="hint" class="k" style="color:var(--mute);font-size:18px;margin-top:6px">اضغطوا على الشاشة وارموا الورد على العروسين</p>
+  <div id="cnt"></div>
+  <div id="end" style="opacity:0;transition:opacity 1.2s;margin-top:8px"><div class="ar" style="font-size:30px" id="en"></div><p style="color:var(--mute);font-size:18px" id="ed"></p><button class="btn o" id="again">من البداية</button></div>
+ </div>
 </div>
 
 <script>
+/* ======= عدّل بيانات الدعوة من هنا ======= */
 const DATA={
-  intro:["صديق الدرب والسرعة…","اليوم نطفئ شموع سنة جديدة من الإبداع","سواء بالمطبخ أو عالدراجة، أنت مبدع بكل ما تحمله الكلمة."],
-  swatches:[["نار هادئة","طبخات تفتح النفس","نكهات مضبوطة عالفرازة على أصولها","linear-gradient(115deg,transparent 40%,rgba(233,196,106,.25) 41% 42%,transparent 43%),linear-gradient(135deg,#0b2b30,#1d8a99)","-2deg"],
-            ["أسفلت طريق","دراجات وسرعة حماسية","طرقات بغداد تشهد على جولاتها","repeating-linear-gradient(90deg,#2f3e46 0 7px,#354f52 7px 10px,#52796f 10px 15px)","2deg"],
-            ["بهارات خاصة","سر الصنعة والطعم","كل وجبة من إيدك تحكي قصة","radial-gradient(circle at 30% 30%,#e76f51,#264653)","1.5deg"],
-            ["ذهب خالص","قيمتك ومعزتك بينا","صديق وفي ورافقنا بأحلى الأوقات","-1.5deg"]],
-  years:[["١","البداية","شرارة الشغف الأولى بين الطبخ وحب الدراجات."],["٢","التطوير","إتقان الوصفات الصعبة والتحكم بكل تفصيلة."],["٣","السرعة","الوصول للقمة سواء بالمطبخ أو بالطرقات."],["٤","الاحتفال","واليوم نحتفل بأجمل عيد ميلاد لأغلى الأصدقاء."]],
-  letter:"عيد ميلاد سعيد يا ديار! اليوم نحتفل بوجودك وبكل لحظة ضحك وسهرة قضيناها وياك. أنت شيف ماكو مثلك وصديق ينحط عالوجبة الطيبة. نتمنى لك سنة مليئة بالنجاح، الصحة، والسرعة الدايمة.",
-  from:"أخوك وصديقك"
+  groom:"علي", bride:"زينب",
+  dateText:"الجمعة · ١٥ كانون الثاني ٢٠٢٧",
+  target:"2027-01-15T19:00:00",
+  events:[["ليلة الحناء","الخميس · ١٤ كانون الثاني","الساعة ٧ مساءً · في بيت العروس","أمسية حناء وأغاني وزغاريد"],
+          ["حفل الزفاف","الجمعة · ١٥ كانون الثاني","الساعة ٧ مساءً · في القاعة","استقبال الضيوف ثم الزفّة والرقص"],
+          ["مأدبة العشاء","الجمعة · ١٥ كانون الثاني","بعد الزفّة مباشرة","على شرف الحضور الكريم"]],
+  venue:"قاعة الياسمين للأفراح", address:"بغداد · الكرادة · شارع ٦٢", mapUrl:"https://maps.google.com/?q=Baghdad",
+  wa:"9647700000000", // رقمك بصيغة دولية بدون +
+  family:"عائلتا العريس والعروس"
 };
+/* ======================================== */
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],wait=ms=>new Promise(r=>setTimeout(r,ms));
-const scenes=$$('.scene'),AR=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);let cur=-1,busy=false;
+const AR=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const scenes=$$('.scene');let cur=-1,busy=false,taps=0;
 $('#dots').innerHTML=scenes.map(()=>'<i></i>').join('');
-
-const iso=(x,y,z)=>[200+(x-y)*20,110+(x+y)*10-z],pt=a=>a.map(p=>p.join(',')).join(' ');
-const pl=(a,f)=>`<polygon points="${pt(a)}" fill="${f}" stroke="var(--brass)" stroke-width="1.2" stroke-linejoin="round"/>`;
-const bx=(x,y,z,w,d,h,c)=>`<g class="pc">${pl([iso(x,y+d,z),iso(x+w,y+d,z),iso(x+w,y+d,z+h),iso(x,y+d,z+h)],c[1])}${pl([iso(x+w,y,z),iso(x+w,y+d,z),iso(x+w,y+d,z+h),iso(x+w,y,z+h)],c[2])}${pl([iso(x,y,z+h),iso(x+w,y,z+h),iso(x+w,y+d,z+h),iso(x,y+d,z+h)],c[0])}</g>`;
-const g=(s)=>`<g class="pc">${s}</g>`;
-const clay=['#1d8a99','#144952','#10373d'],oak=['#f4a261','#e76f51','#d9534f'],olv=['#2a9d8f','#264653','#1d6f65'],cream=['#f4f1de','#e9e0cf','#efe8dc'];
-
-$('#room').innerHTML=`<defs><radialGradient id="gw"><stop offset="0" stop-color="#e9c46a" stop-opacity=".85"/><stop offset="1" stop-color="#e9c46a" stop-opacity="0"/></radialGradient></defs>`+
-  g(pl([iso(0,0,0),iso(8,0,0),iso(8,8,0),iso(0,8,0)],'var(--floor)'))+
-  g(pl([iso(0,0,0),iso(0,8,0),iso(0,8,120),iso(0,0,120)],'var(--wall2)'))+
-  g(pl([iso(0,0,0),iso(8,0,0),iso(8,0,120),iso(0,0,120)],'var(--wall)'))+
-  g(pl([iso(0,2.4,56),iso(0,5.6,56),iso(0,5.6,102),iso(0,2.4,102)],'#cfe0e0')+`<path d="M${pt([iso(0,4,56),iso(0,4,102)])}M${pt([iso(0,2.4,79),iso(0,5.6,79)])}" stroke="var(--brass)" stroke-width="1.2" fill="none"/>`)+
-  g(pl([iso(3,0,56),iso(6.4,0,56),iso(6.4,0,100),iso(3,0,100)],'#10373d')+pl([iso(3.5,0,62),iso(5.9,0,62),iso(5.9,0,94),iso(3.5,0,94)],'#0b2b30')+`<circle cx="${iso(4.7,0,80)[0]}" cy="${iso(4.7,0,80)[1]}" r="9" fill="#1d8a99" stroke="var(--brass)" stroke-width="1.2"/>`)+
-  g(pl([iso(2.4,1.8,.4),iso(7.2,1.8,.4),iso(7.2,7,.4),iso(2.4,7,.4)],'#1d8a99').replace('stroke-width="1.2"','stroke-width="1.2" opacity=".85"'))+
-  bx(.3,2.2,0,.9,3.8,34,clay)+bx(.3,2.2,0,2.4,3.8,15,clay)+bx(.3,2.2,12,2.4,.7,12,clay)+bx(.3,5.3,12,2.4,.7,12,clay)+
-  bx(4.4,3.6,0,2,2,10,oak)+
-  bx(6.6,.4,0,1.1,1.1,13,olv)+
-  g(['M318 164C300 140 296 118 306 100','M318 164C328 136 340 118 336 98','M318 164C316 132 312 110 318 86','M318 164C296 150 282 138 280 122','M318 164C340 152 352 140 354 124'].map(d=>`<path d="${d}" fill="none" stroke="#2a9d8f" stroke-width="7" stroke-linecap="round"/>`).join(''))+
-  g(`<line x1="196" y1="128" x2="196" y2="30" stroke="var(--brass)" stroke-width="2.5"/><circle id="glow" cx="196" cy="22" r="44" fill="url(#gw)"/>`)+bx(.2,.5,84,1.2,1.2,18,cream);
-const parts=$$('#room > g');parts.forEach((e,i)=>e.style.setProperty('--i',i));
-
-async function type(el,t,sp=55){el.classList.remove('done');el.textContent='';for(const c of t){el.textContent+=c;await wait(sp)}el.classList.add('done')}
-function ready(auto){const n=$('#next');n.classList.add('show');busy=false;if(auto){const m=cur;setTimeout(()=>{if(cur===m)next()},auto)}}
+$('#n1').textContent=DATA.groom;$('#n2').textContent=DATA.bride;$('#dt').textContent=DATA.dateText;
+$('#vn').textContent=DATA.venue;$('#va').textContent=DATA.address;$('#vm').href=DATA.mapUrl;
+$('#vc').onclick=async()=>{try{await navigator.clipboard.writeText(DATA.venue+' - '+DATA.address);$('#vc').textContent='تم النسخ'}catch(e){$('#vc').textContent=DATA.address}};
+/* ---- ورد الخلفية ---- */
+for(let i=0;i<14;i++){const p=document.createElement('i');p.className='pt';p.style.left=Math.random()*100+'vw';p.style.setProperty('--dx',(Math.random()*120-60)+'px');p.style.animationDuration=(10+Math.random()*9)+'s';p.style.animationDelay=(-Math.random()*18)+'s';p.style.transform='scale('+(.6+Math.random()*.8)+')';$('#petals').appendChild(p)}
+function throwPetals(x,y){for(let i=0;i<12;i++){const p=document.createElement('i');p.className='pb';p.style.left=x+'px';p.style.top=y+'px';p.style.setProperty('--dx',(Math.random()*260-130)+'px');p.style.setProperty('--up',-(40+Math.random()*90)+'px');p.style.animationDelay=Math.random()*.15+'s';document.body.appendChild(p);setTimeout(()=>p.remove(),2600)}}
+/* ---- التنقل ---- */
+async function type(el,t,sp=55){el.textContent='';for(const c of t){el.textContent+=c;await wait(sp)}}
+function ready(){$('#next').classList.add('show');busy=false}
 async function next(){if(busy)return;busy=true;$('#next').classList.remove('show');go(cur+1)}
-async function go(i){
-  const c=$('#curtain');c.classList.remove('sweep');void c.offsetWidth;c.classList.add('sweep');await wait(650);
-  if(scenes[cur])scenes[cur].classList.remove('on');
-  cur=i;scenes[i].scrollTop=0;scenes[i].classList.add('on');
-  $$('#dots i').forEach((d,k)=>d.classList.toggle('on',k<=i));
-  $('#tb1').textContent='محطة '+AR(i+1)+' / '+AR(scenes.length);
-  await wait(450);run[i]()}
+async function go(i,skip){if(!skip){const c=$('#curtain');c.classList.remove('sweep');void c.offsetWidth;c.classList.add('sweep');await wait(620)}
+ if(scenes[cur])scenes[cur].classList.remove('on');cur=i;scenes[i].scrollTop=0;scenes[i].classList.add('on');
+ $$('#dots i').forEach((d,k)=>d.classList.toggle('on',k<=i));await wait(skip?300:450);run[i]()}
+const star=`<svg viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1.8"><rect x="8" y="8" width="24" height="24"/><rect x="8" y="8" width="24" height="24" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="4" fill="var(--rose)" stroke="none"/></svg>`;
+let cdT;
+function tick(){let d=new Date(DATA.target)-new Date();if(d<0)d=0;const s=Math.floor(d/1000);$('#cd').textContent=AR(Math.floor(s/86400));$('#ch').textContent=AR(Math.floor(s%86400/3600));$('#cm').textContent=AR(Math.floor(s%3600/60));$('#cs').textContent=AR(s%60)}
+function bars(t){let h=7;for(const c of t)h=(h*31+c.charCodeAt(0))>>>0;let o='';for(let i=0;i<18;i++){h=(h*1103515245+12345)>>>0;o+=`<i style="width:${1+(h>>8)%4}px"></i>`}$('#bc').innerHTML=o}
+let gc=1;
+function tk(){const n=$('#gn').value.trim();$('#tn').textContent=n||'اسمكم هنا';$('#gc').textContent=AR(gc);$('#tg').textContent=AR(gc)+(gc>2?' أشخاص':gc===2?' شخصان':' شخص');bars(n+gc);
+ $('#wa').href='https://wa.me/'+DATA.wa+'?text='+encodeURIComponent('السلام عليكم، أنا '+(n||'ضيفكم')+' وراح أحضر زفاف '+DATA.groom+' و'+DATA.bride+' بإذن الله، عدد الحضور: '+gc)}
+$('#gn').oninput=tk;$('#mn').onclick=()=>{gc=Math.max(1,gc-1);tk()};$('#pl').onclick=()=>{gc=Math.min(8,gc+1);tk()};tk();
 const run=[
- async()=>{
-    busy=false;
-    const gf=$('#gift');
-    gf.onclick = async()=>{
-      if(gf.classList.contains('open'))return;
-      gf.classList.add('open');
-      $('#hint').style.display='none';
-      $('#rays').classList.add('on');
-      boom(110);
-      await wait(900);
-      await type($('#gt'),'مفاجأة عيد الميلاد لشيفنا الغالي…',60);
-      await wait(1400);
-      busy=false;
-      next();
-    };
- },
- async()=>{for(const l of DATA.intro){await type($('#t1'),l,65);await wait(900)}ready(700)},
- async()=>{$('#room').classList.add('go');await wait(parts.length*300+900);$('#nm').classList.add('show');await wait(1500);$('#sb').classList.add('show');boom(40);await wait(1000);ready()},
- async()=>{$('#sw').innerHTML=DATA.swatches.map(s=>`<div class="s" style="--r:${s[4]}"><i style="background:${s[3]}"></i><h3>${s[0]} · ${s[1]}</h3><p>${s[2]}</p></div>`).join('');
-    for(const e of $$('.s')){await wait(450);e.classList.add('show')}await wait(1200);ready()},
- async()=>{$('#rw').innerHTML=DATA.years.map(y=>`<div class="r"><b>٠${y[0]}</b><div><small>المحطة ${y[0]}</small><h3>${y[1]}</h3><p>${y[2]}</p></div></div>`).join('');
-    for(const e of $$('.r')){await wait(450);e.classList.add('show');await wait(1100)}ready()},
- async()=>{busy=true;$('#done').style.display='';$('#score').textContent='';mkCtl();renderGame()},
- async()=>{await type($('#t5'),DATA.letter,42);$('#sg').textContent=DATA.from;$('#sg').classList.add('show');await wait(1800);ready()},
- async()=>{busy=true}
+ async()=>{for(const id of ['#n1','#st','#n2']){$(id).classList.add('s');await wait(1100)}$('#dt').classList.add('s');await wait(700);$('#lc').classList.add('s');boom(50);await wait(1200);ready()},
+ async()=>{$('#evs').innerHTML=DATA.events.map(e=>`<div class="ev"><div class="bl">${star}<i></i></div><div class="tx"><h3>${e[0]}</h3><b>${e[1]}</b><p>${e[2]}<br>${e[3]}</p></div></div>`).join('');
+   for(const e of $$('.ev')){await wait(450);e.classList.add('s');await wait(900)}ready()},
+ async()=>{tick();clearInterval(cdT);cdT=setInterval(tick,1000);await wait(900);ready()},
+ async()=>{await wait(800);ready()},
+ async()=>{busy=true;taps=0;$('#zg').textContent='';$('#cnt').textContent='';$('#end').style.opacity=0}
 ];
 $('#next').onclick=next;
-
-const no=$('#no'),ar=$('#arena');
-function flee(){no.style.insetInlineStart=Math.random()*(ar.clientWidth-no.offsetWidth)+'px';no.style.top=Math.random()*(ar.clientHeight-no.offsetHeight)+'px'}
-no.addEventListener('mouseenter',flee);no.addEventListener('click',flee);
-no.addEventListener('touchstart',e=>{e.preventDefault();flee()},{passive:false});
-document.addEventListener('mousemove',e=>{const r=no.getBoundingClientRect();if(no.offsetParent&&Math.hypot(e.clientX-(r.left+r.width/2),e.clientY-(r.top+r.height/2))<90)flee()});
-$('#yes').onclick=async()=>{
-  $('#q').textContent='تم اعتماد مطعم الشيف';['#yes','#no','#qs'].forEach(s=>$(s).style.display='none');ar.style.height='120px';
-  await wait(300);$('#stamp').classList.add('hit');await wait(450);$('#s6').classList.add('shake');boom(140);
-  $('#sg2').textContent='كل عام وأنت بخير يا ديار — '+DATA.from;$('#sg2').classList.add('show');
-  await wait(1000);boom(90);$('#again').style.display='inline-block'};
-$('#again').onclick=()=>{$('#again').style.display='none';['#yes','#no','#qs'].forEach(s=>$(s).style.display='');ar.style.height='';$('#q').textContent='هل تعرف أنك أفضل شيف وراكب بالكون؟';
-  $('#stamp').classList.remove('hit');$('#gift').classList.remove('open');$('#hint').style.display='';$('#rays').classList.remove('on');$('#gt').textContent='';$('#s6').classList.remove('shake');$$('.show').forEach(e=>e.classList.remove('show'));$('#room').classList.remove('go');$('#sg2').textContent='';busy=false;go(0)};
-function boom(n){for(let i=0;i<n;i++){const c=document.createElement('i');c.className='cf';c.style.left=Math.random()*100+'vw';c.style.background=['#1d8a99','#e9c46a','#f4a261','#e76f51','#f5f7f8'][i%5];c.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),5000)}}
-
-const GP={wall:[['#10373d','#0b2b30'],['#144952','#0f383f'],['#264653','#1d3557'],['#2a9d8f','#1d6f65'],['#071e22','#051518']],floor:['#061417','#0b2b30','#10373d','#092026'],rug:['#1d8a99','#e9c46a','#f4a261','#e76f51'],sofa:[clay,['#2a9d8f','#264653','#1d6f65'],['#e76f51','#c55334','#d9534f'],['#e9c46a','#d9a93c','#c2922b'],['#457b9d','#1d3557','#293241']]};
-const GS={wall:0,floor:0,rug:0,sofa:0,t:0,p:0,l:0,f:0,w:0};
-function renderGame(){
- const wl=GP.wall[GS.wall],S=GP.sofa[GS.sofa],gr=$('#gr');
- const leaf=['M318 164C300 140 296 118 306 100','M318 164C328 136 340 118 336 98','M318 164C316 132 312 110 318 86','M318 164C296 150 282 138 280 122','M318 164C340 152 352 140 354 124'].map(d=>`<path d='${d}' fill='none' stroke='#2a9d8f' stroke-width='7' stroke-linecap='round'/>`).join('');
- gr.innerHTML=`<defs><radialGradient id='gw2'><stop offset='0' stop-color='#e9c46a' stop-opacity='.85'/><stop offset='1' stop-color='#e9c46a' stop-opacity='0'/></radialGradient></defs>`+
-  pl([iso(0,0,0),iso(8,0,0),iso(8,8,0),iso(0,8,0)],GP.floor[GS.floor])+pl([iso(0,0,0),iso(0,8,0),iso(0,8,120),iso(0,0,120)],wl[1])+pl([iso(0,0,0),iso(8,0,0),iso(8,0,120),iso(0,0,120)],wl[0])+
-  (GS.w?pl([iso(0,2.4,56),iso(0,5.6,56),iso(0,5.6,102),iso(0,2.4,102)],'#cfe0e0')+`<path d='M${pt([iso(0,4,56),iso(0,4,102)])}M${pt([iso(0,2.4,79),iso(0,5.6,79)])}' stroke='var(--brass)' stroke-width='1.2' fill='none'/>`:'')+
-  (GS.f?pl([iso(3,0,56),iso(6.4,0,56),iso(6.4,0,100),iso(3,0,100)],'#10373d')+pl([iso(3.5,0,62),iso(5.9,0,62),iso(5.9,0,94),iso(3.5,0,94)],'#0b2b30')+`<circle cx='${iso(4.7,0,80)[0]}' cy='${iso(4.7,0,80)[1]}' r='9' fill='#1d8a99' stroke='var(--brass)' stroke-width='1.2'/>`:'')+
-  pl([iso(2.4,1.8,.4),iso(7.2,1.8,.4),iso(7.2,7,.4),iso(2.4,7,.4)],GP.rug[GS.rug])+
-  bx(.3,2.2,0,.9,3.8,34,S)+bx(.3,2.2,0,2.4,3.8,15,S)+bx(.3,2.2,12,2.4,.7,12,S)+bx(.3,5.3,12,2.4,.7,12,S)+
-  (GS.t?bx(4.4,3.6,0,2,2,10,oak):'')+(GS.p?bx(6.6,.4,0,1.1,1.1,13,olv)+leaf:'')+
-  (GS.l?`<line x1='196' y1='128' x2='196' y2='30' stroke='var(--brass)' stroke-width='2.5'/><circle cx='196' cy='22' r='44' fill='url(#gw2)'/>`+bx(.2,.5,84,1.2,1.2,18,cream):'');
- gr.classList.remove('bump');void gr.getBoundingClientRect();gr.classList.add('bump')}
-function mkCtl(){
- const rows=[['ديكور المطبخ','wall',GP.wall.map(w => w[0])],['الأرضية','floor',GP.floor],['السجادة','rug',GP.rug],['طاولة التقديم','sofa',GP.sofa.map(s => s[0])]];
- $('#ctl').innerHTML=rows.map(r=>`<div class='row'><span>${r[0]}</span>${r[2].map((c,i)=>`<button class='dot${GS[r[1]]===i?' on':''}' data-k='${r[1]}' data-v='${i}' style='background:${c}' type='button'></button>`).join('')}</div>`).join('')+
-  `<div class='row'>${[['t','طاولة تحضير'],['p','نبتة مطبخ'],['l','إضاءة السقف'],['f','لوحة الأطباق'],['w','شباك المطبخ']].map(t=>`<button class='tg${GS[t[0]]?' on':''}' data-t='${t[0]}' type='button'>${t[1]}</button>`).join('')}<button class='tg' id='rnd' type='button'>عشوائي</button></div>`;
- $$('#ctl .dot').forEach(b=>b.onclick=()=>{GS[b.dataset.k]=+b.dataset.v;mkCtl();renderGame()});
- $$('#ctl [data-t]').forEach(b=>b.onclick=()=>{GS[b.dataset.t]^=1;mkCtl();renderGame()});
- $('#rnd').onclick=()=>{const r=n=>Math.floor(Math.random()*n);Object.assign(GS,{wall:r(5),floor:r(4),rug:r(4),sofa:r(5),t:r(2),p:r(2),l:r(2),f:r(2),w:r(2)});mkCtl();renderGame()}}
-$('#done').onclick=()=>{const n=GS.t+GS.p+GS.l+GS.f+GS.w,sc=Math.min(100,92+n*2+Math.floor(Math.random()*3));$('#score').textContent='تقييم مطعم الشيف: '+AR(sc)+'٪ — إبداع وفن يا ديار';boom(70);$('#done').style.display='none';ready()};
-
-let ac,master,timer,playing=false,step=0;
-const ch=[[220,261.6,329.6],[174.6,220,261.6],[261.6,329.6,392],[196,246.9,293.7]];
-function tone(f,t,d,ty,v){const o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.08);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.1)}
-function startMusic(){if(!ac){ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.5;const dl=ac.createDelay(1),fb=ac.createGain(),wet=ac.createGain();dl.delayTime.value=.42;fb.gain.value=.45;wet.gain.value=.5;master.connect(ac.destination);master.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(wet);wet.connect(ac.destination)}
+/* ---- ورد الختام ---- */
+$('#s4').addEventListener('pointerdown',async e=>{if(cur!==4||e.target.closest('button'))return;throwPetals(e.clientX,e.clientY);taps++;$('#hint').style.display='none';$('#cnt').textContent='ورد: '+AR(taps*12);
+ if(taps===8){$('#zg').textContent='ليلولييييييي… زغرودة!';boom(160);$('#s4').classList.add('sh');await wait(400);$('#s4').classList.remove('sh');
+  $('#en').textContent='ماكو فرح بدونكم';$('#ed').textContent=DATA.family+' · '+DATA.dateText;$('#end').style.opacity=1}});
+$('#again').onclick=()=>{taps=0;$$('.s').forEach(e=>e.classList.remove('s'));clearInterval(cdT);busy=true;go(0)};
+function boom(n){for(let i=0;i<n;i++){const c=document.createElement('i');c.className='cf';c.style.left=Math.random()*100+'vw';c.style.background=['#b8404f','#d9b66b','#1b7f8a','#f2e9d6','#e0707f'][i%5];c.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),5000)}}
+/* ---- الباب ---- */
+$('#kn').onclick=async()=>{const d=$('#door');if(d.dataset.s)return;d.dataset.s=1;startMusic();$('#dh').style.display='none';$('#kn').classList.add('knock');
+ for(let i=0;i<3;i++){knock();await wait(400)}await wait(300);d.classList.add('open');await wait(1900);d.classList.add('zoom');await wait(1000);d.style.display='none';busy=true;go(0,true)};
+/* ---- موسيقى: عود على مقام الحجاز + إيقاع المقسوم ---- */
+let ac,master,nb,timer,playing=false,st=0,ni=3;
+const HZ=[293.66,311.13,369.99,392,440,466.16,523.25,587.33];
+function pluck(f,t,v=.16){const o=ac.createOscillator(),o2=ac.createOscillator(),fl=ac.createBiquadFilter(),g=ac.createGain();o.type='sawtooth';o2.type='triangle';o.frequency.value=f;o2.frequency.value=f*1.004;fl.type='lowpass';fl.frequency.setValueAtTime(3200,t);fl.frequency.exponentialRampToValueAtTime(500,t+.5);
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+.9);o.connect(fl);o2.connect(fl);fl.connect(g);g.connect(master);o.start(t);o2.start(t);o.stop(t+1);o2.stop(t+1)}
+function dum(t){const o=ac.createOscillator(),g=ac.createGain();o.frequency.setValueAtTime(130,t);o.frequency.exponentialRampToValueAtTime(45,t+.2);g.gain.setValueAtTime(.7,t);g.gain.exponentialRampToValueAtTime(.001,t+.28);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+.3)}
+function tek(t){const s=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain();s.buffer=nb;f.type='highpass';f.frequency.value=3500;g.gain.setValueAtTime(.22,t);g.gain.exponentialRampToValueAtTime(.001,t+.07);s.connect(f);f.connect(g);g.connect(ac.destination);s.start(t);s.stop(t+.1)}
+function knock(){if(!ac||!playing)return;const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.frequency.setValueAtTime(240,t);o.frequency.exponentialRampToValueAtTime(90,t+.12);g.gain.setValueAtTime(.9,t);g.gain.exponentialRampToValueAtTime(.001,t+.2);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+.25)}
+function startMusic(){if(!ac){ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.55;
+  const dl=ac.createDelay(1),fb=ac.createGain(),wt=ac.createGain();dl.delayTime.value=.3;fb.gain.value=.35;wt.gain.value=.35;master.connect(ac.destination);master.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(wt);wt.connect(ac.destination);
+  nb=ac.createBuffer(1,ac.sampleRate*.1,ac.sampleRate);const d=nb.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1}
  ac.resume();playing=true;$('#music').textContent='♪';
- if(!timer){timer=setInterval(()=>{const t=ac.currentTime+.05,c=ch[Math.floor(step/8)%4],n=step%8;if(n===0)c.forEach(f=>tone(f/2,t,4,'sine',.09));tone(c[[0,1,2,1,2,1,0,2][n]]*2,t,1.4,'triangle',.07);if(n%4===0)tone(c[0]*4,t+.25,1.8,'sine',.03);step++},520)}}
-function stopMusic(){clearInterval(timer);timer=null;playing=false;$('#music').textContent='×'}
+ timer=setInterval(()=>{const t=ac.currentTime+.05,n=st%8,r=['D','T','','T','D','','T',''][n];if(r==='D')dum(t);if(r==='T')tek(t);
+  if(st%32===0){pluck(HZ[0]/2,t,.22)}
+  if(n%2===0||Math.random()<.35){const ph=st%16;let m=Math.random();ni+=m<.4?1:m<.7?-1:m<.85?2:-2;if(ph>=14)ni=ph===15?0:2;ni=Math.max(0,Math.min(7,ni));pluck(HZ[ni],t+(n%2?.0:0))}
+  st++},300)}
+function stopMusic(){clearInterval(timer);playing=false;$('#music').textContent='×'}
 $('#music').onclick=()=>playing?stopMusic():startMusic();
-$('#enter').onclick=()=>{startMusic();$('#intro').classList.add('off');go(0)};
 </script>
 </body>
 </html>
